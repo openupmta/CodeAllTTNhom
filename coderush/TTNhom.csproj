@@ -207,6 +207,17 @@
     <Compile Include="Areas\TTNhom_QLNS\Models\ticket.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\Ward.cs" />
     <Compile Include="Areas\TTNhom_QLNS\TTNhom_QLNSAreaRegistration.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Controllers\SachController.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Models\DBQLTVContext.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Models\DocGia.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Models\MuonTraSach.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Models\NhaXuatBan.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Models\Sach.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Models\sysdiagram.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Models\TacGia.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Models\TheLoai.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Models\TheThuVien.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\TTNhom_QLThuVienAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
@@ -7172,6 +7183,8 @@
     <Content Include="Areas\TTNhom_QLNS\Views\group_role\Details.cshtml" />
     <Content Include="Areas\TTNhom_QLNS\Views\group_role\Edit.cshtml" />
     <Content Include="Areas\TTNhom_QLNS\Views\group_role\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\web.config" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Sach\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -7183,7 +7196,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -7265,6 +7280,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\TTNhom_QLNS\Views\Shared\" />
+    <Folder Include="Areas\TTNhom_QLThuVien\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
