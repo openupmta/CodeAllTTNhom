@@ -1,0 +1,163 @@
+﻿@model coderush.Areas.TTNhom_QLNS.Models.staff
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Adminlte.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>staff</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.department.de_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.department.de_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.group_role.gr_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.group_role.gr_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.position.pos_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.position.pos_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_thumbnai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_thumbnai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_fullname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_fullname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_birthday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_birthday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_aboutme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_aboutme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_identity_card)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_identity_card)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_identity_card_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_identity_card_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_created_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_created_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sta_leader_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sta_leader_id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.sta_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

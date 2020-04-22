@@ -28,9 +28,9 @@ namespace coderush.Areas.TTNhom_QLNS.Models
         [StringLength(500)]
         public string add_note { get; set; }
 
-        public int? customer_id { get; set; }
-
         public int? staff_id { get; set; }
+
+        public int? customer_id { get; set; }
 
         public virtual customer customer { get; set; }
 

@@ -49,6 +49,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -194,15 +197,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Controllers\group_roleController.cs" />
+    <Compile Include="Areas\TTNhom_QLNS\Controllers\staffsController.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\address.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\customer.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\department.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\District.cs" />
+    <Compile Include="Areas\TTNhom_QLNS\Models\dropdown.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\group_role.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\DBQLNSContext.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\position.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\Province.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\staff.cs" />
+    <Compile Include="Areas\TTNhom_QLNS\Models\Staff\StaffCreateViewModel.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\sysdiagram.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\ticket.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\Ward.cs" />
@@ -218,6 +224,7 @@
     <Compile Include="Areas\TTNhom_QLThuVien\Models\TheLoai.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Models\TheThuVien.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\TTNhom_QLThuVienAreaRegistration.cs" />
+    <Compile Include="AutoMapperConfig\AutoMapperProfile.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
@@ -261,6 +268,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\TTNhom_QLNS\assest\staffsController.js" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\img\bootstrap-colorpicker\alpha-horizontal.png" />
@@ -7185,6 +7193,11 @@
     <Content Include="Areas\TTNhom_QLNS\Views\group_role\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\web.config" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\Sach\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\staffs\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\staffs\Delete.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\staffs\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\staffs\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\staffs\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

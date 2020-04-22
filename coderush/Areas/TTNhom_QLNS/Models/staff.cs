@@ -54,9 +54,6 @@ namespace coderush.Areas.TTNhom_QLNS.Models
 
         public DateTime? sta_identity_card_date { get; set; }
 
-        [StringLength(120)]
-        public string sta_address { get; set; }
-
         public DateTime? sta_created_date { get; set; }
 
         public int? department_id { get; set; }

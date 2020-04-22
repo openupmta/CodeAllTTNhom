@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using AutoMapper;
+using coderush.AutoMapper;
 
 namespace coderush
 {
@@ -16,6 +18,10 @@ namespace coderush
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            // Config automapper
+            Mapper.Initialize(cfg => cfg.AddProfile<AutoMapperProfile>());
+
+            
         }
     }
 }
