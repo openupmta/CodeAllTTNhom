@@ -207,7 +207,11 @@
     <Compile Include="Areas\TTNhom_QLNS\Models\ticket.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\Ward.cs" />
     <Compile Include="Areas\TTNhom_QLNS\TTNhom_QLNSAreaRegistration.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Controllers\HomeController.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Controllers\NewsController.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Controllers\RulesController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Controllers\SachController.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Controllers\WorkingScheduleController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Models\DBQLTVContext.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Models\DocGia.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Models\MuonTraSach.cs" />
@@ -261,6 +265,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\TTNhom_QLThuVien\images\background.png" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\img\bootstrap-colorpicker\alpha-horizontal.png" />
@@ -7185,6 +7190,10 @@
     <Content Include="Areas\TTNhom_QLNS\Views\group_role\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\web.config" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\Sach\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Rules\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\WorkingSchedule\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\News\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

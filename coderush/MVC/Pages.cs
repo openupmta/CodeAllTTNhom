@@ -7,6 +7,14 @@ namespace lte.MVC
 {
     public static class Pages
     {
+        public static class QLTV
+        {
+            public const string Home = "/TTNhom_QLThuVien/Home/Index";
+            public const string News = "/TTNhom_QLThuVien/News/Index";
+            public const string WorkingSchedule = "/TTNhom_QLThuVien/WorkingSchedule/Index";
+
+            public const string Rules = "/TTNhom_QLThuVien/Rules/Index";
+        }
         public static class GroupRole
         {
             public const string Index = "/TTNhom_QLNS/group_role/Index";
