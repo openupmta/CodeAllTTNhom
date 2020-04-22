@@ -16,7 +16,6 @@ namespace coderush.Areas.TTNhom_QLNS.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int de_id { get; set; }
 
         [StringLength(50)]
