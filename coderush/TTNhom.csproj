@@ -207,8 +207,14 @@
     <Compile Include="Areas\TTNhom_QLNS\Models\ticket.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\Ward.cs" />
     <Compile Include="Areas\TTNhom_QLNS\TTNhom_QLNSAreaRegistration.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Controllers\AuthorController.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Controllers\BookController.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Controllers\BorrowGiveBackController.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Controllers\CategoryController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Controllers\HomeController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Controllers\NewsController.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Controllers\PublishingCompanyController.cs" />
+    <Compile Include="Areas\TTNhom_QLThuVien\Controllers\ReadersController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Controllers\RulesController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Controllers\SachController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Controllers\WorkingScheduleController.cs" />
@@ -7194,6 +7200,12 @@
     <Content Include="Areas\TTNhom_QLThuVien\Views\Rules\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\WorkingSchedule\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\News\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Book\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\BorrowGiveBack\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Readers\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Author\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\PublishingCompany\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Category\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
