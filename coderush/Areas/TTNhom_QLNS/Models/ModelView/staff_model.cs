@@ -1,31 +1,25 @@
-﻿namespace coderush.Areas.TTNhom_QLNS.Models
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Web;
+
+namespace coderush.Areas.TTNhom_QLNS.Models.ModelView
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
-    [Table("staff")]
-    public partial class staff
+    public class staff_model
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public staff()
-        {
-            addresses = new HashSet<address>();
-            tickets = new HashSet<ticket>();
-        }
-
         [Key]
         public int sta_id { get; set; }
 
-        [Display(Name ="MANV")]
+        [Display(Name = "MANV")]
+        //[StringLength(20, MinimumLength = 6, ErrorMessage = "Độ dài mật khẩu ít nhất 6 ký tự.")]
+        //[Required(ErrorMessage = "Yêu cầu nhập mật khẩu")]
         [StringLength(50)]
         public string sta_code { get; set; }
 
         [StringLength(120)]
         public string sta_thumbnai { get; set; }
-
         [Display(Name = "Họ và tên")]
         [Required(ErrorMessage = "Yêu cầu nhập họ và tên")]
         public string sta_fullname { get; set; }
@@ -65,17 +59,5 @@
         public int? sta_leader_id { get; set; }
 
         public int? group_role_id { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<address> addresses { get; set; }
-
-        public virtual department department { get; set; }
-
-        public virtual group_role group_role { get; set; }
-
-        public virtual position position { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ticket> tickets { get; set; }
     }
 }
