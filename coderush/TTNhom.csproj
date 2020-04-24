@@ -7206,6 +7206,9 @@
     <Content Include="Areas\TTNhom_QLThuVien\Views\Author\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\PublishingCompany\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\Category\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Category\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Category\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<coderush.Areas.TTNhom_QLThuVien.Models.TheLoai>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Adminlte.cshtml";
@@ -28,11 +29,49 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title" style="color:blue"><b>THỂ LOẠI</b></h3>
-
+                        <button type="button" class="btn btn-warning" style="float:right">
+                            <i class="fa fa-plus-square"></i> &nbsp;
+                            @Html.ActionLink("Thêm Thể loại", "Create", "Category")
+                        </button>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Mã thể loại
+                                    </th>
+                                    <th>
+                                        Tên thể loại
+                                    </th>
 
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MaTheLoai)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TenTheLoai)
+                                        </td>
+                                        <td>
+                                            <i class="fa fa-info-circle"></i> &nbsp;
+                                            @Html.ActionLink("Chi tiết", "Details", new { id = item.MaTheLoai }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <i class="fa fa-edit"></i> &nbsp;
+                                            @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.MaTheLoai }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <i class="fa fa-trash-o"></i> &nbsp;
+                                            @Html.ActionLink("Xóa bỏ", "Delete", new { id = item.MaTheLoai }, new { onclick = "return confirm('Are you sure?');" })
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+
+                        </table>
                     </div>
                     <!-- /.box-body -->
                 </div>
