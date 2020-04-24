@@ -8,7 +8,7 @@ namespace coderush.Areas.TTNhom_QLNS.Models
     public partial class DBQLNSContext : DbContext
     {
         public DBQLNSContext()
-            : base("name=Model11")
+            : base("name=Model1")
         {
         }
 
@@ -41,7 +41,8 @@ namespace coderush.Areas.TTNhom_QLNS.Models
             modelBuilder.Entity<customer>()
                 .HasMany(e => e.addresses)
                 .WithOptional(e => e.customer)
-                .HasForeignKey(e => e.customer_id);
+                .HasForeignKey(e => e.customer_id)
+                .WillCascadeOnDelete();
 
             modelBuilder.Entity<department>()
                 .Property(e => e.de_thumbnail)

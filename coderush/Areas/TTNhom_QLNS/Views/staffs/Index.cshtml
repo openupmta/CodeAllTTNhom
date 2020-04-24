@@ -1,0 +1,136 @@
+﻿@model IEnumerable<coderush.Areas.TTNhom_QLNS.Models.staff>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Adminlte.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.department.de_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.group_role.gr_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.position.pos_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_thumbnai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_fullname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_sex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_birthday)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_aboutme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_identity_card)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_identity_card_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_created_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sta_leader_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.department.de_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.group_role.gr_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.position.pos_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_thumbnai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_fullname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_sex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_birthday)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_aboutme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_identity_card)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_identity_card_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_created_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sta_leader_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.sta_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.sta_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.sta_id })
+        </td>
+    </tr>
+}
+
+</table>
