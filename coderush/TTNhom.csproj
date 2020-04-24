@@ -205,6 +205,7 @@
     <Compile Include="Areas\TTNhom_QLNS\Models\dropdown.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\group_role.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\DBQLNSContext.cs" />
+    <Compile Include="Areas\TTNhom_QLNS\Models\ModelView\staff_model.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\position.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\Province.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\staff.cs" />
