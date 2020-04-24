@@ -9125,12 +9125,6 @@
       <DependentUpon>201806010834011_initialdb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\QLKSCommonModels\QLKSCommonModels.csproj">
-      <Project>{7b53361a-c145-4b46-82ae-d9151d17d559}</Project>
-      <Name>QLKSCommonModels</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
