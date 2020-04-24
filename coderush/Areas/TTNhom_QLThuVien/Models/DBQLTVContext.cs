@@ -8,7 +8,7 @@ namespace coderush.Areas.TTNhom_QLThuVien.Models
     public partial class DBQLTVContext : DbContext
     {
         public DBQLTVContext()
-            : base("name=DBQLTVContext")
+            : base("name=DBQLTVContext1")
         {
         }
 
