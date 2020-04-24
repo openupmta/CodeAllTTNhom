@@ -1,4 +1,4 @@
-namespace coderush.Areas.TTNhom_QLNS.Models
+﻿namespace coderush.Areas.TTNhom_QLNS.Models
 {
     using System;
     using System.Collections.Generic;
@@ -19,13 +19,15 @@ namespace coderush.Areas.TTNhom_QLNS.Models
         [Key]
         public int sta_id { get; set; }
 
+        [Display(Name ="MANV")]
         [StringLength(50)]
         public string sta_code { get; set; }
 
         [StringLength(120)]
         public string sta_thumbnai { get; set; }
 
-        [StringLength(45)]
+        [Display(Name = "Họ và tên")]
+        [Required(ErrorMessage = "Yêu cầu nhập họ và tên")]
         public string sta_fullname { get; set; }
 
         [StringLength(45)]
