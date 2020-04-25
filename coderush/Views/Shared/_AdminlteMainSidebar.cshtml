@@ -64,6 +64,28 @@
                             <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Chức năng 3</a></li>
                         </ul>
                     </li>
+
+                    <li class="@Html.IsSelected(controller: "group_role") treeview">
+                        <a href="#">
+                            <i class="fa fa-dashboard"></i> <span>Quản Lý Trường THPT</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="@Html.IsSelected(controller: "Home", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.Home"><i class="fa fa-circle-o"></i> Giới Thiệu - Nội Quy </a></li>
+                            <li class="@Html.IsSelected(controller: "GiaoVien", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.GiaoVien"><i class="fa fa-circle-o"></i> Quản Lý Giáo Viên</a></li>
+                            <li class="@Html.IsSelected(controller: "HocSinh", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.HocSinh"><i class="fa fa-circle-o"></i> Quản Lý Học Sinh</a></li>
+                            <li class="@Html.IsSelected(controller: "Diem", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.Diem"><i class="fa fa-circle-o"></i>  Quản Lý Điểm</a></li>
+                            <li class="@Html.IsSelected(controller: "DiemChiTiet", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.DiemChiTiet"><i class="fa fa-circle-o"></i> Quản Lý Điểm Chi Tiết</a></li>
+                            <li class="@Html.IsSelected(controller: "MonHoc", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.MonHoc"><i class="fa fa-circle-o"></i> Quản Lý Môn Học</a></li>
+                            <li class="@Html.IsSelected(controller: "PhanCong", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.PhanCong"><i class="fa fa-circle-o"></i> Quản Lý Phân Công</a></li>
+                            <li class="@Html.IsSelected(controller: "Lop", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.Lop"><i class="fa fa-circle-o"></i> Quản Lý Lớp</a></li>
+                            <li class="@Html.IsSelected(controller: "KhoiLop", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.KhoiLop"><i class="fa fa-circle-o"></i> Quản Lý Khối Lớp</a></li>
+                            <li class="@Html.IsSelected(controller: "DienUuTien", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.DienUuTien"><i class="fa fa-circle-o"></i> Quản Lý Diện Ưu Tiên</a></li>
+
+                        </ul>
+                    </li>
                     @*end*@
                 </ul>
             </li>
