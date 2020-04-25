@@ -1,4 +1,6 @@
-﻿<aside class="main-sidebar">
+﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+
+<aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <!-- Sidebar user panel -->
@@ -28,28 +30,34 @@
             <li class="header">MAIN NAVIGATION</li>
             <li class="@Html.IsSelected(controller: "group_role") treeview">
                 <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>Nhóm Quyền</span>
+                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</span>
+                </a>
+
+
+            </li>
+            <li class="@Html.IsSelected(controller: "group_role") treeview">
+                <a href="#">
+                    <i class="fas fa-user-alt"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Nhân Sự</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    @*<li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Danh sách</a></li>*@
 
-                    @*start*@
                     <li class="@Html.IsSelected(controller: "group_role") treeview">
                         <a href="#">
-                            <i class="fa fa-dashboard"></i> <span>Quản Lý Nhân Sự</span>
+                            <i class="fa fa-circle-o"></i> <span>Nhóm quyền</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Chức năng 1</a></li>
-                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Chức năng 2</a></li>
-                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Chức năng 3</a></li>
+                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Thêm</a></li>
+                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Sửa</a></li>
+                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
                         </ul>
                     </li>
+                </ul>
 
                     <li class="@Html.IsSelected(controller: "group_role") treeview">
                         <a href="#">
@@ -87,6 +95,65 @@
                         </ul>
                     </li>
                     @*end*@
+            </li>
+            <li class="@Html.IsSelected(controller: "group_role") treeview">
+                <a href="#">
+                    <i class="fas fa-book"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Thư Viện</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Html.IsSelected(controller: "Home", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Home"><i class="fa fa-circle-o"></i> Giới thiệu </a></li>
+                    <li class="@Html.IsSelected(controller: "News", action: "Index")"><a href="@lte.MVC.Pages.QLTV.News"><i class="fa fa-circle-o"></i> Tin tức - Sự kiện</a></li>
+                    <li class="@Html.IsSelected(controller: "WorkingSchedule", action: "Index")"><a href="@lte.MVC.Pages.QLTV.WorkingSchedule"><i class="fa fa-circle-o"></i> Lịch công tác</a></li>
+                    <li class="@Html.IsSelected(controller: "BorrowGiveBack", action: "Index")"><a href="@lte.MVC.Pages.QLTV.BorrowGiveBack"><i class="fa fa-circle-o"></i> Mượn - Trả</a></li>
+                    <li class="@Html.IsSelected(controller: "Book", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Book"><i class="fa fa-circle-o"></i> Kho sách</a></li>
+                    <li class="@Html.IsSelected(controller: "Author", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Author"><i class="fa fa-circle-o"></i> Tác giả</a></li>
+                    <li class="@Html.IsSelected(controller: "PublishingCompany", action: "Index")"><a href="@lte.MVC.Pages.QLTV.PublishingCompany"><i class="fa fa-circle-o"></i> Nhà xuất bản</a></li>
+                    <li class="@Html.IsSelected(controller: "Category", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Category"><i class="fa fa-circle-o"></i> Thể loại</a></li>
+                    <li class="@Html.IsSelected(controller: "Readers", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Readers"><i class="fa fa-circle-o"></i> Độc giả</a></li>
+                    <li class="@Html.IsSelected(controller: "Rules", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Rules"><i class="fa fa-circle-o"></i> Nội quy - Xử lý</a></li>
+                    <li><a href="http://mta.edu.vn" target="_blank"><i class="fa fa-circle-o"></i> Cổng thống tin điện tử</a></li>
+                </ul>
+            </li>
+            <li class="@Html.IsSelected(controller: "group_role") treeview">
+                <a href="#">
+                    <i class="fas fa-hotel"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Khách Sạn</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Thêm</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Sửa</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
+                </ul>
+            </li>
+            <li class="@Html.IsSelected(controller: "group_role") treeview">
+                <a href="#">
+                    <i class="fas fa-key"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Kho</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Thêm</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Sửa</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
+                </ul>
+            </li>
+            <li class="@Html.IsSelected(controller: "group_role") treeview">
+                <a href="#">
+                    <i class="fas fa-school"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Trường THPT</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Thêm</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Sửa</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
                 </ul>
             </li>
             <li class="@Html.IsSelected(controller: "Layout") treeview">
