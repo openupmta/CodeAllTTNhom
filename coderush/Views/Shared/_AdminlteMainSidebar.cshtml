@@ -1,5 +1,11 @@
 ﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 
+<style>
+    a i {
+        margin-right: 12px;
+    }
+</style>
+
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -35,7 +41,7 @@
 
 
             </li>
-            <li class="@Html.IsSelected(controller: "group_role") treeview">
+            <li class="treeview">
                 <a href="#">
                     <i class="fas fa-user-alt"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Nhân Sự</span>
                     <span class="pull-right-container">
@@ -43,60 +49,13 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-
-                    <li class="@Html.IsSelected(controller: "group_role") treeview">
-                        <a href="#">
-                            <i class="fa fa-circle-o"></i> <span>Nhóm quyền</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Thêm</a></li>
-                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Sửa</a></li>
-                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
-                        </ul>
-                    </li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fas fa-user-edit"></i> Thêm</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fas fa-user-edit"></i> Sửa</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fas fa-user-edit"></i> Xoá</a></li>
                 </ul>
-
-                    <li class="@Html.IsSelected(controller: "group_role") treeview">
-                        <a href="#">
-                            <i class="fa fa-dashboard"></i> <span>Quản Lý Thư Viện</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Chức năng 1 </a></li>
-                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Chức năng 2</a></li>
-                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Chức năng 3</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="@Html.IsSelected(controller: "group_role") treeview">
-                        <a href="#">
-                            <i class="fa fa-dashboard"></i> <span>Quản Lý Trường THPT</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="@Html.IsSelected(controller: "Home", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.Home"><i class="fa fa-circle-o"></i> Giới Thiệu - Nội Quy </a></li>
-                            <li class="@Html.IsSelected(controller: "GiaoVien", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.GiaoVien"><i class="fa fa-circle-o"></i> Quản Lý Giáo Viên</a></li>
-                            <li class="@Html.IsSelected(controller: "HocSinh", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.HocSinh"><i class="fa fa-circle-o"></i> Quản Lý Học Sinh</a></li>
-                            <li class="@Html.IsSelected(controller: "Diem", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.Diem"><i class="fa fa-circle-o"></i>  Quản Lý Điểm</a></li>
-                            <li class="@Html.IsSelected(controller: "DiemChiTiet", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.DiemChiTiet"><i class="fa fa-circle-o"></i> Quản Lý Điểm Chi Tiết</a></li>
-                            <li class="@Html.IsSelected(controller: "MonHoc", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.MonHoc"><i class="fa fa-circle-o"></i> Quản Lý Môn Học</a></li>
-                            <li class="@Html.IsSelected(controller: "PhanCong", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.PhanCong"><i class="fa fa-circle-o"></i> Quản Lý Phân Công</a></li>
-                            <li class="@Html.IsSelected(controller: "Lop", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.Lop"><i class="fa fa-circle-o"></i> Quản Lý Lớp</a></li>
-                            <li class="@Html.IsSelected(controller: "KhoiLop", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.KhoiLop"><i class="fa fa-circle-o"></i> Quản Lý Khối Lớp</a></li>
-                            <li class="@Html.IsSelected(controller: "DienUuTien", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.DienUuTien"><i class="fa fa-circle-o"></i> Quản Lý Diện Ưu Tiên</a></li>
-
-                        </ul>
-                    </li>
-                    @*end*@
+                @*end*@
             </li>
-            <li class="@Html.IsSelected(controller: "group_role") treeview">
+            <li class="@*@Html.IsSelected(controller: "Home")*@ treeview">
                 <a href="#">
                     <i class="fas fa-book"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Thư Viện</span>
                     <span class="pull-right-container">
@@ -104,20 +63,20 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "Home", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Home"><i class="fa fa-circle-o"></i> Giới thiệu </a></li>
-                    <li class="@Html.IsSelected(controller: "News", action: "Index")"><a href="@lte.MVC.Pages.QLTV.News"><i class="fa fa-circle-o"></i> Tin tức - Sự kiện</a></li>
-                    <li class="@Html.IsSelected(controller: "WorkingSchedule", action: "Index")"><a href="@lte.MVC.Pages.QLTV.WorkingSchedule"><i class="fa fa-circle-o"></i> Lịch công tác</a></li>
-                    <li class="@Html.IsSelected(controller: "BorrowGiveBack", action: "Index")"><a href="@lte.MVC.Pages.QLTV.BorrowGiveBack"><i class="fa fa-circle-o"></i> Mượn - Trả</a></li>
-                    <li class="@Html.IsSelected(controller: "Book", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Book"><i class="fa fa-circle-o"></i> Kho sách</a></li>
-                    <li class="@Html.IsSelected(controller: "Author", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Author"><i class="fa fa-circle-o"></i> Tác giả</a></li>
-                    <li class="@Html.IsSelected(controller: "PublishingCompany", action: "Index")"><a href="@lte.MVC.Pages.QLTV.PublishingCompany"><i class="fa fa-circle-o"></i> Nhà xuất bản</a></li>
-                    <li class="@Html.IsSelected(controller: "Category", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Category"><i class="fa fa-circle-o"></i> Thể loại</a></li>
-                    <li class="@Html.IsSelected(controller: "Readers", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Readers"><i class="fa fa-circle-o"></i> Độc giả</a></li>
-                    <li class="@Html.IsSelected(controller: "Rules", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Rules"><i class="fa fa-circle-o"></i> Nội quy - Xử lý</a></li>
-                    <li><a href="http://mta.edu.vn" target="_blank"><i class="fa fa-circle-o"></i> Cổng thống tin điện tử</a></li>
+                    <li class="@Html.IsSelected(controller: "Home", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Home"><i class="fas fa-user-edit"></i> Giới thiệu </a></li>
+                    <li class="@Html.IsSelected(controller: "News", action: "Index")"><a href="@lte.MVC.Pages.QLTV.News"><i class="fas fa-user-edit"></i> Tin tức - Sự kiện</a></li>
+                    <li class="@Html.IsSelected(controller: "WorkingSchedule", action: "Index")"><a href="@lte.MVC.Pages.QLTV.WorkingSchedule"><i class="fas fa-user-edit"></i> Lịch công tác</a></li>
+                    <li class="@Html.IsSelected(controller: "BorrowGiveBack", action: "Index")"><a href="@lte.MVC.Pages.QLTV.BorrowGiveBack"><i class="fas fa-user-edit"></i> Mượn - Trả</a></li>
+                    <li class="@Html.IsSelected(controller: "Book", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Book"><i class="fas fa-user-edit"></i> Kho sách</a></li>
+                    <li class="@Html.IsSelected(controller: "Author", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Author"><i class="fas fa-user-edit"></i> Tác giả</a></li>
+                    <li class="@Html.IsSelected(controller: "PublishingCompany", action: "Index")"><a href="@lte.MVC.Pages.QLTV.PublishingCompany"><i class="fas fa-user-edit"></i> Nhà xuất bản</a></li>
+                    <li class="@Html.IsSelected(controller: "Category", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Category"><i class="fas fa-user-edit"></i> Thể loại</a></li>
+                    <li class="@Html.IsSelected(controller: "Readers", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Readers"><i class="fas fa-user-edit"></i> Độc giả</a></li>
+                    <li class="@Html.IsSelected(controller: "Rules", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Rules"><i class="fas fa-user-edit"></i> Nội quy - Xử lý</a></li>
+                    <li><a href="http://mta.edu.vn" target="_blank"><i class="fas fa-user-edit"></i> Cổng thống tin điện tử</a></li>
                 </ul>
             </li>
-            <li class="@Html.IsSelected(controller: "group_role") treeview">
+            <li class="@*@Html.IsSelected(controller: "Home")*@ treeview">
                 <a href="#">
                     <i class="fas fa-hotel"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Khách Sạn</span>
                     <span class="pull-right-container">
@@ -125,12 +84,12 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Thêm</a></li>
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Sửa</a></li>
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fas fa-user-edit"></i> Thêm</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fas fa-user-edit"></i> Sửa</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fas fa-user-edit"></i> Xoá</a></li>
                 </ul>
             </li>
-            <li class="@Html.IsSelected(controller: "group_role") treeview">
+            <li class="@*@Html.IsSelected(controller: "Home")*@ treeview">
                 <a href="#">
                     <i class="fas fa-key"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Kho</span>
                     <span class="pull-right-container">
@@ -138,12 +97,12 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Thêm</a></li>
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Sửa</a></li>
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fas fa-user-edit"></i> Thêm</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fas fa-user-edit"></i> Sửa</a></li>
+                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fas fa-user-edit"></i> Xoá</a></li>
                 </ul>
             </li>
-            <li class="@Html.IsSelected(controller: "group_role") treeview">
+            <li class="@Html.IsSelected(controller: "Home") treeview">
                 <a href="#">
                     <i class="fas fa-school"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Trường THPT</span>
                     <span class="pull-right-container">
@@ -151,10 +110,19 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Thêm</a></li>
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Sửa</a></li>
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
+                    <li class="@Html.IsSelected(controller: "Home", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.Home"><i class="fas fa-user-edit"></i> Giới Thiệu - Nội Quy </a></li>
+                    <li class="@Html.IsSelected(controller: "GiaoVien", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.GiaoVien"><i class="fas fa-user-edit"></i> Quản Lý Giáo Viên</a></li>
+                    <li class="@Html.IsSelected(controller: "HocSinh", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.HocSinh"><i class="fas fa-user-edit"></i> Quản Lý Học Sinh</a></li>
+                    <li class="@Html.IsSelected(controller: "Diem", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.Diem"><i class="fas fa-user-edit"></i>  Quản Lý Điểm</a></li>
+                    <li class="@Html.IsSelected(controller: "DiemChiTiet", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.DiemChiTiet"><i class="fas fa-user-edit"></i> Quản Lý Điểm Chi Tiết</a></li>
+                    <li class="@Html.IsSelected(controller: "MonHoc", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.MonHoc"><i class="fas fa-user-edit"></i> Quản Lý Môn Học</a></li>
+                    <li class="@Html.IsSelected(controller: "PhanCong", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.PhanCong"><i class="fas fa-user-edit"></i> Quản Lý Phân Công</a></li>
+                    <li class="@Html.IsSelected(controller: "Lop", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.Lop"><i class="fas fa-user-edit"></i> Quản Lý Lớp</a></li>
+                    <li class="@Html.IsSelected(controller: "KhoiLop", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.KhoiLop"><i class="fas fa-user-edit"></i> Quản Lý Khối Lớp</a></li>
+                    <li class="@Html.IsSelected(controller: "DienUuTien", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.DienUuTien"><i class="fas fa-user-edit"></i> Quản Lý Diện Ưu Tiên</a></li>
+
                 </ul>
+
             </li>
             <li class="@Html.IsSelected(controller: "Layout") treeview">
                 <a href="#">
@@ -165,10 +133,10 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "Layout", action: "Top")"><a href="@lte.MVC.Pages.LayoutTop.Url"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                    <li class="@Html.IsSelected(controller: "Layout", action: "Boxed")"><a href="@lte.MVC.Pages.LayoutBoxed.Url"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                    <li class="@Html.IsSelected(controller: "Layout", action: "Fixed")"><a href="@lte.MVC.Pages.LayoutFixed.Url"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                    <li class="@Html.IsSelected(controller: "Layout", action: "Collapsed")"><a href="@lte.MVC.Pages.LayoutCollapsed.Url"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                    <li class="@Html.IsSelected(controller: "Layout", action: "Top")"><a href="@lte.MVC.Pages.LayoutTop.Url"><i class="fas fa-user-edit"></i> Top Navigation</a></li>
+                    <li class="@Html.IsSelected(controller: "Layout", action: "Boxed")"><a href="@lte.MVC.Pages.LayoutBoxed.Url"><i class="fas fa-user-edit"></i> Boxed</a></li>
+                    <li class="@Html.IsSelected(controller: "Layout", action: "Fixed")"><a href="@lte.MVC.Pages.LayoutFixed.Url"><i class="fas fa-user-edit"></i> Fixed</a></li>
+                    <li class="@Html.IsSelected(controller: "Layout", action: "Collapsed")"><a href="@lte.MVC.Pages.LayoutCollapsed.Url"><i class="fas fa-user-edit"></i> Collapsed Sidebar</a></li>
                 </ul>
             </li>
             <li class="@Html.IsSelected(controller: "Widget")">
@@ -188,10 +156,10 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "Chart", action: "ChartJS")"><a href="@lte.MVC.Pages.ChartChartJS.Url"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-                    <li class="@Html.IsSelected(controller: "Chart", action: "Morris")"><a href="@lte.MVC.Pages.ChartMorris.Url"><i class="fa fa-circle-o"></i> Morris</a></li>
-                    <li class="@Html.IsSelected(controller: "Chart", action: "Flot")"><a href="@lte.MVC.Pages.ChartFlot.Url"><i class="fa fa-circle-o"></i> Flot</a></li>
-                    <li class="@Html.IsSelected(controller: "Chart", action: "Inline")"><a href="@lte.MVC.Pages.ChartInline.Url"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                    <li class="@Html.IsSelected(controller: "Chart", action: "ChartJS")"><a href="@lte.MVC.Pages.ChartChartJS.Url"><i class="fas fa-user-edit"></i> ChartJS</a></li>
+                    <li class="@Html.IsSelected(controller: "Chart", action: "Morris")"><a href="@lte.MVC.Pages.ChartMorris.Url"><i class="fas fa-user-edit"></i> Morris</a></li>
+                    <li class="@Html.IsSelected(controller: "Chart", action: "Flot")"><a href="@lte.MVC.Pages.ChartFlot.Url"><i class="fas fa-user-edit"></i> Flot</a></li>
+                    <li class="@Html.IsSelected(controller: "Chart", action: "Inline")"><a href="@lte.MVC.Pages.ChartInline.Url"><i class="fas fa-user-edit"></i> Inline charts</a></li>
                 </ul>
             </li>
             <li class="@Html.IsSelected(controller: "UIElement") treeview">
@@ -203,12 +171,12 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "UIElement", action: "General")"><a href="@lte.MVC.Pages.UIElementGeneral.Url"><i class="fa fa-circle-o"></i> General</a></li>
-                    <li class="@Html.IsSelected(controller: "UIElement", action: "Icon")"><a href="@lte.MVC.Pages.UIElementIcon.Url"><i class="fa fa-circle-o"></i> Icons</a></li>
-                    <li class="@Html.IsSelected(controller: "UIElement", action: "Button")"><a href="@lte.MVC.Pages.UIElementButton.Url"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                    <li class="@Html.IsSelected(controller: "UIElement", action: "Slider")"><a href="@lte.MVC.Pages.UIElementSlider.Url"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                    <li class="@Html.IsSelected(controller: "UIElement", action: "Timeline")"><a href="@lte.MVC.Pages.UIElementTimeline.Url"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                    <li class="@Html.IsSelected(controller: "UIElement", action: "Modal")"><a href="@lte.MVC.Pages.UIElementModal.Url"><i class="fa fa-circle-o"></i> Modals</a></li>
+                    <li class="@Html.IsSelected(controller: "UIElement", action: "General")"><a href="@lte.MVC.Pages.UIElementGeneral.Url"><i class="fas fa-user-edit"></i> General</a></li>
+                    <li class="@Html.IsSelected(controller: "UIElement", action: "Icon")"><a href="@lte.MVC.Pages.UIElementIcon.Url"><i class="fas fa-user-edit"></i> Icons</a></li>
+                    <li class="@Html.IsSelected(controller: "UIElement", action: "Button")"><a href="@lte.MVC.Pages.UIElementButton.Url"><i class="fas fa-user-edit"></i> Buttons</a></li>
+                    <li class="@Html.IsSelected(controller: "UIElement", action: "Slider")"><a href="@lte.MVC.Pages.UIElementSlider.Url"><i class="fas fa-user-edit"></i> Sliders</a></li>
+                    <li class="@Html.IsSelected(controller: "UIElement", action: "Timeline")"><a href="@lte.MVC.Pages.UIElementTimeline.Url"><i class="fas fa-user-edit"></i> Timeline</a></li>
+                    <li class="@Html.IsSelected(controller: "UIElement", action: "Modal")"><a href="@lte.MVC.Pages.UIElementModal.Url"><i class="fas fa-user-edit"></i> Modals</a></li>
                 </ul>
             </li>
             <li class="@Html.IsSelected(controller: "Form") treeview">
@@ -219,9 +187,9 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "Form", action: "General")"><a href="@lte.MVC.Pages.FormGeneral.Url"><i class="fa fa-circle-o"></i> General Elements</a></li>
-                    <li class="@Html.IsSelected(controller: "Form", action: "Advanced")"><a href="@lte.MVC.Pages.FormAdvanced.Url"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-                    <li class="@Html.IsSelected(controller: "Form", action: "Editor")"><a href="@lte.MVC.Pages.FormEditor.Url"><i class="fa fa-circle-o"></i> Editors</a></li>
+                    <li class="@Html.IsSelected(controller: "Form", action: "General")"><a href="@lte.MVC.Pages.FormGeneral.Url"><i class="fas fa-user-edit"></i> General Elements</a></li>
+                    <li class="@Html.IsSelected(controller: "Form", action: "Advanced")"><a href="@lte.MVC.Pages.FormAdvanced.Url"><i class="fas fa-user-edit"></i> Advanced Elements</a></li>
+                    <li class="@Html.IsSelected(controller: "Form", action: "Editor")"><a href="@lte.MVC.Pages.FormEditor.Url"><i class="fas fa-user-edit"></i> Editors</a></li>
                 </ul>
             </li>
             <li class="@Html.IsSelected(controller: "Table") treeview">
@@ -232,8 +200,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "Table", action: "Simple")"><a href="@lte.MVC.Pages.TableSimple.Url"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                    <li class="@Html.IsSelected(controller: "Table", action: "Data")"><a href="@lte.MVC.Pages.TableData.Url"><i class="fa fa-circle-o"></i> Data tables</a></li>
+                    <li class="@Html.IsSelected(controller: "Table", action: "Simple")"><a href="@lte.MVC.Pages.TableSimple.Url"><i class="fas fa-user-edit"></i> Simple tables</a></li>
+                    <li class="@Html.IsSelected(controller: "Table", action: "Data")"><a href="@lte.MVC.Pages.TableData.Url"><i class="fas fa-user-edit"></i> Data tables</a></li>
                 </ul>
             </li>
             <li class="@Html.IsSelected(controller: "Calendar")">
@@ -274,15 +242,15 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "Example", action: "Invoice")"><a href="@lte.MVC.Pages.ExampleInvoice.Url"><i class="fa fa-circle-o"></i> Invoice</a></li>
-                    <li class="@Html.IsSelected(controller: "Example", action: "Profile")"><a href="@lte.MVC.Pages.ExampleProfile.Url"><i class="fa fa-circle-o"></i> Profile</a></li>
-                    <li class="@Html.IsSelected(controller: "Example", action: "Login")"><a href="@lte.MVC.Pages.ExampleLogin.Url"><i class="fa fa-circle-o"></i> Login</a></li>
-                    <li class="@Html.IsSelected(controller: "Example", action: "Register")"><a href="@lte.MVC.Pages.ExampleRegister.Url"><i class="fa fa-circle-o"></i> Register</a></li>
-                    <li class="@Html.IsSelected(controller: "Example", action: "Lockscreen")"><a href="@lte.MVC.Pages.ExampleLockscreen.Url"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-                    <li class="@Html.IsSelected(controller: "Example", action: "Error404")"><a href="@lte.MVC.Pages.ExampleError404.Url"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-                    <li class="@Html.IsSelected(controller: "Example", action: "Error500")"><a href="@lte.MVC.Pages.ExampleError500.Url"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-                    <li class="@Html.IsSelected(controller: "Example", action: "BlankPage")"><a href="@lte.MVC.Pages.ExampleBlankPage.Url"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-                    <li class="@Html.IsSelected(controller: "Example", action: "PacePage")"><a href="@lte.MVC.Pages.ExamplePacePage.Url"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+                    <li class="@Html.IsSelected(controller: "Example", action: "Invoice")"><a href="@lte.MVC.Pages.ExampleInvoice.Url"><i class="fas fa-user-edit"></i> Invoice</a></li>
+                    <li class="@Html.IsSelected(controller: "Example", action: "Profile")"><a href="@lte.MVC.Pages.ExampleProfile.Url"><i class="fas fa-user-edit"></i> Profile</a></li>
+                    <li class="@Html.IsSelected(controller: "Example", action: "Login")"><a href="@lte.MVC.Pages.ExampleLogin.Url"><i class="fas fa-user-edit"></i> Login</a></li>
+                    <li class="@Html.IsSelected(controller: "Example", action: "Register")"><a href="@lte.MVC.Pages.ExampleRegister.Url"><i class="fas fa-user-edit"></i> Register</a></li>
+                    <li class="@Html.IsSelected(controller: "Example", action: "Lockscreen")"><a href="@lte.MVC.Pages.ExampleLockscreen.Url"><i class="fas fa-user-edit"></i> Lockscreen</a></li>
+                    <li class="@Html.IsSelected(controller: "Example", action: "Error404")"><a href="@lte.MVC.Pages.ExampleError404.Url"><i class="fas fa-user-edit"></i> 404 Error</a></li>
+                    <li class="@Html.IsSelected(controller: "Example", action: "Error500")"><a href="@lte.MVC.Pages.ExampleError500.Url"><i class="fas fa-user-edit"></i> 500 Error</a></li>
+                    <li class="@Html.IsSelected(controller: "Example", action: "BlankPage")"><a href="@lte.MVC.Pages.ExampleBlankPage.Url"><i class="fas fa-user-edit"></i> Blank Page</a></li>
+                    <li class="@Html.IsSelected(controller: "Example", action: "PacePage")"><a href="@lte.MVC.Pages.ExamplePacePage.Url"><i class="fas fa-user-edit"></i> Pace Page</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -293,31 +261,31 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                    <li><a href="#"><i class="fas fa-user-edit"></i> Level One</a></li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-circle-o"></i> Level One
+                            <i class="fas fa-user-edit"></i> Level One
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+                            <li><a href="#"><i class="fas fa-user-edit"></i> Level Two</a></li>
                             <li class="treeview">
                                 <a href="#">
-                                    <i class="fa fa-circle-o"></i> Level Two
+                                    <i class="fas fa-user-edit"></i> Level Two
                                     <span class="pull-right-container">
                                         <i class="fa fa-angle-left pull-right"></i>
                                     </span>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                    <li><a href="#"><i class="fas fa-user-edit"></i> Level Three</a></li>
+                                    <li><a href="#"><i class="fas fa-user-edit"></i> Level Three</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                    <li><a href="#"><i class="fas fa-user-edit"></i> Level One</a></li>
                 </ul>
             </li>
             <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>

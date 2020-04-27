@@ -1,4 +1,4 @@
-﻿@model IEnumerable<coderush.Areas.TTNHOM_QLTTHPT.Models.Model.DIENUUTIEN>
+﻿@model IEnumerable<coderush.Areas.TTNHOM_QLTTHPT.Models.Model.MONHOC>
 
 @{
     ViewBag.Title = "Index";
@@ -42,7 +42,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Danh Sách Điểm Chi Tiết Môn Học
+            Danh Sách Môn Học
         </h1>
         @*<ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> home</a></li>
@@ -58,7 +58,7 @@
                     <div class="box-header">
                         @*<h3 class="box-title">Danh sách nhóm quyền</h3>*@
                         <button type="button" class="btn btn-warning" style="float:right ;margin-right: 10px;margin-top: 7px;">
-                            <i class="btn-icon fas fa-user-plus"></i>@Html.ActionLink("Thêm Học Sinh", "Create", "HocSinh")
+                            <i class="btn-icon fas fa-user-plus"></i>@Html.ActionLink("Thêm Môn Học", "Create", "HocSinh")
                         </button>
 
                         <!-- /.box-header -->
@@ -66,27 +66,27 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Mã Diện Ưu Tiên</th>
-                                        <th>Diện Ưu Tiên</th>
+                                        <th>Tên Môn Học</th>
+                                        <th>Khối Môn Học</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                    <tr>
-                                        <td>@item.MaDUT</td>
-                                        <td>@item.TenDUT</td>
-                                    </tr>
+                                        <tr>
+                                            <td>@item.TenMH</td>
+                                            <td>@item.KhoiMH</td>
+                                        </tr>
                                     }
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Mã Diện Ưu Tiên</th>
-                                        <th>Diện Ưu Tiên</th>
+                                        <th>Tên Môn Học</th>
+                                        <th>Khối Môn Học</th>
                                     </tr>
                                 </tfoot>
                             </table>
-                        </div>
+                        </div>  
                         <!-- /.box-body -->
                     </div>
                 </div>
@@ -158,6 +158,5 @@
             })
         })</script>
 }
-
 
 

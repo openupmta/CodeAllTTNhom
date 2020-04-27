@@ -7,14 +7,13 @@ using coderush.Areas.TTNHOM_QLTTHPT.Models.Model;
 
 namespace coderush.Areas.TTNHOM_QLTTHPT.Controllers
 {
-    public class DiemController : Controller
+    public class MonHocController : Controller
     {
         QuanLyTTHPTContext db = new QuanLyTTHPTContext();
-
-        // GET: TTNHOM_QLTTHPT/Diem
+        // GET: TTNHOM_QLTTHPT/MonHoc
         public ActionResult Index()
         {
-            List<DIEM> res = db.DIEMs.ToList();
+            List<MONHOC> res = db.MONHOCs.ToList();
             return View(res);
         }
     }

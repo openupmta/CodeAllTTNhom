@@ -31,6 +31,9 @@
     .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
             border-color: #999;
         }
+    .btn-icon{
+        margin-right:4px;
+    }
 </style>
 
 
@@ -54,7 +57,7 @@
                     <div class="box-header">
                         @*<h3 class="box-title">Danh sách nhóm quyền</h3>*@
                         <button type="button" class="btn btn-warning" style="float:right ;margin-right: 10px;margin-top: 7px;">
-                            @Html.ActionLink("Thêm Học Sinh", "Create", "HocSinh")
+                            <i class="btn-icon fas fa-user-plus"></i> @Html.ActionLink("Thêm Học Sinh", "Create", "HocSinh")
                         </button>
 
                         <!-- /.box-header -->
@@ -72,36 +75,36 @@
                                         <th>Mã BT</th>
                                         <th>Niên Khóa</th>
                                         <th>Dân Tộc</th>
-                                        <th>Mã Lớp</th>
+                                        <th>Lớp</th>
                                         <th>Tôn Giáo</th>
-                                        <th>Mã Ưu Tiên</th>
+                                        <th>Diện Ưu Tiên</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        <tr>
-                                            <td>@item.MaHS</td>
-                                            <td>
-                                                @item.HoTenHS
-                                            </td>
-                                            <td>@item.GioiTinh</td>
-                                            <td>@item.NgaySinh</td>
-                                            <td>
-                                                @item.DiaChi
-                                            </td>
-                                            <td>@item.SDT</td>
-                                            <td>
-                                                @item.MaLop
-                                            </td>
-                                            <td>@item.MaBT</td>
-                                            <td>@item.NienKhoa</td>
-                                            <td>@item.DanToc</td>
+                                    <tr>
+                                        <td>@item.MaHS</td>
+                                        <td>
+                                            @item.HoTenHS
+                                        </td>
+                                        <td>@item.GioiTinh</td>
+                                        <td>@item.NgaySinh</td>
+                                        <td>
+                                            @item.DiaChi
+                                        </td>
+                                        <td>@item.SDT</td>
+                                        <td>
+                                            @item.MaLT
+                                        </td>
+                                        <td>@item.MaBT</td>
+                                        <td>@item.NienKhoa</td>
+                                        <td>@item.DanToc</td>
 
-                                            <td>@item.MaLop</td>
-                                            <td>@item.TonGiao</td>
-                                            <td>@item.MaDUT</td>
-                                        </tr>
+                                        <td>@item.LOP.TenLop</td>
+                                        <td>@item.TonGiao</td>
+                                        <td>@item.DIENUUTIEN.TenDUT</td>
+                                    </tr>
                                     }
                                 </tbody>
                                 <tfoot>
@@ -116,9 +119,9 @@
                                         <th>Mã BT</th>
                                         <th>Niên Khóa</th>
                                         <th>Dân Tộc</th>
-                                        <th>Mã Lớp</th>
+                                        <th>Lớp</th>
                                         <th>Tôn Giáo</th>
-                                        <th>Mã Ưu Tiên</th>
+                                        <th>Diện Ưu Tiên</th>
                                     </tr>
                                 </tfoot>
                             </table>

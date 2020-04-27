@@ -28,9 +28,13 @@
         border-color: #999;
     }
 
-        .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+    .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
             border-color: #999;
-        }
+    }
+
+    .btn-icon {
+        margin-right: 4px;
+    }
 </style>
 
 
@@ -38,7 +42,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Danh Sách Học Sinh
+            Danh Sách Điểm Chi Tiết Môn Học
         </h1>
         @*<ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> home</a></li>
@@ -54,7 +58,7 @@
                     <div class="box-header">
                         @*<h3 class="box-title">Danh sách nhóm quyền</h3>*@
                         <button type="button" class="btn btn-warning" style="float:right ;margin-right: 10px;margin-top: 7px;">
-                            @Html.ActionLink("Thêm Học Sinh", "Create", "HocSinh")
+                            <i class="btn-icon fas fa-user-plus"></i>@Html.ActionLink("Thêm Học Sinh", "Create", "HocSinh")
                         </button>
 
                         <!-- /.box-header -->
@@ -62,7 +66,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Mã Điểm CTMH</th>
+                                        <th>Học Sinh</th>
                                         <th>Miệng 1</th>
                                         <th>Miệng 2</th>
                                         <th>Điểm 15P</th>
@@ -70,13 +74,15 @@
                                         <th>Điểm Thi</th>
                                         <th>Điểm TBMH</th>
                                         <th>Ngày Nhập</th>
+                                        <th>Môn Học</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td>@item.MaDiemCTMH</td>
+                                            <td>@item.DIEM.HOCSINH.HoTenHS</td>
                                             <td>@item.DiemMieng1</td>
                                             <td>@item.DiemMieng2</td>
                                             <td>@item.Diem15</td>
@@ -84,12 +90,14 @@
                                             <td>@item.DiemThi</td>
                                             <td>@item.DiemTBMH</td>
                                             <td>@item.NgayNhap</td>
+                                            <td>@item.MONHOC.TenMH</td>
+
                                         </tr>
                                     }
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Mã Điểm CTMH</th>
+                                        <th>Học Sinh</th>
                                         <th>Miệng 1</th>
                                         <th>Miệng 2</th>
                                         <th>Điểm 15P</th>
@@ -97,6 +105,7 @@
                                         <th>Điểm Thi</th>
                                         <th>Điểm TBMH</th>
                                         <th>Ngày Nhập</th>
+                                        <th>Môn Học</th>
                                     </tr>
                                 </tfoot>
                             </table>

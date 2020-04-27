@@ -8,7 +8,7 @@ namespace lte.MVC
 
     public static class Pages
     {
-<<<<<<< HEAD
+////<<<<<<< HEAD
         public static class QuanLyTTHPT{
             public const string Home = "/TTNhom_QLTTHPT/Home/Index";
             public const string HocSinh = "/TTNhom_QLTTHPT/HocSinh/Index";
@@ -25,7 +25,7 @@ namespace lte.MVC
         }
 
 
-=======
+//=======
         public static class QLTV
         {
             public const string Home = "/TTNhom_QLThuVien/Home/Index";
@@ -39,7 +39,7 @@ namespace lte.MVC
             public const string Readers = "/TTNhom_QLThuVien/Readers/Index";
             public const string Rules = "/TTNhom_QLThuVien/Rules/Index";
         }
->>>>>>> b0e3e01b3fe42ca73565d8608cd369567cbb5f97
+//>>>>>>> b0e3e01b3fe42ca73565d8608cd369567cbb5f97
         public static class GroupRole
         {
             public const string Index = "/TTNhom_QLNS/group_role/Index";
