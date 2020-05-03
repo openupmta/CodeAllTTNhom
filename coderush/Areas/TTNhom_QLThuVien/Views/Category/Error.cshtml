@@ -5,8 +5,6 @@
     Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
 
-<style>
-</style>
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -31,54 +29,24 @@
                 <div class="box">
                     <div class="box-header">
                         <i class="fa fa-hand-o-right"></i>
-                        <h3 class="box-title">QUẢN LÝ THỂ LOẠI</h3>
+                        <h3 class="box-title">QUẢN LÝ THỂ LOẠI&nbsp;&nbsp;</h3>
+                        <i class="fa fa-angle-double-right"></i>
+                        <h3 class="box-title">Xoá Thể loại</h3>
 
-                        <button type="button" class="btn btn-warning" style="float:right; margin-left:10px">
-                            <i class="fa fa-plus-square"></i> &nbsp;
-                            @Html.ActionLink("Thêm mới", "Create", "Category")
+
+                        <button type="button" class="btn btn-warning" style="float:right">
+                            <a class="fa fa-th-list"></a> &nbsp;
+                            @Html.ActionLink("Danh sách", "Index")
                         </button>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <div class="box-body">
-                            <table id="example1" class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Mã thể loại</th>
-                                        <th>Tên thể loại</th>
-                                        <th>Chức năng</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var item in Model)
-                                    {
-                                        <tr>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.MaTheLoai)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.TenTheLoai)
-                                            </td>
-                                            <td>
-                                                <i class="fa fa-info-circle"></i> &nbsp;
-                                                @Html.ActionLink("Thông tin", "Details", new { id = item.MaTheLoai }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <i class="fa fa-edit"></i> &nbsp;
-                                                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.MaTheLoai }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <i class="far fa-trash-alt"></i> &nbsp;
-                                                @Html.ActionLink("Xóa bỏ", "Delete", new { id = item.MaTheLoai }, new { onclick = "return confirm('Chắc chắn muốn xoá?');" })
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-
-                            </table>
-                        </div>
-                        <!-- /.box-body -->
+                        <h4 style="color:crimson"><i class="fas fa-exclamation-circle"></i>&nbsp;&nbsp;Hiện tại không thể xoá Thể loại này, vui lòng thử lại sau.</h4>
                     </div>
                     <!-- /.box-body -->
                 </div>
                 <!-- /.box -->
+
             </div>
             <!-- /.col -->
         </div>
@@ -118,7 +86,7 @@
     <!-- Bootstrap 3.3.7 -->
     <script src="~/Content/adminlte/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- DataTables -->
-    <script src="~/Areas/TTNhom_QLThuVien/assets/myscript.js"></script>
+    <script src="~/Content/adminlte/components/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="~/Content/adminlte/components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <!-- Slimscroll -->
     <script src="~/Content/adminlte/components/jquery-slimscroll/jquery.slimscroll.min.js"></script>

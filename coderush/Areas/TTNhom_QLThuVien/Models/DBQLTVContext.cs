@@ -7,6 +7,8 @@ namespace coderush.Areas.TTNhom_QLThuVien.Models
 
     public partial class DBQLTVContext : DbContext
     {
+        internal readonly object Links;
+
         public DBQLTVContext()
             : base("name=DBQLTVContext1")
         {
