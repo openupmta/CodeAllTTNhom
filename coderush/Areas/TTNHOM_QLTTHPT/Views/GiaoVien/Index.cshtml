@@ -1,4 +1,4 @@
-﻿@model IEnumerable<coderush.Areas.TTNHOM_QLTTHPT.Models.Model.GIAOVIEN>
+﻿@model IEnumerable<coderush.Areas.TTNhom_QLTTHPT.Models.GIAOVIEN>
 
 @{
     ViewBag.Title = "Index";
@@ -34,6 +34,9 @@
 
     .btn-icon {
         margin-right: 4px;
+    }
+    td a {
+        color: #72afd2;
     }
 </style>
 
@@ -74,21 +77,28 @@
                                         <th>SDT</th>
                                         <th>Luong</th>
                                         <th>Dạy Môn</th>
+                                        <th>Chức Năng</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        <tr>
-                                            <td>@item.MaGV</td>
-                                            <td>@item.HoTenGV</td>
-                                            <td>@item.GioiTinh</td>
-                                            <td>@item.NgaySinh</td>
-                                            <td>@item.DiaChi</td>
-                                            <td>@item.SDT</td>
-                                            <td>@item.Luong</td>
-                                            <td>@item.MONHOC.TenMH</td>
-                                        </tr>
+                                    <tr>
+                                        <td>@item.MaGV</td>
+                                        <td>@item.HoTenGV</td>
+                                        <td>@item.GioiTinh</td>
+                                        <td>@item.NgaySinh</td>
+                                        <td>@item.DiaChi</td>
+                                        <td>@item.SDT</td>
+                                        <td>@item.Luong</td>
+                                        <td>@item.MONHOC.TenMH</td>
+                                        <td>
+                                            @Html.ActionLink("Xem", "Details", new { id = item.MaGV })|
+                                            @Html.ActionLink("Sửa", "Edit", new { id = item.MaGV })|
+                                            @Html.ActionLink("Xóa", "Delete", new { id = item.MaGV }, new { onclick = "return confirm('Are you sure?');" })
+                                        </td>
+                                    </tr>
                                     }
                                 </tbody>
                                 <tfoot>
@@ -101,6 +111,8 @@
                                         <th>SDT</th>
                                         <th>Luong</th>
                                         <th>Dạy Môn</th>
+                                        <th>Chức Năng</th>
+
                                     </tr>
                                 </tfoot>
                             </table>

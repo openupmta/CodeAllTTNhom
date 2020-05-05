@@ -1,4 +1,4 @@
-namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
+namespace coderush.Areas.TTNhom_QLTTHPT.Models
 {
     using System;
     using System.Collections.Generic;
@@ -16,8 +16,7 @@ namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
         }
 
         [Key]
-        [StringLength(10)]
-        public string MaDiem { get; set; }
+        public int MaDiem { get; set; }
 
         public double? DiemTBHK { get; set; }
 
@@ -35,8 +34,7 @@ namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
         [StringLength(50)]
         public string HocLuc { get; set; }
 
-        [StringLength(10)]
-        public string MaHS { get; set; }
+        public int? MaHS { get; set; }
 
         public virtual HOCSINH HOCSINH { get; set; }
 

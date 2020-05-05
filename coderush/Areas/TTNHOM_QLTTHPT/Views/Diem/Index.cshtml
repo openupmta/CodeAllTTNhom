@@ -1,4 +1,4 @@
-﻿@model IEnumerable<coderush.Areas.TTNHOM_QLTTHPT.Models.Model.DIEM>
+﻿@model IEnumerable<coderush.Areas.TTNhom_QLTTHPT.Models.DIEM>
 
 @{
     ViewBag.Title = "Index";
@@ -6,43 +6,13 @@
 }
 
 
-<style>
-    #example1_length {
-        /*position: relative;
-        bottom: 10px;*/
-    }
-
-    .col-sm-6 {
-        width: unset;
-    }
-
-    label {
-        margin-bottom: 13px;
-    }
-
-    a {
-        color: #fff;
-    }
-
-    .table-bordered {
-        border-color: #999;
-    }
-
-        .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
-            border-color: #999;
-        }
-
-    .btn-icon {
-        margin-right: 4px;
-    }
-</style>
 
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Danh Sách Điểm Chi Tiết Môn Học
+            Danh Sách Điểm Đánh Giá Học Lực
         </h1>
         @*<ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> home</a></li>
@@ -58,7 +28,7 @@
                     <div class="box-header">
                         @*<h3 class="box-title">Danh sách nhóm quyền</h3>*@
                         <button type="button" class="btn btn-warning" style="float:right ;margin-right: 10px;margin-top: 7px;">
-                            <i class="btn-icon fas fa-user-plus"></i>@Html.ActionLink("Thêm Học Sinh", "Create", "HocSinh")
+                            @Html.ActionLink("Thêm Bản Ghi", "Create", "Diem")<i class="btn-icon fas fa-user-plus"></i>
                         </button>
 
                         <!-- /.box-header -->
@@ -73,7 +43,9 @@
                                         <th>Hạnh Kiểm</th>
                                         <th>Năm Học</th>
                                         <th>Học Lực</th>
-                                        <th>Học Sinh</th>
+                                        <th>Mã HS</th>
+                                        <th>Chức Năng</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -87,7 +59,12 @@
                                             <td>@item.HanhKiem</td>
                                             <td>@item.NamHoc</td>
                                             <td>@item.HocLuc</td>
-                                            <td>@item.HOCSINH.HoTenHS</td>
+                                            <td>@item.MaHS</td>
+                                            <td>
+                                                <i class="fas fa-info-circle"></i> @Html.ActionLink("Xem", "Details", new { id = item.MaDiem }) |
+                                                <i class="far fa-edit"></i> @Html.ActionLink("Sửa", "Edit", new { id = item.MaDiem }) |
+                                                <i class="fas fa-trash-alt"></i> @Html.ActionLink("Xóa", "Delete", new { id = item.MaDiem }, new { onclick = "return confirm('Bạn có muốn xóa bản ghi này?');" })
+                                            </td>
                                         </tr>
                                     }
                                 </tbody>
@@ -101,6 +78,8 @@
                                         <th>Năm Học</th>
                                         <th>Học Lực</th>
                                         <th>Học Sinh</th>
+                                        <th>Chức Năng</th>
+
                                     </tr>
                                 </tfoot>
                             </table>
@@ -114,10 +93,10 @@
 
         </div>
         <!-- /.col -->
-</div>
-<!-- /.row -->
     </section>
 </div>
+<!-- /.row -->
+
 
 
 
@@ -144,6 +123,8 @@
     <![endif]-->
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="~/Areas/TTNhom_QLTTHPT/Asset/index.css" />
+
 }
 
 @section Scripts{

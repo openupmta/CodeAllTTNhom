@@ -1,8 +1,10 @@
-﻿@model IEnumerable<coderush.Areas.TTNHOM_QLTTHPT.Models.Model.KHOILOP>
+﻿@model IEnumerable<coderush.Areas.TTNhom_QLTTHPT.Models.KHOILOP>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Adminlte.cshtml";
+                /**/
+
+                ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
 
 
@@ -34,6 +36,9 @@
 
     .btn-icon {
         margin-right: 4px;
+    }
+    td a {
+        color: #72afd2;
     }
 </style>
 
@@ -68,21 +73,30 @@
                                     <tr>
                                         <th>Mã Khối</th>
                                         <th>Tên Khối</th>
+                                        <th>Chức Năng</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        <tr>
-                                            <td>@item.MaKhoi</td>
-                                            <td>@item.TenKhoi</td>
-                                        </tr>
+                                    <tr>
+                                        <td>@item.MaKhoi</td>
+                                        <td>@item.TenKhoi</td>
+                                        <td>
+                                            @Html.ActionLink("Xem", "Details", new { id = item.MaKhoi })|
+                                            @Html.ActionLink("Sửa", "Edit", new { id = item.MaKhoi })|
+                                            @Html.ActionLink("Xóa", "Delete", new { id = item.MaKhoi }, new { onclick = "return confirm('Are you sure?');" })
+                                        </td>
+                                    </tr>
                                     }
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <th>Mã Khối</th>
                                         <th>Tên Khối</th>
+                                        <th>Chức Năng</th>
+
                                     </tr>
                                 </tfoot>
                             </table>

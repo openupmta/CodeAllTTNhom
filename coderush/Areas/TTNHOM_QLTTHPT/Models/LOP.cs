@@ -1,4 +1,4 @@
-namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
+namespace coderush.Areas.TTNhom_QLTTHPT.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,30 +6,30 @@ namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("MONHOC")]
-    public partial class MONHOC
+    [Table("LOP")]
+    public partial class LOP
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MONHOC()
+        public LOP()
         {
-            DIEMCHITIETMONHOCs = new HashSet<DIEMCHITIETMONHOC>();
-            GIAOVIENs = new HashSet<GIAOVIEN>();
+            HOCSINHs = new HashSet<HOCSINH>();
+            PHANCONGs = new HashSet<PHANCONG>();
         }
 
         [Key]
+        public int MaLop { get; set; }
+
         [StringLength(10)]
-        public string MaMH { get; set; }
+        public string TenLop { get; set; }
 
-        [StringLength(50)]
-        public string TenMH { get; set; }
-
-        [StringLength(50)]
-        public string KhoiMH { get; set; }
+        public int? MaKhoi { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DIEMCHITIETMONHOC> DIEMCHITIETMONHOCs { get; set; }
+        public virtual ICollection<HOCSINH> HOCSINHs { get; set; }
+
+        public virtual KHOILOP KHOILOP { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GIAOVIEN> GIAOVIENs { get; set; }
+        public virtual ICollection<PHANCONG> PHANCONGs { get; set; }
     }
 }

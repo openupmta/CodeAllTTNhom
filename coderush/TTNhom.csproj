@@ -52,10 +52,6 @@
     <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -132,6 +128,9 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
@@ -237,34 +236,34 @@
     <Compile Include="Areas\TTNhom_QLThuVien\Models\TheLoai.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Models\TheThuVien.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\TTNhom_QLThuVienAreaRegistration.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Controllers\DiemChiTietController.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Controllers\DiemController.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Controllers\DienUuTienController.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Controllers\GiaoVienController.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Controllers\HocSinhController.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Controllers\HomeController.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Controllers\KhoiLopController.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Controllers\LopController.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Controllers\MonHocController.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Controllers\PhanCongController.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Models\Model\DIEM.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Models\Model\DIEMCHITIETMONHOC.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Models\Model\DIENUUTIEN.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Models\Model\GIAOVIEN.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Models\Model\HOCSINH.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Models\Model\KHOILOP.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Models\Model\LOP.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Models\Model\MONHOC.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Models\Model\PHANCONG.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Models\Model\QuanLyTTHPTContext.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\Models\Model\sysdiagram.cs" />
-    <Compile Include="Areas\TTNHOM_QLTTHPT\TTNHOM_QLTTHPTAreaRegistration.cs" />
     <Compile Include="Areas\TTNhom_QLKS\Common\CommonConstants.cs" />
     <Compile Include="Areas\TTNhom_QLKS\Common\UserLogin.cs" />
     <Compile Include="Areas\TTNhom_QLKS\Controllers\BaseController.cs" />
     <Compile Include="Areas\TTNhom_QLKS\Controllers\HomeController.cs" />
     <Compile Include="Areas\TTNhom_QLKS\Controllers\LoginController.cs" />
     <Compile Include="Areas\TTNhom_QLKS\TTNhon_QLKSAreaRegistration.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Controllers\DiemChiTietController.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Controllers\DiemController.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Controllers\DienUuTienController.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Controllers\GiaoVienController.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Controllers\HocSinhController.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Controllers\HomeController.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Controllers\KhoiLopController.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Controllers\LopController.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Controllers\MonHocController.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Controllers\PhanCongController.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Models\DIEM.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Models\DIEMCHITIETMONHOC.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Models\DIENUUTIEN.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Models\GIAOVIEN.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Models\HOCSINH.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Models\KHOILOP.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Models\LOP.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Models\MONHOC.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Models\PHANCONG.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Models\QuanLyTTHPTConText.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\Models\sysdiagram.cs" />
+    <Compile Include="Areas\TTNhom_QLTTHPT\TTNhom_QLTTHPTAreaRegistration.cs" />
     <Compile Include="AutoMapperConfig\AutoMapperProfile.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
@@ -1913,6 +1912,11 @@
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\vendor\jquery\jquery.min.js" />
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\vendor\jquery\jquery.slim.js" />
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Asset\create.css" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Asset\details.css" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Asset\edit.css" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Asset\index.css" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Asset\scripts.js" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\img\bootstrap-colorpicker\alpha-horizontal.png" />
@@ -8855,16 +8859,6 @@
     <Content Include="Areas\TTNhom_QLNS\Views\staffs\Details.cshtml" />
     <Content Include="Areas\TTNhom_QLNS\Views\staffs\Edit.cshtml" />
     <Content Include="Areas\TTNhom_QLNS\Views\staffs\Index.cshtml" />
-    <Content Include="Areas\TTNHOM_QLTTHPT\Views\web.config" />
-    <Content Include="Areas\TTNHOM_QLTTHPT\Views\Home\Index.cshtml" />
-    <Content Include="Areas\TTNHOM_QLTTHPT\Views\HocSinh\Index.cshtml" />
-    <Content Include="Areas\TTNHOM_QLTTHPT\Views\DiemChiTiet\Index.cshtml" />
-    <Content Include="Areas\TTNHOM_QLTTHPT\Views\Diem\Index.cshtml" />
-    <Content Include="Areas\TTNHOM_QLTTHPT\Views\DienUuTien\Index.cshtml" />
-    <Content Include="Areas\TTNHOM_QLTTHPT\Views\GiaoVien\Index.cshtml" />
-    <Content Include="Areas\TTNHOM_QLTTHPT\Views\KhoiLop\Index.cshtml" />
-    <Content Include="Areas\TTNHOM_QLTTHPT\Views\Lop\Index.cshtml" />
-    <Content Include="Areas\TTNHOM_QLTTHPT\Views\PhanCong\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLKS\Views\web.config" />
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\scss\navs\_global.scss" />
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\scss\navs\_sidebar.scss" />
@@ -9035,7 +9029,26 @@
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Areas\TTNhom_QLKS\Views\Home\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLKS\Views\Login\Index.cshtml" />
-    <Content Include="Areas\TTNHOM_QLTTHPT\Views\MonHoc\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\web.config" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\DiemChiTiet\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\Diem\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\DienUuTien\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\GiaoVien\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\HocSinh\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\KhoiLop\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\Lop\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\MonHoc\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\PhanCong\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\Home\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\DiemChiTiet\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\DiemChiTiet\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\DiemChiTiet\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\Diem\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\Diem\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\Diem\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\DienUuTien\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\DienUuTien\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\DienUuTien\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -9134,9 +9147,8 @@
     <Folder Include="Areas\TTNhom_QLKS\Views\Shared\" />
     <Folder Include="Areas\TTNhom_QLNS\Views\Shared\" />
     <Folder Include="Areas\TTNhom_QLThuVien\Views\Shared\" />
-    <Folder Include="Areas\TTNHOM_QLTTHPT\Asset\" />
-    <Folder Include="Areas\TTNHOM_QLTTHPT\Models\Access\" />
-    <Folder Include="Areas\TTNHOM_QLTTHPT\Views\Shared\" />
+    <Folder Include="Areas\TTNhom_QLTTHPT\Models\Access\" />
+    <Folder Include="Areas\TTNhom_QLTTHPT\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

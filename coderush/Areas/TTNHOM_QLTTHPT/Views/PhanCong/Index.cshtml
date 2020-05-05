@@ -1,4 +1,4 @@
-﻿@model IEnumerable<coderush.Areas.TTNHOM_QLTTHPT.Models.Model.PHANCONG>
+﻿@model IEnumerable<coderush.Areas.TTNhom_QLTTHPT.Models.PHANCONG>
 
 @{
     ViewBag.Title = "Index";
@@ -34,6 +34,9 @@
 
     .btn-icon {
         margin-right: 4px;
+    }
+    td a {
+        color: #72afd2;
     }
 </style>
 
@@ -71,18 +74,25 @@
                                         <th>Năm Học</th>
                                         <th>Số Tiết</th>
                                         <th>Lớp</th>
+                                        <th>Chức Năng</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        <tr>
-                                            <td>@item.GIAOVIEN.HoTenGV</td>
-                                            <td>@item.CongViec</td>
-                                            <td>@item.NamHoc</td>
-                                            <td>@item.SoTiet</td>
-                                            <td>@item.LOP.TenLop</td>
-                                        </tr>
+                                    <tr>
+                                        <td>@item.GIAOVIEN.HoTenGV</td>
+                                        <td>@item.CongViec</td>
+                                        <td>@item.NamHoc</td>
+                                        <td>@item.SoTiet</td>
+                                        <td>@item.LOP.TenLop</td>
+                                        <td>
+                                            @Html.ActionLink("Xem", "Details", new { id = item.MaPC })|
+                                            @Html.ActionLink("Sửa", "Edit", new { id = item.MaPC })|
+                                            @Html.ActionLink("Xóa", "Delete", new { id = item.MaPC }, new { onclick = "return confirm('Are you sure?');" })
+                                        </td>
+                                    </tr>
                                     }
                                 </tbody>
                                 <tfoot>
@@ -92,6 +102,8 @@
                                         <th>Năm Học</th>
                                         <th>Số Tiết</th>
                                         <th>Lớp</th>
+                                        <th>Chức Năng</th>
+
                                     </tr>
                                 </tfoot>
                             </table>

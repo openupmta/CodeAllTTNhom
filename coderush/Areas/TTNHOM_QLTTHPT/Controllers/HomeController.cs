@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using coderush.Areas.TTNhom_QLTTHPT.Models;
 
-namespace coderush.Areas.TTNHOM_QLTTHPT.Controllers
+
+namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: TTNHOM_QLTTHPT/Home
+        QuanLyTTHPTConText db = new QuanLyTTHPTConText();
+
+        // GET: TTNhom_QLTTHPT/Home
         public ActionResult Index()
         {
             return View();

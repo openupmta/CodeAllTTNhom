@@ -1,4 +1,4 @@
-namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
+namespace coderush.Areas.TTNhom_QLTTHPT.Models
 {
     using System;
     using System.Collections.Generic;

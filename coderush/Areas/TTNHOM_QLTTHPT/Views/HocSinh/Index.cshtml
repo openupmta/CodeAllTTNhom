@@ -1,8 +1,10 @@
-﻿@model IEnumerable<coderush.Areas.TTNHOM_QLTTHPT.Models.Model.HOCSINH>
+﻿@model IEnumerable<coderush.Areas.TTNhom_QLTTHPT.Models.HOCSINH>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Adminlte.cshtml";
+                /**/
+
+                ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
 
 
@@ -28,11 +30,15 @@
         border-color: #999;
     }
 
-    .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+        .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
             border-color: #999;
         }
-    .btn-icon{
-        margin-right:4px;
+
+    .btn-icon {
+        margin-right: 4px;
+    }
+    td a {
+        color: #72afd2;
     }
 </style>
 
@@ -78,6 +84,8 @@
                                         <th>Lớp</th>
                                         <th>Tôn Giáo</th>
                                         <th>Diện Ưu Tiên</th>
+                                        <th>Chức Năng</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -104,6 +112,11 @@
                                         <td>@item.LOP.TenLop</td>
                                         <td>@item.TonGiao</td>
                                         <td>@item.DIENUUTIEN.TenDUT</td>
+                                        <td>
+                                            @Html.ActionLink("Xem", "Details", new { id = item.MaHS })|
+                                            @Html.ActionLink("Sửa", "Edit", new { id = item.MaHS })|
+                                            @Html.ActionLink("Xóa", "Delete", new { id = item.MaHS }, new { onclick = "return confirm('Are you sure?');" })
+                                        </td>
                                     </tr>
                                     }
                                 </tbody>
@@ -122,6 +135,8 @@
                                         <th>Lớp</th>
                                         <th>Tôn Giáo</th>
                                         <th>Diện Ưu Tiên</th>
+                                        <th>Chức Năng</th>
+
                                     </tr>
                                 </tfoot>
                             </table>

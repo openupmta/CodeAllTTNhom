@@ -1,0 +1,62 @@
+﻿.col-sm-6 {
+    width: unset;
+}
+
+label {
+    margin-bottom: 13px;
+}
+
+a {
+    color: #fff;
+}
+
+.table-bordered {
+    border-color: #999;
+}
+
+    .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+        border-color: #999;
+    }
+
+.btn-icon {
+    margin-right: 8px;
+    position: relative;
+    bottom: 1px;
+}
+
+.btn.btn-warning {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+    .btn.btn-warning a:hover ~ .btn-icon {
+        color: #72afd2;
+    }
+
+td a {
+    color: #72afd2;
+}
+
+#example1_length label {
+    font-size: 15px;
+    font-style: italic;
+}
+
+#example1_filter label {
+    font-size: 15px;
+    font-style: italic;
+}
+
+#example1 thead tr {
+    font-size : 13px;
+}
+
+#example1 tfoot tr {
+    font-size: 13px;
+}
+
+div.dataTables_wrapper div.dataTables_info{
+    font-style:italic;
+    font-size : 14.5px;
+} 

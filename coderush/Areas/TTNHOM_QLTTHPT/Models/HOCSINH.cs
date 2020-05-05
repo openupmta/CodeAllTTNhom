@@ -1,4 +1,4 @@
-namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
+namespace coderush.Areas.TTNhom_QLTTHPT.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,21 +6,20 @@ namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("GIAOVIEN")]
-    public partial class GIAOVIEN
+    [Table("HOCSINH")]
+    public partial class HOCSINH
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public GIAOVIEN()
+        public HOCSINH()
         {
-            PHANCONGs = new HashSet<PHANCONG>();
+            DIEMs = new HashSet<DIEM>();
         }
 
         [Key]
-        [StringLength(10)]
-        public string MaGV { get; set; }
+        public int MaHS { get; set; }
 
         [StringLength(50)]
-        public string HoTenGV { get; set; }
+        public string HoTenHS { get; set; }
 
         [StringLength(3)]
         public string GioiTinh { get; set; }
@@ -35,16 +34,29 @@ namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
         public string SDT { get; set; }
 
         [StringLength(10)]
-        public string MaHT { get; set; }
+        public string MaLT { get; set; }
 
         [StringLength(10)]
-        public string MaMH { get; set; }
+        public string MaBT { get; set; }
 
-        public int? Luong { get; set; }
+        [StringLength(10)]
+        public string NienKhoa { get; set; }
 
-        public virtual MONHOC MONHOC { get; set; }
+        [StringLength(20)]
+        public string DanToc { get; set; }
+
+        public int? MaLop { get; set; }
+
+        [StringLength(50)]
+        public string TonGiao { get; set; }
+
+        public int? MaDUT { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHANCONG> PHANCONGs { get; set; }
+        public virtual ICollection<DIEM> DIEMs { get; set; }
+
+        public virtual DIENUUTIEN DIENUUTIEN { get; set; }
+
+        public virtual LOP LOP { get; set; }
     }
 }

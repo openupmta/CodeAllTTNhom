@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using coderush.Areas.TTNHOM_QLTTHPT.Models.Model;
+using coderush.Areas.TTNhom_QLTTHPT.Models;
 
-namespace coderush.Areas.TTNHOM_QLTTHPT.Controllers
+
+namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
 {
     public class MonHocController : Controller
     {
-        QuanLyTTHPTContext db = new QuanLyTTHPTContext();
-        // GET: TTNHOM_QLTTHPT/MonHoc
+        QuanLyTTHPTConText db = new QuanLyTTHPTConText();
+
+        // GET: TTNhom_QLTTHPT/MonHoc
         public ActionResult Index()
         {
             List<MONHOC> res = db.MONHOCs.ToList();

@@ -1,41 +1,10 @@
-﻿@model IEnumerable<coderush.Areas.TTNHOM_QLTTHPT.Models.Model.DIEMCHITIETMONHOC>
+﻿@model IEnumerable<coderush.Areas.TTNhom_QLTTHPT.Models.DIEMCHITIETMONHOC>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
 
-
-<style>
-    #example1_length {
-        /*position: relative;
-        bottom: 10px;*/
-    }
-
-    .col-sm-6 {
-        width: unset;
-    }
-
-    label {
-        margin-bottom: 13px;
-    }
-
-    a {
-        color: #fff;
-    }
-
-    .table-bordered {
-        border-color: #999;
-    }
-
-    .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
-            border-color: #999;
-    }
-
-    .btn-icon {
-        margin-right: 4px;
-    }
-</style>
 
 
 <div class="content-wrapper">
@@ -58,7 +27,7 @@
                     <div class="box-header">
                         @*<h3 class="box-title">Danh sách nhóm quyền</h3>*@
                         <button type="button" class="btn btn-warning" style="float:right ;margin-right: 10px;margin-top: 7px;">
-                            <i class="btn-icon fas fa-user-plus"></i>@Html.ActionLink("Thêm Học Sinh", "Create", "HocSinh")
+                            @Html.ActionLink("Thêm Bản Ghi", "Create", "DiemChiTiet")<i class="btn-icon fas fa-user-plus"></i>
                         </button>
 
                         <!-- /.box-header -->
@@ -66,7 +35,6 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Học Sinh</th>
                                         <th>Miệng 1</th>
                                         <th>Miệng 2</th>
                                         <th>Điểm 15P</th>
@@ -74,15 +42,16 @@
                                         <th>Điểm Thi</th>
                                         <th>Điểm TBMH</th>
                                         <th>Ngày Nhập</th>
-                                        <th>Môn Học</th>
-
+                                        <th>Mã Điểm</th>
+                                        <th>Mã MH</th>
+                                        <th>Chức Năng</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td>@item.DIEM.HOCSINH.HoTenHS</td>
+
                                             <td>@item.DiemMieng1</td>
                                             <td>@item.DiemMieng2</td>
                                             <td>@item.Diem15</td>
@@ -90,14 +59,18 @@
                                             <td>@item.DiemThi</td>
                                             <td>@item.DiemTBMH</td>
                                             <td>@item.NgayNhap</td>
-                                            <td>@item.MONHOC.TenMH</td>
-
+                                            <td>@item.MaDiem</td>
+                                            <td>@item.MaMH</td>
+                                            <td>
+                                                <i class="fas fa-info-circle"></i> @Html.ActionLink("Xem", "Details", new { id = item.MaDiemCTMH }) |
+                                                <i class="far fa-edit"></i> @Html.ActionLink("Sửa", "Edit", new { id = item.MaDiemCTMH }) |
+                                                <i class="fas fa-trash-alt"></i> @Html.ActionLink("Xóa", "Delete", new { id = item.MaDiemCTMH }, new { onclick = "return confirm('Bạn có muốn xóa bản ghi này?');" })
+                                            </td>
                                         </tr>
                                     }
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Học Sinh</th>
                                         <th>Miệng 1</th>
                                         <th>Miệng 2</th>
                                         <th>Điểm 15P</th>
@@ -105,7 +78,9 @@
                                         <th>Điểm Thi</th>
                                         <th>Điểm TBMH</th>
                                         <th>Ngày Nhập</th>
-                                        <th>Môn Học</th>
+                                        <th>Mã Điểm</th>
+                                        <th>Mã MH</th>
+                                        <th>Chức Năng</th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -119,10 +94,10 @@
 
         </div>
         <!-- /.col -->
-</div>
-<!-- /.row -->
+        <!-- /.row -->
     </section>
 </div>
+
 
 
 
@@ -149,6 +124,7 @@
     <![endif]-->
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="~/Areas/TTNhom_QLTTHPT/Asset/index.css"/>
 }
 
 @section Scripts{
@@ -157,7 +133,7 @@
     <!-- Bootstrap 3.3.7 -->
     <script src="~/Content/adminlte/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- DataTables -->
-    <script src="~/Content/adminlte/components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/Areas/TTNhom_QLTTHPT/Asset/scripts.js"></script>
     <script src="~/Content/adminlte/components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <!-- Slimscroll -->
     <script src="~/Content/adminlte/components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
@@ -181,4 +157,5 @@
             })
         })</script>
 }
+
 

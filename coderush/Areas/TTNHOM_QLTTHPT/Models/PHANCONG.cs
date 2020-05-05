@@ -1,4 +1,4 @@
-namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
+namespace coderush.Areas.TTNhom_QLTTHPT.Models
 {
     using System;
     using System.Collections.Generic;
@@ -10,14 +10,11 @@ namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
     public partial class PHANCONG
     {
         [Key]
-        [Column(Order = 0)]
-        [StringLength(10)]
-        public string MaLop { get; set; }
+        public int MaPC { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [StringLength(10)]
-        public string MaGV { get; set; }
+        public int MaLop { get; set; }
+
+        public int MaGV { get; set; }
 
         [StringLength(50)]
         public string CongViec { get; set; }

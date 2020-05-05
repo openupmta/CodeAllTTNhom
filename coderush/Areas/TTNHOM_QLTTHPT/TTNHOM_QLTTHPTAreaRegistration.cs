@@ -1,22 +1,22 @@
 ﻿using System.Web.Mvc;
 
-namespace coderush.Areas.TTNHOM_QLTTHPT
+namespace coderush.Areas.TTNhom_QLTTHPT
 {
-    public class TTNHOM_QLTTHPTAreaRegistration : AreaRegistration 
+    public class TTNhom_QLTTHPTAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {
             get 
             {
-                return "TTNHOM_QLTTHPT";
+                return "TTNhom_QLTTHPT";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "TTNHOM_QLTTHPT_default",
-                "TTNHOM_QLTTHPT/{controller}/{action}/{id}",
+                "TTNhom_QLTTHPT_default",
+                "TTNhom_QLTTHPT/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

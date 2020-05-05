@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using coderush.Areas.TTNHOM_QLTTHPT.Models.Model;
+using coderush.Areas.TTNhom_QLTTHPT.Models;
 
-namespace coderush.Areas.TTNHOM_QLTTHPT.Controllers
+
+namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
 {
     public class PhanCongController : Controller
     {
-        QuanLyTTHPTContext db = new QuanLyTTHPTContext();
-        // GET: TTNHOM_QLTTHPT/PhanCong
+        QuanLyTTHPTConText db = new QuanLyTTHPTConText();
+
+        // GET: TTNhom_QLTTHPT/PhanCong
         public ActionResult Index()
         {
             List<PHANCONG> res = db.PHANCONGs.ToList();

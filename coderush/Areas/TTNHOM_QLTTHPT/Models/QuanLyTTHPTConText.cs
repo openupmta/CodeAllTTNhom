@@ -1,14 +1,14 @@
-namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
+namespace coderush.Areas.TTNhom_QLTTHPT.Models
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class QuanLyTTHPTContext : DbContext
+    public partial class QuanLyTTHPTConText : DbContext
     {
-        public QuanLyTTHPTContext()
-            : base("name=QuanLyTTHPTContext")
+        public QuanLyTTHPTConText()
+            : base("name=QuanLyTTHPTConText")
         {
         }
 
@@ -26,39 +26,11 @@ namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<DIEM>()
-                .Property(e => e.MaDiem)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DIEM>()
                 .Property(e => e.HocKy)
                 .IsUnicode(false);
 
             modelBuilder.Entity<DIEM>()
                 .Property(e => e.NamHoc)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DIEM>()
-                .Property(e => e.MaHS)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DIEMCHITIETMONHOC>()
-                .Property(e => e.MaDiemCTMH)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DIEMCHITIETMONHOC>()
-                .Property(e => e.MaMH)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DIEMCHITIETMONHOC>()
-                .Property(e => e.MaDiem)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DIENUUTIEN>()
-                .Property(e => e.MaDUT)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<GIAOVIEN>()
-                .Property(e => e.MaGV)
                 .IsUnicode(false);
 
             modelBuilder.Entity<GIAOVIEN>()
@@ -70,17 +42,9 @@ namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<GIAOVIEN>()
-                .Property(e => e.MaMH)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<GIAOVIEN>()
                 .HasMany(e => e.PHANCONGs)
                 .WithRequired(e => e.GIAOVIEN)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<HOCSINH>()
-                .Property(e => e.MaHS)
-                .IsUnicode(false);
 
             modelBuilder.Entity<HOCSINH>()
                 .Property(e => e.SDT)
@@ -98,42 +62,10 @@ namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
                 .Property(e => e.NienKhoa)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<HOCSINH>()
-                .Property(e => e.MaLop)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<HOCSINH>()
-                .Property(e => e.MaDUT)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<KHOILOP>()
-                .Property(e => e.MaKhoi)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LOP>()
-                .Property(e => e.MaLop)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LOP>()
-                .Property(e => e.MaKhoi)
-                .IsUnicode(false);
-
             modelBuilder.Entity<LOP>()
                 .HasMany(e => e.PHANCONGs)
                 .WithRequired(e => e.LOP)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<MONHOC>()
-                .Property(e => e.MaMH)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PHANCONG>()
-                .Property(e => e.MaLop)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PHANCONG>()
-                .Property(e => e.MaGV)
-                .IsUnicode(false);
 
             modelBuilder.Entity<PHANCONG>()
                 .Property(e => e.NamHoc)

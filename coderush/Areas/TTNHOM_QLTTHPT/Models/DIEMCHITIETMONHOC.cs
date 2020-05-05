@@ -1,4 +1,4 @@
-namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
+namespace coderush.Areas.TTNhom_QLTTHPT.Models
 {
     using System;
     using System.Collections.Generic;
@@ -10,8 +10,7 @@ namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
     public partial class DIEMCHITIETMONHOC
     {
         [Key]
-        [StringLength(10)]
-        public string MaDiemCTMH { get; set; }
+        public int MaDiemCTMH { get; set; }
 
         public double? DiemMieng1 { get; set; }
 
@@ -28,11 +27,9 @@ namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
         [Column(TypeName = "date")]
         public DateTime? NgayNhap { get; set; }
 
-        [StringLength(10)]
-        public string MaMH { get; set; }
+        public int? MaMH { get; set; }
 
-        [StringLength(10)]
-        public string MaDiem { get; set; }
+        public int? MaDiem { get; set; }
 
         public virtual DIEM DIEM { get; set; }
 

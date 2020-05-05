@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using coderush.Areas.TTNHOM_QLTTHPT.Models.Model;
+using coderush.Areas.TTNhom_QLTTHPT.Models;
 
-namespace coderush.Areas.TTNHOM_QLTTHPT.Controllers
+namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
 {
     public class HocSinhController : Controller
     {
-        QuanLyTTHPTContext db = new QuanLyTTHPTContext();
-        // GET: TTNHOM_QLTTHPT/HocSinh
+        QuanLyTTHPTConText db = new QuanLyTTHPTConText();
+
+        // GET: TTNhom_QLTTHPT/HocSinh
         public ActionResult Index()
         {
-            List<HOCSINH> hs = db.HOCSINHs.ToList();
-            return View(hs);
+            List<HOCSINH> res = db.HOCSINHs.ToList();
+            return View(res);
         }
     }
-
-    
 }

@@ -1,4 +1,4 @@
-namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
+namespace coderush.Areas.TTNhom_QLTTHPT.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,23 +6,22 @@ namespace coderush.Areas.TTNHOM_QLTTHPT.Models.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("DIENUUTIEN")]
-    public partial class DIENUUTIEN
+    [Table("KHOILOP")]
+    public partial class KHOILOP
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DIENUUTIEN()
+        public KHOILOP()
         {
-            HOCSINHs = new HashSet<HOCSINH>();
+            LOPs = new HashSet<LOP>();
         }
 
         [Key]
-        [StringLength(10)]
-        public string MaDUT { get; set; }
+        public int MaKhoi { get; set; }
 
-        [StringLength(50)]
-        public string TenDUT { get; set; }
+        [StringLength(20)]
+        public string TenKhoi { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOCSINH> HOCSINHs { get; set; }
+        public virtual ICollection<LOP> LOPs { get; set; }
     }
 }
