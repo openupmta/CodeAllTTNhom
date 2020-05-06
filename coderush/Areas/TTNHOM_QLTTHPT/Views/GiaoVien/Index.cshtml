@@ -6,52 +6,17 @@
 }
 
 
-<style>
-    #example1_length {
-        /*position: relative;
-        bottom: 10px;*/
-    }
-
-    .col-sm-6 {
-        width: unset;
-    }
-
-    label {
-        margin-bottom: 13px;
-    }
-
-    a {
-        color: #fff;
-    }
-
-    .table-bordered {
-        border-color: #999;
-    }
-
-        .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
-            border-color: #999;
-        }
-
-    .btn-icon {
-        margin-right: 4px;
-    }
-    td a {
-        color: #72afd2;
-    }
-</style>
-
-
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
             Danh Sách Giáo Viên
         </h1>
-        @*<ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> home</a></li>
-                <li><a href="#">tables</a></li>
-                <li class="active">data tables</li>
-            </ol>*@
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> home</a></li>
+            <li><a href="#">tables</a></li>
+            <li class="active">data tables</li>
+        </ol>
     </section>
     <!-- Main content -->
     <section class="content">
@@ -61,7 +26,7 @@
                     <div class="box-header">
                         @*<h3 class="box-title">Danh sách nhóm quyền</h3>*@
                         <button type="button" class="btn btn-warning" style="float:right ;margin-right: 10px;margin-top: 7px;">
-                            <i class="btn-icon fas fa-user-plus"></i>@Html.ActionLink("Thêm Giáo Viên", "Create", "GiaoVien")
+                            @Html.ActionLink("Thêm Bản Ghi", "Create", "GiaoVien")<i class="btn-icon fas fa-user-plus"></i>
                         </button>
 
                         <!-- /.box-header -->
@@ -69,7 +34,6 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Mã GV</th>
                                         <th>Họ và Tên</th>
                                         <th>Giới Tính</th>
                                         <th>Ngày Sinh</th>
@@ -84,26 +48,24 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                    <tr>
-                                        <td>@item.MaGV</td>
-                                        <td>@item.HoTenGV</td>
-                                        <td>@item.GioiTinh</td>
-                                        <td>@item.NgaySinh</td>
-                                        <td>@item.DiaChi</td>
-                                        <td>@item.SDT</td>
-                                        <td>@item.Luong</td>
-                                        <td>@item.MONHOC.TenMH</td>
-                                        <td>
-                                            @Html.ActionLink("Xem", "Details", new { id = item.MaGV })|
-                                            @Html.ActionLink("Sửa", "Edit", new { id = item.MaGV })|
-                                            @Html.ActionLink("Xóa", "Delete", new { id = item.MaGV }, new { onclick = "return confirm('Are you sure?');" })
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td>@item.HoTenGV</td>
+                                            <td>@item.GioiTinh</td>
+                                            <td>@item.NgaySinh</td>
+                                            <td>@item.DiaChi</td>
+                                            <td>@item.SDT</td>
+                                            <td>@item.Luong</td>
+                                            <td>@item.MONHOC.TenMH</td>
+                                            <td>
+                                                <i class="fas fa-info-circle"></i> @Html.ActionLink("Xem", "Details", new { id = item.MaGV })|
+                                                <i class="far fa-edit"></i> @Html.ActionLink("Sửa", "Edit", new { id = item.MaGV })|
+                                                <i class="fas fa-trash-alt"></i> @Html.ActionLink("Xóa", "Delete", new { id = item.MaGV }, new { onclick = "return confirm('Bạn có muốn xóa bản ghi này?');" })
+                                            </td>
+                                        </tr>
                                     }
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Mã GV</th>
                                         <th>Họ và Tên</th>
                                         <th>Giới Tính</th>
                                         <th>Ngày Sinh</th>
@@ -126,10 +88,11 @@
 
         </div>
         <!-- /.col -->
-</div>
-<!-- /.row -->
     </section>
 </div>
+<!-- /.row -->
+
+
 
 
 
@@ -156,6 +119,7 @@
     <![endif]-->
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="~/Areas/TTNhom_QLTTHPT/Asset/index.css" />
 }
 
 @section Scripts{

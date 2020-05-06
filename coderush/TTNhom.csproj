@@ -1915,6 +1915,7 @@
     <Content Include="Areas\TTNhom_QLTTHPT\Asset\create.css" />
     <Content Include="Areas\TTNhom_QLTTHPT\Asset\details.css" />
     <Content Include="Areas\TTNhom_QLTTHPT\Asset\edit.css" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Asset\img\ff81224b0050fa0ea341.jpg" />
     <Content Include="Areas\TTNhom_QLTTHPT\Asset\index.css" />
     <Content Include="Areas\TTNhom_QLTTHPT\Asset\scripts.js" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css" />
@@ -9049,6 +9050,12 @@
     <Content Include="Areas\TTNhom_QLTTHPT\Views\DienUuTien\Details.cshtml" />
     <Content Include="Areas\TTNhom_QLTTHPT\Views\DienUuTien\Create.cshtml" />
     <Content Include="Areas\TTNhom_QLTTHPT\Views\DienUuTien\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\GiaoVien\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\GiaoVien\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\GiaoVien\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\HocSinh\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\HocSinh\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\HocSinh\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
