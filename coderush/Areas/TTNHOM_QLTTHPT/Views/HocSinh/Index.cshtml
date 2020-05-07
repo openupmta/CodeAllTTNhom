@@ -12,11 +12,11 @@
         <h1>
             Danh Sách Học Sinh
         </h1>
-        @*<ol class="breadcrumb">
+        <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> home</a></li>
                 <li><a href="#">tables</a></li>
                 <li class="active">data tables</li>
-            </ol>*@
+            </ol>
     </section>
     <!-- Main content -->
     <section class="content">
@@ -59,7 +59,7 @@
                                             </td>
                                             <td>@item.SDT</td>
                                             <td>@item.NienKhoa</td>
-                                            <td>@item.MaLop</td>
+                                            <td>@item.LOP.TenLop</td>
                                             <td>
                                                 <i class="fas fa-info-circle"></i> @Html.ActionLink("Xem", "Details", new { id = item.MaHS })|
                                                 <i class="far fa-edit"></i> @Html.ActionLink("Sửa", "Edit", new { id = item.MaHS })|

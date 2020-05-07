@@ -38,10 +38,10 @@ namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
         public ActionResult Create()
         {
             var lop = db.LOPs.ToList();
-            SelectList listLop = new SelectList(lop, "MaLop", "MaLop");
+            SelectList listLop = new SelectList(lop, "MaLop", "TenLop");
             ViewBag.CatagoryLop = listLop;
             var DUT = db.DIENUUTIENs.ToList();
-            SelectList listDut = new SelectList(DUT, "MaDUT", "MaDUT");
+            SelectList listDut = new SelectList(DUT, "MaDUT", "TenDUT");
             ViewBag.CatagoryDut = listDut;
             return View();
         }

@@ -35,7 +35,7 @@
                     {
                         @Html.AntiForgeryToken()
 
-                        <div class="form-horizontal">
+                    <div class="form-horizontal">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="form-group">
                             @Html.LabelFor(model => model.HoTenHS, "Họ Và Tên : ", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -102,7 +102,7 @@
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.MaLop, "Lớp : ", htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.LabelFor(model => model.MaLop, "Lớp :", htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
                                 @Html.DropDownList("MaLop", ViewBag.CatagoryLop as SelectList, htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.MaLop, "", new { @class = "text-danger" })
@@ -110,7 +110,7 @@
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.MaDUT, "Diện Ưu Tiên: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.LabelFor(model => model.MaDUT, "Diện Ưu Tiên:", htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
                                 @Html.DropDownList("MaDUT", ViewBag.CatagoryDut as SelectList, htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.MaDUT, "", new { @class = "text-danger" })
@@ -122,7 +122,7 @@
                                 <input type="submit" value="Tạo Mới" class="btn btn-default" />
                             </div>
                         </div>
-                        </div>
+                    </div>
                     }
                 </div>
 
