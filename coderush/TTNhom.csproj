@@ -9068,6 +9068,13 @@
     <Content Include="Areas\TTNhom_QLTTHPT\Views\PhanCong\Details.cshtml" />
     <Content Include="Areas\TTNhom_QLTTHPT\Views\PhanCong\Create.cshtml" />
     <Content Include="Areas\TTNhom_QLTTHPT\Views\PhanCong\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\Diem\Error.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\DienUuTien\Error.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\GiaoVien\Error.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\HocSinh\Error.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\KhoiLop\Error.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\Lop\Error.cshtml" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Views\MonHoc\Error.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

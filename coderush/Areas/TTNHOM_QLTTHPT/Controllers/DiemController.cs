@@ -98,10 +98,19 @@ namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
 
         public ActionResult Delete(int? id)
         {
-            DIEM diem = db.DIEMs.Find(id);
-            db.DIEMs.Remove(diem);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                DIEM diem = db.DIEMs.Find(id);
+                db.DIEMs.Remove(diem);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch(Exception)
+            {
+                return View("Error");
+            }
+
+            
         }
 
 

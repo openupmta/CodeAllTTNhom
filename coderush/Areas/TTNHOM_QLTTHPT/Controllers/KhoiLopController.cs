@@ -88,10 +88,17 @@ namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
 
         public ActionResult Delete(int? id)
         {
-            KHOILOP KHOILOP = db.KHOILOPs.Find(id);
-            db.KHOILOPs.Remove(KHOILOP);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                KHOILOP KHOILOP = db.KHOILOPs.Find(id);
+                db.KHOILOPs.Remove(KHOILOP);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch(Exception)
+            {
+                return View("Error");
+            }
         }
 
 

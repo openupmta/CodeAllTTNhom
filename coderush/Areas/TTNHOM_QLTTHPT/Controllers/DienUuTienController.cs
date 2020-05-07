@@ -90,10 +90,17 @@ namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
 
         public ActionResult Delete(int? id)
         {
-            DIENUUTIEN diem = db.DIENUUTIENs.Find(id);
-            db.DIENUUTIENs.Remove(diem);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                DIENUUTIEN diem = db.DIENUUTIENs.Find(id);
+                db.DIENUUTIENs.Remove(diem);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch(Exception)
+            {
+                return View("Error");
+            }
         }
 
 

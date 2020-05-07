@@ -103,10 +103,17 @@ namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
 
         public ActionResult Delete(int? id)
         {
-            GIAOVIEN diem = db.GIAOVIENs.Find(id);
-            db.GIAOVIENs.Remove(diem);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                GIAOVIEN diem = db.GIAOVIENs.Find(id);
+                db.GIAOVIENs.Remove(diem);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch(Exception)
+            {
+                return View("Error");
+            }
         }
 
 

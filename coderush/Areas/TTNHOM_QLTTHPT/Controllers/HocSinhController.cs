@@ -114,10 +114,17 @@ namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
 
         public ActionResult Delete(int? id)
         {
-            HOCSINH diem = db.HOCSINHs.Find(id);
-            db.HOCSINHs.Remove(diem);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                HOCSINH diem = db.HOCSINHs.Find(id);
+                db.HOCSINHs.Remove(diem);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch(Exception)
+            {
+                return View("Error");
+            }
         }
 
 

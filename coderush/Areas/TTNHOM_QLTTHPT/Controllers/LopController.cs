@@ -97,10 +97,17 @@ namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
 
         public ActionResult Delete(int? id)
         {
-            LOP LOP = db.LOPs.Find(id);
-            db.LOPs.Remove(LOP);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                LOP LOP = db.LOPs.Find(id);
+                db.LOPs.Remove(LOP);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch(Exception)
+            {
+                return View("Error");
+            }
         }
 
 

@@ -87,10 +87,17 @@ namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
 
         public ActionResult Delete(int? id)
         {
-            MONHOC MONHOC = db.MONHOCs.Find(id);
-            db.MONHOCs.Remove(MONHOC);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                MONHOC MONHOC = db.MONHOCs.Find(id);
+                db.MONHOCs.Remove(MONHOC);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch(Exception)
+            {
+                return View("Error");
+            }
         }
 
 
