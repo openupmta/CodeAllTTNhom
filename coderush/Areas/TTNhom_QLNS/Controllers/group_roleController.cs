@@ -11,7 +11,7 @@ using coderush.Areas.TTNhom_QLNS.Models;
 
 namespace coderush.Areas.TTNhom_QLNS.Controllers
 {
-    public class group_roleController : Controller
+    public class group_roleController : BaseController
     {
         DBQLNSContext db = new DBQLNSContext();
 

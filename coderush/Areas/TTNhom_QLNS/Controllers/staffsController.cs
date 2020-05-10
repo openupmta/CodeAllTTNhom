@@ -11,12 +11,14 @@ using coderush.Areas.TTNhom_QLNS.Models;
 using coderush.Areas.TTNhom_QLNS.Models.Staff;
 namespace coderush.Areas.TTNhom_QLNS.Controllers
 {
-    public class staffsController : Controller
+    [Authorize]
+    public class staffsController : BaseController
     {
         private DBQLNSContext db = new DBQLNSContext();
-       
-       
+
+
         // GET: TTNhom_QLNS/staffs
+        [Authorize]
         public ActionResult Index()
         {
             var staffs = db.staffs.ToList();
@@ -60,6 +62,10 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
                 try
                 {
                     staff staff = Mapper.Map<staff>(create_staff);
+                    var code = db.staffs.OrderByDescending(x => x.sta_id).FirstOrDefault();
+                    if (code == null) staff.sta_code = "NV000001";
+                    else staff.sta_code = Utilis.CreateCodeByCode("NV", code.sta_code, 8);
+                    staff.sta_created_date = DateTime.Now;
                     db.staffs.Add(staff);
 
                     db.SaveChanges();
@@ -68,7 +74,6 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
                     create_add.add_province = db.Provinces.Where(x => x.Id == create_staff.provinceID).FirstOrDefault().Name;
                     create_add.add_district = db.Districts.Where(x => x.Id == create_staff.districtID).FirstOrDefault().Name;
                     create_add.add_ward = db.Wards.Where(x => x.Id == create_staff.wardID).FirstOrDefault().Name;
-                    create_add.add_detail = create_staff.detail;
                     create_add.staff_id = staff_last.sta_id;
                     db.addresses.Add(create_add);
                     db.SaveChanges();
@@ -96,6 +101,7 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             staff staff = db.staffs.Find(id);
+            address add = db.addresses.Where(x => x.staff_id == staff.sta_id).FirstOrDefault();
             if (staff == null)
             {
                 return HttpNotFound();
@@ -103,6 +109,9 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
             ViewBag.department_id = new SelectList(db.departments, "de_id", "de_name", staff.department_id);
             ViewBag.group_role_id = new SelectList(db.group_role, "gr_id", "gr_name", staff.group_role_id);
             ViewBag.position_id = new SelectList(db.positions, "pos_id", "pos_name", staff.position_id);
+            ViewBag.provinceID = new SelectList(db.Provinces, "Id", "Name", db.Provinces.Where(x => x.Name.Contains(add.add_province)).FirstOrDefault().Id);
+            ViewBag.districtID = new SelectList(db.Districts, "Id", "Name", db.Districts.Where(x => x.Name.Contains(add.add_district)).FirstOrDefault().Id);
+            ViewBag.wardID = new SelectList(db.Wards, "Id", "Name", db.Wards.Where(x => x.Name.Contains(add.add_ward)).FirstOrDefault().Id);
             return View(staff);
         }
 
@@ -128,28 +137,14 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         // GET: TTNhom_QLNS/staffs/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            staff staff = db.staffs.Find(id);
-            if (staff == null)
-            {
-                return HttpNotFound();
-            }
-            return View(staff);
-        }
-
-        // POST: TTNhom_QLNS/staffs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
             staff staff = db.staffs.Find(id);
             db.staffs.Remove(staff);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
+        
         public JsonResult LoadProvince()
         {
             List<dropdown> res = new List<dropdown>();

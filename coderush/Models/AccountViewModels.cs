@@ -49,14 +49,13 @@ namespace coderush.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "User name")]
+        public string sta_username { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
-        public string Password { get; set; }
+        public string sta_password { get; set; }
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }

@@ -10,7 +10,6 @@ namespace coderush.Areas.TTNhom_QLNS.Models
     public partial class address
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int add_id { get; set; }
 
         [StringLength(50)]

@@ -5,9 +5,9 @@ namespace coderush.Areas.TTNhom_QLNS.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class DBQLNSContext : DbContext
+    public partial class Model1 : DbContext
     {
-        public DBQLNSContext()
+        public Model1()
             : base("name=Model1")
         {
         }
@@ -141,5 +141,4 @@ namespace coderush.Areas.TTNhom_QLNS.Models
                 .IsFixedLength();
         }
     }
-
 }
