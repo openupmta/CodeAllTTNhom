@@ -1,4 +1,4 @@
-namespace coderush.Areas.TTNhom_QLNS.Models
+﻿namespace coderush.Areas.TTNhom_QLNS.Models
 {
     using System;
     using System.Collections.Generic;
@@ -13,47 +13,62 @@ namespace coderush.Areas.TTNhom_QLNS.Models
         public staff()
         {
             addresses = new HashSet<address>();
-            tickets = new HashSet<ticket>();
         }
 
         [Key]
+        [Display(Name ="Mã nhân viên")]
         public int sta_id { get; set; }
 
         [StringLength(50)]
+        [Display(Name ="Mã nhân viên")]
         public string sta_code { get; set; }
 
         [StringLength(120)]
+        [Display(Name ="Hình ảnh")]
         public string sta_thumbnai { get; set; }
 
         [StringLength(45)]
+        [Display(Name = "Tên nhân viên")]
+        [Required(ErrorMessage ="Tên nhân viên không được để trống")]
         public string sta_fullname { get; set; }
 
         [StringLength(45)]
+        [Display(Name = "Tên đăng nhập")]
+        [Required(ErrorMessage ="Tên đăng nhập không được để trống ")]
         public string sta_username { get; set; }
 
         [StringLength(120)]
+        [Display(Name = "Mật khẩu")]
+        [Required(ErrorMessage ="Mật khẩu không được để trống")]
         public string sta_password { get; set; }
-
+        [Display(Name = "Giới tính")]
+        [Required(ErrorMessage ="Giới tính không được để trống")]
         public byte? sta_sex { get; set; }
-
+        [Display(Name = "Ngày sinh ")]
         public DateTime? sta_birthday { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Email")]
+        [Required(ErrorMessage ="Email không được để trống")]
         public string sta_email { get; set; }
 
+        [Display(Name = "Trạng thái")]
         public byte? sta_status { get; set; }
-
+            
         [Column(TypeName = "ntext")]
+        [Display(Name = "Giới thiệu bản thân")]
         public string sta_aboutme { get; set; }
 
         [StringLength(11)]
+        [Display(Name = "Số điện thoại")]
         public string sta_mobile { get; set; }
 
         [StringLength(20)]
+        [Display(Name = "Thẻ căn cước")]
         public string sta_identity_card { get; set; }
-
+        [Display(Name = "Ngày tạo thẻ")]
         public DateTime? sta_identity_card_date { get; set; }
-
+        [Display(Name = "Ngày tạo")]
         public DateTime? sta_created_date { get; set; }
 
         public int? department_id { get; set; }
@@ -72,8 +87,5 @@ namespace coderush.Areas.TTNhom_QLNS.Models
         public virtual group_role group_role { get; set; }
 
         public virtual position position { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ticket> tickets { get; set; }
     }
 }

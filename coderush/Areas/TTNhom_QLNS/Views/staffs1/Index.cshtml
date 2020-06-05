@@ -82,11 +82,11 @@
                                         <td>
                                             @Html.DisplayFor(modelItem => item.department.de_name)
                                         </td>
-
+                                        
                                         <td>
                                             @Html.DisplayFor(modelItem => item.position.pos_name)
                                         </td>
-
+                                        
                                         <td>
                                             @Html.DisplayFor(modelItem => item.sta_email)
                                         </td>
@@ -94,32 +94,25 @@
                                             @Html.DisplayFor(modelItem => item.sta_mobile)
                                         </td>
                                         <td>
-                                            @{
+                                            @{ 
                                                 var add = item.addresses.FirstOrDefault();
-                                                if (add != null)
+                                                if(add != null)
                                                 {
-                                                    string diachi = String.Concat(add.add_province, "-", add.add_district, "-", add.add_ward);
+                                                    string diachi = String.Concat(add.add_province, "-", add.add_district, "-", add.add_ward, "-", add.add_detail);
                                                     <p>@diachi</p>
                                                 }
                                             }
-
+                                            
                                         </td>
-
+                                      
                                         <td>
-                                            @if (item.sta_status == 1)
-                                            {
-                                                @Html.Raw("Hoạt động")
-                                            }
-                                            else
-                                            {
-                                                @Html.Raw("Khóa")
-                                            }
+                                            @Html.DisplayFor(modelItem => item.sta_status)
                                         </td>
-
+                                        
                                         <td>
                                             @Html.ActionLink("Edit", "Edit", new { id = item.sta_id }) |
                                             @Html.ActionLink("Details", "Details", new { id = item.sta_id }) |
-                                            @Html.ActionLink("Delete", "Delete", new { id = item.sta_id }, new { onclick = "return confirm('Are you sure?');" })
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.sta_id },new { onclick="return confirm('Are you sure?');"})
                                         </td>
                                     </tr>
                                 }

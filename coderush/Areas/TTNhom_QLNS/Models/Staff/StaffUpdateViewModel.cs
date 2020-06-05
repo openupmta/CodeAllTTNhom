@@ -6,7 +6,7 @@ using System.Web;
 
 namespace coderush.Areas.TTNhom_QLNS.Models.Staff
 {
-    public class StaffCreateViewModel
+    public class StaffUpdateViewModel
     {
         //Thong tin nhan sự
         public int sta_id { get; set; }
@@ -43,8 +43,5 @@ namespace coderush.Areas.TTNhom_QLNS.Models.Staff
         public int? wardID { get; set; }
 
         public string detail { get; set; }
-
-
-
     }
 }

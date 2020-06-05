@@ -198,8 +198,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\TTNhom_QLKS\Models\Login.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Controllers\BaseController.cs" />
+    <Compile Include="Areas\TTNhom_QLNS\Controllers\DepartmentsController.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Controllers\group_roleController.cs" />
-    <Compile Include="Areas\TTNhom_QLNS\Controllers\staffsController.cs" />
+    <Compile Include="Areas\TTNhom_QLNS\Controllers\PositionsController.cs" />
+    <Compile Include="Areas\TTNhom_QLNS\Controllers\StaffsController.cs" />
+    <Compile Include="Areas\TTNhom_QLNS\Controllers\staffsController1.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\address.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\customer.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\department.cs" />
@@ -207,12 +210,13 @@
     <Compile Include="Areas\TTNhom_QLNS\Models\dropdown.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\group_role.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\DBQLNSContext.cs" />
-    <Compile Include="Areas\TTNhom_QLNS\Models\Model1.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\ModelView\staffviewmodel.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\position.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\Province.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\staff.cs" />
+    <Compile Include="Areas\TTNhom_QLNS\Models\Staff\AddressViewModel.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\Staff\StaffCreateViewModel.cs" />
+    <Compile Include="Areas\TTNhom_QLNS\Models\Staff\StaffUpdateViewModel.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\sysdiagram.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\ticket.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\Ward.cs" />
@@ -8829,11 +8833,11 @@
     <Content Include="Areas\TTNhom_QLThuVien\Views\Category\Details.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\Category\Edit.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\Category\Create.cshtml" />
-    <Content Include="Areas\TTNhom_QLNS\Views\staffs\Create.cshtml" />
-    <Content Include="Areas\TTNhom_QLNS\Views\staffs\Delete.cshtml" />
-    <Content Include="Areas\TTNhom_QLNS\Views\staffs\Details.cshtml" />
-    <Content Include="Areas\TTNhom_QLNS\Views\staffs\Edit.cshtml" />
-    <Content Include="Areas\TTNhom_QLNS\Views\staffs\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\staffs1\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\staffs1\Delete.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\staffs1\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\staffs1\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\staffs1\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLKS\Views\web.config" />
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\scss\navs\_global.scss" />
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\scss\navs\_sidebar.scss" />
@@ -9004,6 +9008,19 @@
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Areas\TTNhom_QLKS\Views\Home\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLKS\Views\Login\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\Departments\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\Departments\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\Departments\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\Departments\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\Positions\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\Positions\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\Positions\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\Positions\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\Staffs\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\Staffs\Delete.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\Staffs\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\Staffs\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLNS\Views\Staffs\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -9100,6 +9117,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\TTNhom_QLKS\Views\Base\" />
     <Folder Include="Areas\TTNhom_QLKS\Views\Shared\" />
+    <Folder Include="Areas\TTNhom_QLNS\assest\Image\" />
     <Folder Include="Areas\TTNhom_QLNS\Views\Shared\" />
     <Folder Include="Areas\TTNhom_QLThuVien\Views\Shared\" />
   </ItemGroup>
@@ -9126,6 +9144,12 @@
     <EmbeddedResource Include="Migrations\201806010834011_initialdb.resx">
       <DependentUpon>201806010834011_initialdb.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{413F529C-1262-4716-83BF-5A2664131623}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

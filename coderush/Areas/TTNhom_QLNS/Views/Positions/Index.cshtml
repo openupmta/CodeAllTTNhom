@@ -1,19 +1,16 @@
-﻿@model IEnumerable<coderush.Areas.TTNhom_QLNS.Models.staff>
+﻿@model IEnumerable<coderush.Areas.TTNhom_QLNS.Models.position>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
 
-
-
-
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
             Bảng dữ liêu
-            <small>Danh sách nhân sự</small>
+            <small>chức vụ</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -28,9 +25,9 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Danh sách nhân viên </h3>
+                        <h3 class="box-title">Danh sách chức vụ </h3>
                         <button type="button" class="btn btn-warning" style="float:right">
-                            @Html.ActionLink("Thêm nhân sự ", "Create", "staffs")
+                            @Html.ActionLink("Thêm chức vụ ", "Create", "Positions")
                         </button>
 
                     </div>
@@ -40,73 +37,34 @@
                             <thead>
                                 <tr>
                                     <th>
-                                        Mã NV
-                                    </th>
-                                    <th>
-                                        Họ và tên
-                                    </th>
-                                    <th>
-                                        Phòng ban
-                                    </th>
-                                    <th>
-                                        Vị trí
-                                    </th>
-                                    <th>
-                                        Email
-                                    </th>
-                                    <th>
-                                        SĐT
-                                    </th>
-                                    <th>
-                                        Địa chỉ
-                                    </th>
-                                    <th>
-                                        Trạng thái
-                                    </th>
-                                    <th>
-                                        Hành động
+                                        @Html.DisplayNameFor(model => model.pos_name)
                                     </th>
 
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.pos_description)
+                                    </th>
+
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.pos_status)
+                                    </th>
+
+                                    <th>Hành động</th>
                                 </tr>
                             </thead>
                             <tbody>
+
                                 @foreach (var item in Model)
                                 {
                                     <tr>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.sta_code)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.sta_fullname)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.department.de_name)
+                                            @Html.DisplayFor(modelItem => item.pos_name)
                                         </td>
 
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.position.pos_name)
-                                        </td>
-
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.sta_email)
+                                            @Html.DisplayFor(modelItem => item.pos_description)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.sta_mobile)
-                                        </td>
-                                        <td>
-                                            @{
-                                                var add = item.addresses.FirstOrDefault();
-                                                if (add != null)
-                                                {
-                                                    string diachi = String.Concat(add.add_province, "-", add.add_district, "-", add.add_ward);
-                                                    <p>@diachi</p>
-                                                }
-                                            }
-
-                                        </td>
-
-                                        <td>
-                                            @if (item.sta_status == 1)
+                                            @if (item.pos_status == 1)                                                                                                                                   
                                             {
                                                 @Html.Raw("Hoạt động")
                                             }
@@ -115,11 +73,10 @@
                                                 @Html.Raw("Khóa")
                                             }
                                         </td>
-
                                         <td>
-                                            @Html.ActionLink("Edit", "Edit", new { id = item.sta_id }) |
-                                            @Html.ActionLink("Details", "Details", new { id = item.sta_id }) |
-                                            @Html.ActionLink("Delete", "Delete", new { id = item.sta_id }, new { onclick = "return confirm('Are you sure?');" })
+                                            @Html.ActionLink("Sửa", "Edit", new { id = item.pos_id }) |
+                                            @Html.ActionLink("Xem", "Details", new { id = item.pos_id }) |
+                                            @Html.ActionLink("Xóa", "Delete", new { id = item.pos_id }, new { onclick = "return confirm('Are you sure?');" })
                                         </td>
                                     </tr>
                                 }
@@ -193,6 +150,3 @@
             })
         })</script>
 }
-
-
-
