@@ -62,11 +62,11 @@
                                             </td>
                                             <td>
                                                 <i class="fa fa-info-circle"></i> &nbsp;
-                                                @Html.ActionLink("Thông tin", "Details", new { id = item.MaTheLoai }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                @Html.ActionLink("Xem", "Details", new { id = item.MaTheLoai }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <i class="fa fa-edit"></i> &nbsp;
-                                                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.MaTheLoai }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                @Html.ActionLink("Sửa", "Edit", new { id = item.MaTheLoai }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <i class="far fa-trash-alt"></i> &nbsp;
-                                                @Html.ActionLink("Xóa bỏ", "Delete", new { id = item.MaTheLoai }, new { onclick = "return confirm('Chắc chắn muốn xoá?');" })
+                                                @Html.ActionLink("Xóa", "Delete", new { id = item.MaTheLoai }, new { onclick = "return confirm('Chắc chắn muốn xoá?');" })
                                             </td>
                                         </tr>
                                     }

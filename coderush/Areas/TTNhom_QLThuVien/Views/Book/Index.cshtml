@@ -1,9 +1,9 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Adminlte.cshtml";
-}
+﻿@model IEnumerable<coderush.Areas.TTNhom_QLThuVien.Models.Sach>
 
+@{
+                ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_Adminlte.cshtml";
+}
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -27,17 +27,75 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title" style="color:blue"><b>KHO SÁCH</b></h3>
+                        <i class="fa fa-hand-o-right"></i>
+                        <h3 class="box-title">QUẢN LÝ SÁCH</h3>
 
+                        <button type="button" class="btn btn-warning" style="float:right; margin-left:10px">
+                            <i class="fa fa-plus-square"></i> &nbsp;
+                            @Html.ActionLink("Thêm mới", "Create", "Book")
+                        </button>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
+                        <div class="box-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã sách</th>
+                                        <th>Tên sách</th>
+                                        <th>Tác giả</th>
+                                        <th>Thể loại</th>
+                                        <th>Nhà xuất bản</th>
+                                        <th>Năm xuất bản</th>
+                                        <th>Tình trạng</th>
+                                        <th>Chức năng</th>
 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.MaSach)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.TenSach)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.TacGia.TenTacGia)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.TheLoai.TenTheLoai)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NhaXuatBan.TenNXB)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NamXuatBan)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.TinhTrang)
+                                            </td>
+                                            <td>
+                                                <i class="fa fa-info-circle"></i> &nbsp;
+                                                @Html.ActionLink("Xem", "Details", new { id = item.MaSach }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <i class="fa fa-edit"></i> &nbsp;
+                                                @Html.ActionLink("Sửa", "Edit", new { id = item.MaSach }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <i class="far fa-trash-alt"></i> &nbsp;
+                                                @Html.ActionLink("Xóa", "Delete", new { id = item.MaSach }, new { onclick = "return confirm('Chắc chắn muốn xoá?');" })
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
                     </div>
                     <!-- /.box-body -->
                 </div>
                 <!-- /.box -->
-
             </div>
             <!-- /.col -->
         </div>
@@ -68,6 +126,7 @@
     <![endif]-->
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="~/Areas/TTNhom_QLThuVien/assets/mystyle.css">
 }
 
 @section Scripts{
@@ -76,7 +135,7 @@
     <!-- Bootstrap 3.3.7 -->
     <script src="~/Content/adminlte/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- DataTables -->
-    <script src="~/Content/adminlte/components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/Areas/TTNhom_QLThuVien/assets/myscript.js"></script>
     <script src="~/Content/adminlte/components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <!-- Slimscroll -->
     <script src="~/Content/adminlte/components/jquery-slimscroll/jquery.slimscroll.min.js"></script>

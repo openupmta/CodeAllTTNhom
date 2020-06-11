@@ -1,0 +1,150 @@
+﻿@model coderush.Areas.TTNhom_QLThuVien.Models.DocGia
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Adminlte.cshtml";
+}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            <b>
+                QUẢN LÝ THƯ VIỆN
+                <small>Học viện Kỹ thuật Quân sự</small>
+            </b>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Data tables</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <i class="fa fa-hand-o-right"></i>
+                        <h3 class="box-title">QUẢN LÝ ĐỘC GIẢ&nbsp;&nbsp;</h3>
+                        <i class="fa fa-angle-double-right"></i>
+                        <h3 class="box-title">Chỉnh sửa thông tin Độc giả</h3>
+                        <button type="button" class="btn btn-warning" style="float:right">
+                            <a class="fa fa-th-list"></a> &nbsp;
+                            @Html.ActionLink("Danh sách", "Index")
+                        </button>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Mã độc giả</label>
+                                <input type="text" class="form-control" name="MaDocGia" placeholder="Nhập mã độc giả" value=" @Html.DisplayFor(model => model.MaDocGia)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Tên độc giả</label>
+                                <input type="text" class="form-control" name="TenDocGia" placeholder="Nhập tên độc giả" value=" @Html.DisplayFor(model => model.TenDocGia)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Đơn vị</label>
+                                <input type="text" class="form-control" name="DonVi" placeholder="Nhập đơn vị" value=" @Html.DisplayFor(model => model.DonVi)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Số điện thoại</label>
+                                <input type="text" class="form-control" name="SoDT" placeholder="Nhập số điện thoại" value=" @Html.DisplayFor(model => model.SoDT)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Địa chỉ</label>
+                                <input type="text" class="form-control" name="DiaChi" placeholder="Nhập địa chỉ" value=" @Html.DisplayFor(model => model.DiaChi)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">CMT/CCDC</label>
+                                <input type="text" class="form-control" name="CMT" placeholder="Nhập số CMT/CCDC" value=" @Html.DisplayFor(model => model.CMT)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Mã số thẻ</label>
+                                <input type="text" class="form-control" name="MaSoThe" placeholder="Mã số thẻ" value=" @Html.DisplayFor(model => model.MaSoThe)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ngày cấp thẻ</label>
+                                <input type="text" class="form-control" name="NgayCap" placeholder="Ngày cấp thẻ thư viện" value="@Html.Raw(Model.TheThuVien.NgayCap.Value.ToShortDateString())">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ngày hết hạn thẻ</label>
+                                <input type="text" class="form-control" name="NgayHetHan" placeholder="Này hết hạn thẻ thư viện" value="@Html.Raw(Model.TheThuVien.NgayHetHan.Value.ToShortDateString())">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ghi chú</label>
+                                <input type="text" class="form-control" name="GhiChu" placeholder="Thêm ghi chú" value="@Html.DisplayFor(model=>model.TheThuVien.GhiChu)">
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary"><a class="fa fa-save"></a> &nbsp;Lưu lại</button>
+                        </div>
+
+                    }
+
+
+                </div>
+
+            </div>
+            <!--/.col -->
+
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+
+@section Styles{
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="~/Content/adminlte/components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/adminlte/components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/Content/adminlte/components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/adminlte/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="~/Content/adminlte/dist/css/skins/_all-skins.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="~/Areas/TTNhom_QLThuVien/assets/mystyle.css">
+}
+
+
+@section Scripts{
+    <!-- jQuery 3 -->
+    <script src="~/Content/adminlte/components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="~/Content/adminlte/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Content/adminlte/components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Content/adminlte/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Content/adminlte/dist/js/demo.js"></script>
+}
+
+
+
+

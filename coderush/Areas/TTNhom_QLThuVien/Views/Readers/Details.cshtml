@@ -1,9 +1,9 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@model coderush.Areas.TTNhom_QLThuVien.Models.DocGia
+
+@{
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
-
-
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -27,21 +27,103 @@
                 <div class="box">
                     <div class="box-header">
                         <i class="fa fa-hand-o-right"></i>
-                        <h3 class="box-title">QUẢN LÝ THỂ LOẠI&nbsp;&nbsp;</h3>
+                        <h3 class="box-title">QUẢN LÝ ĐỘC GIẢ&nbsp;&nbsp;</h3>
                         <i class="fa fa-angle-double-right"></i>
-                        <h3 class="box-title">Xoá Thể loại</h3>
-
-
-                        <button type="button" class="btn btn-warning" style="float:right">
-                            <a class="fa fa-th-list"></a> &nbsp;
-                            @Html.ActionLink("Danh sách", "Index")
-                        </button>
+                        <h3 class="box-title">Thông tin Độc giả</h3>
+                        <div style="float:right">
+                            <button type="button" class="btn btn-success">
+                                <i class="fa fa-print"></i> &nbsp;
+                                @Html.ActionLink("Xuất phiếu", "ExportToExcel", new { id = Model.MaDocGia })
+                            </button>
+                            <button type="button" class="btn btn-warning">
+                                <a class="fa fa-edit"></a> &nbsp;
+                                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaDocGia })
+                            </button>
+                            <button type="button" class="btn btn-warning" style="margin-right: auto">
+                                <a class="fa fa-th-list"></a> &nbsp;
+                                @Html.ActionLink("Danh sách", "Index")
+                            </button>
+                        </div>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <h4 style="color:crimson"><i class="fas fa-exclamation-circle"></i>&nbsp;&nbsp;Hiện tại không thể xoá Thể loại này, vui lòng thử lại sau.</h4>
+                        <dl class="dl-horizontal">
+                            <dt>
+                                Mã độc giả:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.MaDocGia)
+                            </dd>
+
+                            <dt>
+                                Tên độc giả:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TenDocGia)
+                            </dd>
+
+                            <dt>
+                                Đơn vị:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DonVi)
+                            </dd>
+
+                            <dt>
+                                Số điện thoại:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.SoDT)
+                            </dd>
+
+                            <dt>
+                                CMT/CCDC:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CMT)
+                            </dd>
+
+                            <dt>
+                                Mã số thẻ:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.MaSoThe)
+                            </dd>
+
+                            <dt>
+                                Ngày cấp thẻ:
+                            </dt>
+
+                            <dd>
+                                @Html.Raw(Model.TheThuVien.NgayCap.Value.ToShortDateString())
+                            </dd>
+
+                            <dt>
+                                Ngày hết hạn thẻ:
+                            </dt>
+
+                            <dd>
+                                @Html.Raw(Model.TheThuVien.NgayHetHan.Value.ToShortDateString())
+                            </dd>
+
+                            <dt>
+                                Ghi chú:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TheThuVien.GhiChu)
+                            </dd>
+                        </dl>
                     </div>
+
                     <!-- /.box-body -->
+
                 </div>
                 <!-- /.box -->
 
@@ -108,4 +190,5 @@
             })
         })</script>
 }
+
 

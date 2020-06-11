@@ -80,3 +80,30 @@ thead {
     color: firebrick;
     font-size: 15px;
 }
+
+.combobox {
+    float:left;
+    height: 32px;
+    width: 222px;
+}
+
+.note {
+    background-color:floralwhite;
+    float:left;
+    height: 32px;
+    width: 410px;
+    color: crimson;
+    text-indent: 25px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.btn-add {
+    height: 32px;
+    width: 130px;
+    text-align: left;
+}
+
+

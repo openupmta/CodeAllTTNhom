@@ -1,9 +1,12 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@model coderush.Areas.TTNhom_QLThuVien.Models.TacGia
+
+@{
+    ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
 
 
+<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -27,32 +30,61 @@
                 <div class="box">
                     <div class="box-header">
                         <i class="fa fa-hand-o-right"></i>
-                        <h3 class="box-title">QUẢN LÝ THỂ LOẠI&nbsp;&nbsp;</h3>
+                        <h3 class="box-title">QUẢN LÝ TÁC GIẢ&nbsp;&nbsp;</h3>
                         <i class="fa fa-angle-double-right"></i>
-                        <h3 class="box-title">Xoá Thể loại</h3>
-
-
+                        <h3 class="box-title">Chỉnh sửa thông tin Tác giả</h3>
                         <button type="button" class="btn btn-warning" style="float:right">
                             <a class="fa fa-th-list"></a> &nbsp;
                             @Html.ActionLink("Danh sách", "Index")
                         </button>
                     </div>
                     <!-- /.box-header -->
-                    <div class="box-body">
-                        <h4 style="color:crimson"><i class="fas fa-exclamation-circle"></i>&nbsp;&nbsp;Hiện tại không thể xoá Thể loại này, vui lòng thử lại sau.</h4>
-                    </div>
-                    <!-- /.box-body -->
+                    <!-- form start -->
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="box-body">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-dangter" })
+                            @Html.HiddenFor(model => model.MaTacGia)
+
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Mã tác giả</label>
+                                <input type="text" class="form-control" name="MaTacGia" placeholder="Nhập mã tác giả" value=" @Html.DisplayFor(model => model.MaTacGia)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Tên tác giả</label>
+                                <input type="text" class="form-control" name="TenTacGia" placeholder="Nhập tên tác giả" value=" @Html.DisplayFor(model => model.TenTacGia)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ghi chú</label>
+                                <input type="text" class="form-control" name="GhiChu" placeholder="Nhập ghi chú cho tác giả" value=" @Html.DisplayFor(model => model.GhiChu)">
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary"><a class="fa fa-save"></a> &nbsp;Lưu lại</button>
+                        </div>
+
+                    }
+
+
                 </div>
-                <!-- /.box -->
 
             </div>
-            <!-- /.col -->
+            <!--/.col -->
+
         </div>
         <!-- /.row -->
     </section>
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
+
+
 @section Styles{
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="~/Content/adminlte/components/bootstrap/dist/css/bootstrap.min.css">
@@ -60,8 +92,6 @@
     <link rel="stylesheet" href="~/Content/adminlte/components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="~/Content/adminlte/components/Ionicons/css/ionicons.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="~/Content/adminlte/components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/Content/adminlte/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -78,34 +108,20 @@
     <link rel="stylesheet" href="~/Areas/TTNhom_QLThuVien/assets/mystyle.css">
 }
 
+
 @section Scripts{
     <!-- jQuery 3 -->
     <script src="~/Content/adminlte/components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.3.7 -->
     <script src="~/Content/adminlte/components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- DataTables -->
-    <script src="~/Content/adminlte/components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="~/Content/adminlte/components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <!-- Slimscroll -->
-    <script src="~/Content/adminlte/components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
     <!-- FastClick -->
     <script src="~/Content/adminlte/components/fastclick/lib/fastclick.js"></script>
     <!-- AdminLTE App -->
     <script src="~/Content/adminlte/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/Content/adminlte/dist/js/demo.js"></script>
-    <!-- page script -->
-    <script>
-        $(function () {
-            $('#example1').DataTable()
-            $('#example2').DataTable({
-                'paging': true,
-                'lengthChange': false,
-                'searching': false,
-                'ordering': true,
-                'info': true,
-                'autoWidth': false
-            })
-        })</script>
 }
+
+
+
 
