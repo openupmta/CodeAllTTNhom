@@ -1,6 +1,8 @@
-﻿@model coderush.Areas.TTNhom_QLThuVien.Models.TheLoai
+﻿@model coderush.Areas.TTNhom_QLThuVien.Models.DocGia
 
 @{
+    /**/
+
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
@@ -28,9 +30,9 @@
                 <div class="box">
                     <div class="box-header">
                         <i class="fa fa-hand-o-right"></i>
-                        <h3 class="box-title">QUẢN LÝ THỂ LOẠI&nbsp;&nbsp;</h3>
+                        <h3 class="box-title">QUẢN LÝ ĐỘC GIẢ&nbsp;&nbsp;</h3>
                         <i class="fa fa-angle-double-right"></i>
-                        <h3 class="box-title">Thêm Thể loại</h3>
+                        <h3 class="box-title">Thêm Độc giả</h3>
                         <button type="button" class="btn btn-warning" style="float:right">
                             <a class="fa fa-th-list"></a> &nbsp;
                             @Html.ActionLink("Danh sách", "Index")
@@ -38,24 +40,51 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    @using (Html.BeginForm("Create", "Category", FormMethod.Post))
+                    @using (Html.BeginForm("Create", "Readers", FormMethod.Post))
                     {
                         @Html.AntiForgeryToken()
 
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Mã thể loại</label>
-                                <input type="text" class="form-control" name="MaTheLoai" placeholder="Nhập mã thể loại" value=" @Html.DisplayFor(model => model.MaTheLoai)">
+                                <label for="exampleInputEmail1">Mã độc giả</label>
+                                <input type="text" class="form-control" name="MaDocGia" placeholder="Nhập mã độc giả" value=" @Html.DisplayFor(model => model.MaDocGia)">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Tên thể loại</label>
-                                <input type="text" class="form-control" name="TenTheLoai" placeholder="Nhập tên thể loại" value=" @Html.DisplayFor(model => model.TenTheLoai)">
+                                <label for="exampleInputEmail1">Tên độc giả</label>
+                                <input type="text" class="form-control" name="TenDocGia" placeholder="Nhập tên độc giả" value=" @Html.DisplayFor(model => model.TenDocGia)">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Mô tả</label>
-                                <input type="text" class="form-control" name="GhiChu" placeholder="Nhập mô tả cho thể loại" value=" @Html.DisplayFor(model => model.GhiChu)">
+                                <label for="exampleInputEmail1">Đơn vị</label>
+                                <input type="text" class="form-control" name="DonVi" placeholder="Nhập đơn vị" value=" @Html.DisplayFor(model => model.DonVi)">
                             </div>
-
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Số điện thoại</label>
+                                <input type="text" class="form-control" name="SoDT" placeholder="Nhập số điện thoại" value=" @Html.DisplayFor(model => model.SoDT)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Địa chỉ</label>
+                                <input type="text" class="form-control" name="DiaChi" placeholder="Nhập địa chỉ" value=" @Html.DisplayFor(model => model.DiaChi)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">CMT/CCDC</label>
+                                <input type="text" class="form-control" name="CMT" placeholder="Nhập số CMT/CCDC" value=" @Html.DisplayFor(model => model.CMT)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Mã số thẻ</label>
+                                <input type="text" class="form-control" name="MaSoThe" placeholder="Mã số thẻ" value=" @Html.DisplayFor(model => model.MaSoThe)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ngày cấp thẻ</label>
+                                <input type="text" class="form-control" name="NgayCap" placeholder="Ngày cấp thẻ thư viện" value="@DateTime.Now.ToShortDateString()">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ngày hết hạn thẻ</label>
+                                <input type="text" class="form-control" name="NgayHetHan" placeholder="Này hết hạn thẻ thư viện" value="@DateTime.Now.AddYears(1).ToShortDateString()">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ghi chú</label>
+                                <input type="text" class="form-control" name="GhiChu" placeholder="Thêm ghi chú" value="@Html.DisplayFor(model=>model.TheThuVien.GhiChu)">
+                            </div>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">

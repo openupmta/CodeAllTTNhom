@@ -1,9 +1,11 @@
-﻿@model coderush.Areas.TTNhom_QLThuVien.Models.TheLoai
+﻿@model coderush.Areas.TTNhom_QLThuVien.Models.NhaXuatBan
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
+
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -28,9 +30,9 @@
                 <div class="box">
                     <div class="box-header">
                         <i class="fa fa-hand-o-right"></i>
-                        <h3 class="box-title">QUẢN LÝ THỂ LOẠI&nbsp;&nbsp;</h3>
+                        <h3 class="box-title">QUẢN LÝ NHÀ XUẤT BẢN&nbsp;&nbsp;</h3>
                         <i class="fa fa-angle-double-right"></i>
-                        <h3 class="box-title">Thêm Thể loại</h3>
+                        <h3 class="box-title">Chỉnh sửa thông tin Nhà xuất bản</h3>
                         <button type="button" class="btn btn-warning" style="float:right">
                             <a class="fa fa-th-list"></a> &nbsp;
                             @Html.ActionLink("Danh sách", "Index")
@@ -38,29 +40,45 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    @using (Html.BeginForm("Create", "Category", FormMethod.Post))
+                    @using (Html.BeginForm())
                     {
                         @Html.AntiForgeryToken()
 
                         <div class="box-body">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Mã thể loại</label>
-                                <input type="text" class="form-control" name="MaTheLoai" placeholder="Nhập mã thể loại" value=" @Html.DisplayFor(model => model.MaTheLoai)">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Tên thể loại</label>
-                                <input type="text" class="form-control" name="TenTheLoai" placeholder="Nhập tên thể loại" value=" @Html.DisplayFor(model => model.TenTheLoai)">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Mô tả</label>
-                                <input type="text" class="form-control" name="GhiChu" placeholder="Nhập mô tả cho thể loại" value=" @Html.DisplayFor(model => model.GhiChu)">
-                            </div>
 
+                            @Html.ValidationSummary(true, "", new { @class = "text-dangter" })
+                            @Html.HiddenFor(model => model.MaNXB)
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Mã NXB</label>
+                                <input type="text" class="form-control" name="MaNXB" placeholder="Nhập mã NXB" value=" @Html.DisplayFor(model => model.MaNXB)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Tên NXB</label>
+                                <input type="text" class="form-control" name="TenNXB" placeholder="Nhập tên NXB" value=" @Html.DisplayFor(model => model.TenNXB)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Địa chỉ</label>
+                                <input type="text" class="form-control" name="DiaChi" placeholder="Nhập địa chỉ NXB" value=" @Html.DisplayFor(model => model.DiaChi)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Điện thoại</label>
+                                <input type="text" class="form-control" name="SoDT" placeholder="Nhập số điện thoại của NXB" value=" @Html.DisplayFor(model => model.SoDT)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="text" class="form-control" name="Email" placeholder="Nhập email của NXB" value=" @Html.DisplayFor(model => model.Email)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ghi chú</label>
+                                <input type="text" class="form-control" name="GhiChu" placeholder="Thêm ghi chú cho NXB" value=" @Html.DisplayFor(model => model.GhiChu)">
+                            </div>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary"><a class="fa fa-plus-square"></a> &nbsp;Tạo mới</button>
+                            <button type="submit" class="btn btn-primary"><a class="fa fa-save"></a> &nbsp;Lưu lại</button>
                         </div>
+
                     }
 
 
@@ -114,8 +132,6 @@
     <!-- AdminLTE for demo purposes -->
     <script src="~/Content/adminlte/dist/js/demo.js"></script>
 }
-
-
 
 
 

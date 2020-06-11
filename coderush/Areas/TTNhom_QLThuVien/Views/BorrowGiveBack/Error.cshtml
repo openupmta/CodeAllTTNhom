@@ -1,16 +1,17 @@
-﻿@model IEnumerable<coderush.Areas.TTNhom_QLThuVien.Models.Sach>
-
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
+
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Bảng dữ liêu
-            <small>Nhóm khách hàng</small>
+            <b>
+                QUẢN LÝ THƯ VIỆN
+                <small>Học viện Kỹ thuật Quân sự</small>
+            </b>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -25,63 +26,20 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Danh sách nhóm quyền</h3>
-                        <button type="button" class="btn btn-warning" style="float:right">
-                            @Html.ActionLink("Thêm nhóm quyền", "Create", "group_role")
-                        </button>
+                        <i class="fa fa-hand-o-right"></i>
+                        <h3 class="box-title">QUẢN LÝ MƯỢN-TRẢ&nbsp;&nbsp;</h3>
+                        <i class="fa fa-angle-double-right"></i>
+                        <h3 class="box-title">Xoá thông tin mượn-trả</h3>
 
+
+                        <button type="button" class="btn btn-warning" style="float:right">
+                            <a class="fa fa-th-list"></a> &nbsp;
+                            @Html.ActionLink("Danh sách", "Index")
+                        </button>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <table id="example2" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        Tên nhóm
-                                    </th>
-                                    <th>
-                                        Mô tả nhóm
-                                    </th>
-                                    <th>
-                                        Trạng thái
-                                    </th>
-                                    <th>
-                                        Hành động
-                                    </th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.MaSach)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.TenSach)
-                                        </td>
-                                        @*<td>
-                                            @if (item.gr_status == 0)
-                                            {
-                                                <p>Khóa </p>
-                                            }
-                                            else
-                                            {
-                                                <p>Hoạt động</p>
-                                            }
-                                        </td>
-                                        <td>
-                                            @Html.ActionLink("Sửa", "Edit", new { id = item.gr_id }) |
-                                            @Html.ActionLink("Xem", "Details", new { id = item.gr_id }) |
-                                            @Html.ActionLink("Xóa", "Delete", new { id = item.gr_id }, new { onclick = "return confirm('Are you sure?');" })
-                                        </td>*@
-                                    </tr>
-                                }
-
-                            </tbody>
-
-                        </table>
+                        <h4 style="color:crimson"><i class="fas fa-exclamation-circle"></i>&nbsp;&nbsp;Hiện tại không thể xoá thông tin mượn-trả, vui lòng thử lại sau.</h4>
                     </div>
                     <!-- /.box-body -->
                 </div>
@@ -117,6 +75,7 @@
     <![endif]-->
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="~/Areas/TTNhom_QLThuVien/assets/mystyle.css">
 }
 
 @section Scripts{

@@ -52,6 +52,15 @@
     <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="ClosedXML, Version=0.95.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.3\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -60,6 +69,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -118,6 +133,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -226,11 +242,9 @@
     <Compile Include="Areas\TTNhom_QLThuVien\Controllers\BorrowGiveBackController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Controllers\CategoryController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Controllers\HomeController.cs" />
-    <Compile Include="Areas\TTNhom_QLThuVien\Controllers\NewsController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Controllers\PublishingCompanyController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Controllers\ReadersController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Controllers\RulesController.cs" />
-    <Compile Include="Areas\TTNhom_QLThuVien\Controllers\SachController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Controllers\WorkingScheduleController.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Models\DBQLTVContext.cs" />
     <Compile Include="Areas\TTNhom_QLThuVien\Models\DocGia.cs" />
@@ -1896,6 +1910,9 @@
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\vendor\jquery\jquery.min.js" />
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\vendor\jquery\jquery.slim.js" />
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Areas\TTNhom_QLThuVien\assets\myscript.js" />
+    <Content Include="Areas\TTNhom_QLThuVien\assets\mystyle.css" />
+    <Content Include="Areas\TTNhom_QLThuVien\images\background.png" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\img\bootstrap-colorpicker\alpha-horizontal.png" />
@@ -8819,14 +8836,11 @@
     <Content Include="Areas\TTNhom_QLNS\Views\group_role\Edit.cshtml" />
     <Content Include="Areas\TTNhom_QLNS\Views\group_role\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\web.config" />
-    <Content Include="Areas\TTNhom_QLThuVien\Views\Sach\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\Home\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\Rules\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\WorkingSchedule\Index.cshtml" />
-    <Content Include="Areas\TTNhom_QLThuVien\Views\News\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\Book\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\BorrowGiveBack\Index.cshtml" />
-    <Content Include="Areas\TTNhom_QLThuVien\Views\Readers\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\Author\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\PublishingCompany\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\Category\Index.cshtml" />
@@ -9003,6 +9017,33 @@
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Areas\TTNhom_QLKS\Views\Home\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLKS\Views\Login\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Category\Error.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\PublishingCompany\Error.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\PublishingCompany\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\PublishingCompany\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\PublishingCompany\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Book\Error.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Book\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Author\Error.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Author\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Author\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Author\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Book\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Book\AddAuthor.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Book\AddCategory.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Book\AddPublishingCompany.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Readers\Index.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Readers\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Readers\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Readers\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Book\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\BorrowGiveBack\Details.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\BorrowGiveBack\Edit.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\BorrowGiveBack\Create.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\BorrowGiveBack\Index2.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\BorrowGiveBack\Index3.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\BorrowGiveBack\Error.cshtml" />
+    <Content Include="Areas\TTNhom_QLThuVien\Views\Readers\Error.cshtml" />
     <Content Include="Areas\TTNhom_QLNS\Views\Departments\Create.cshtml" />
     <Content Include="Areas\TTNhom_QLNS\Views\Departments\Details.cshtml" />
     <Content Include="Areas\TTNhom_QLNS\Views\Departments\Edit.cshtml" />

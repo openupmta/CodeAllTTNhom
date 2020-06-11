@@ -1,4 +1,4 @@
-﻿@model coderush.Areas.TTNhom_QLThuVien.Models.TheLoai
+﻿@model coderush.Areas.TTNhom_QLThuVien.Models.TacGia
 
 @{
     ViewBag.Title = "Create";
@@ -28,9 +28,9 @@
                 <div class="box">
                     <div class="box-header">
                         <i class="fa fa-hand-o-right"></i>
-                        <h3 class="box-title">QUẢN LÝ THỂ LOẠI&nbsp;&nbsp;</h3>
+                        <h3 class="box-title">QUẢN LÝ TÁC GIẢ&nbsp;&nbsp;</h3>
                         <i class="fa fa-angle-double-right"></i>
-                        <h3 class="box-title">Thêm Thể loại</h3>
+                        <h3 class="box-title">Thêm Tác giả</h3>
                         <button type="button" class="btn btn-warning" style="float:right">
                             <a class="fa fa-th-list"></a> &nbsp;
                             @Html.ActionLink("Danh sách", "Index")
@@ -38,24 +38,23 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    @using (Html.BeginForm("Create", "Category", FormMethod.Post))
+                    @using (Html.BeginForm("Create", "Author", FormMethod.Post))
                     {
                         @Html.AntiForgeryToken()
 
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Mã thể loại</label>
-                                <input type="text" class="form-control" name="MaTheLoai" placeholder="Nhập mã thể loại" value=" @Html.DisplayFor(model => model.MaTheLoai)">
+                                <label for="exampleInputEmail1">Mã tác giả</label>
+                                <input type="text" class="form-control" name="MaTacGia" placeholder="Nhập mã tác giả" value=" @Html.DisplayFor(model => model.MaTacGia)">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Tên thể loại</label>
-                                <input type="text" class="form-control" name="TenTheLoai" placeholder="Nhập tên thể loại" value=" @Html.DisplayFor(model => model.TenTheLoai)">
+                                <label for="exampleInputEmail1">Tên tác giả</label>
+                                <input type="text" class="form-control" name="TenTacGia" placeholder="Nhập tên tác giả" value=" @Html.DisplayFor(model => model.TenTacGia)">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Mô tả</label>
-                                <input type="text" class="form-control" name="GhiChu" placeholder="Nhập mô tả cho thể loại" value=" @Html.DisplayFor(model => model.GhiChu)">
+                                <label for="exampleInputEmail1">Ghi chú</label>
+                                <input type="text" class="form-control" name="GhiChu" placeholder="Nhập ghi chú cho tác giả" value=" @Html.DisplayFor(model => model.GhiChu)">
                             </div>
-
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">

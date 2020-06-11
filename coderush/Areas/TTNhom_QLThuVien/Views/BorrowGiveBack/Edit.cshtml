@@ -1,10 +1,9 @@
-﻿@model coderush.Areas.TTNhom_QLThuVien.Models.TheLoai
+﻿@model coderush.Areas.TTNhom_QLThuVien.Models.MuonTraSach
 
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
-
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -30,9 +29,9 @@
                 <div class="box">
                     <div class="box-header">
                         <i class="fa fa-hand-o-right"></i>
-                        <h3 class="box-title">QUẢN LÝ THỂ LOẠI&nbsp;&nbsp;</h3>
+                        <h3 class="box-title">QUẢN LÝ MƯỢN-TRẢ&nbsp;&nbsp;</h3>
                         <i class="fa fa-angle-double-right"></i>
-                        <h3 class="box-title">Chỉnh sửa thông tin Thể loại</h3>
+                        <h3 class="box-title">Chỉnh sửa thông tin Mượn-Trả</h3>
                         <button type="button" class="btn btn-warning" style="float:right">
                             <a class="fa fa-th-list"></a> &nbsp;
                             @Html.ActionLink("Danh sách", "Index")
@@ -45,32 +44,56 @@
                         @Html.AntiForgeryToken()
 
                         <div class="box-body">
-
-                            @Html.ValidationSummary(true, "", new { @class = "text-dangter" })
-                            @Html.HiddenFor(model => model.MaTheLoai)
-
-
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Mã thể loại</label>
-                                <input type="text" class="form-control" name="MaTheLoai" placeholder="Nhập mã thể loại" value=" @Html.DisplayFor(model => model.MaTheLoai)">
+                                <label for="exampleInputEmail1">Mã mượn trả</label>
+                                <input type="text" class="form-control" name="MaMuonTra" placeholder="Nhập mã mượn trả" value=" @Html.DisplayFor(model => model.MaMuonTra)">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Tên thể loại</label>
-                                <input type="text" class="form-control" name="TenTheLoai" placeholder="Nhập tên thể loại" value=" @Html.DisplayFor(model => model.TenTheLoai)">
+                                <label for="exampleInputEmail1">Mã số thẻ</label><br />
+                                @Html.DropDownList("MaSoThe", (IEnumerable<SelectListItem>)ViewBag.CardList, "-- Mã số thẻ --", new { @class = "combobox" })
+                                <br />
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Mô tả thể loại</label>
-                                <input type="text" class="form-control" name="GhiChu" placeholder="Thêm mô tả cho thể loại" value=" @Html.DisplayFor(model => model.GhiChu)">
+                                <label for="exampleInputEmail1">Sách mượn</label><br />
+                                <input type="text" class="form-control" name="MaSach" placeholder="Nhập mã sách" value=" @Html.DisplayFor(model => model.MaSach)">
+                                @Html.DropDownList("MaSach", (IEnumerable<SelectListItem>)ViewBag.BookList, "-- Sách mượn --", new { @class = "combobox" })
+                                <br />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ngày mượn sách</label><br />
+                                <input type="text" class="form-control" name="NgayMuonSach" placeholder="Nhập ngày mượn sách" value=" @Html.Raw(Model.NgayMuonSach.Value.ToShortDateString())">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Hạn trả sách</label><br />
+                                <input type="text" class="form-control" name="HanTraSach" placeholder="Nhập hạn trả sách" value=" @Html.Raw(Model.HanTraSach.Value.ToShortDateString())">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Tình trạng khi mượn</label><br />
+                                <input type="text" class="form-control" name="TinhTrangKhiMuon" placeholder="Nhập tình trạng khi mượn" value=" @Html.DisplayFor(model => model.TinhTrangKhiMuon)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Đã trả</label><br />
+                                <input type="text" class="form-control" name="DaTra" placeholder="Đã trả hay chưa" value=" @Html.Raw(Model.DaTra.Value)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ngày trả sách</label><br />
+                                <input type="text" class="form-control" name="NgayTraSach" placeholder="Nhập ngày trả sách" value="@if (Model.DaTra == true) { @Html.Raw(Model.NgayTraSach.Value.ToShortDateString())} else { @Html.Raw("")} ">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Tình trạng khi trả</label><br />
+                                <input type="text" class="form-control" name="TinhTrangKhiTra" placeholder="Nhập tình trạng khi trả" value="@if (Model.DaTra == true) { @Html.DisplayFor(model=>model.TinhTrangKhiTra)} else { @Html.Raw("")} ">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Ghi chú</label><br />
+                                <input type="text" class="form-control" name="GhiChu" placeholder="Nhập ghi chú" value=" @Html.DisplayFor(model => model.GhiChu)">
                             </div>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary"><a class="fa fa-save"></a> &nbsp;Lưu lại</button>
                         </div>
-
                     }
-
-
                 </div>
 
             </div>

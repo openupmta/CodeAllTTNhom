@@ -1,15 +1,9 @@
-﻿@model IEnumerable<coderush.Areas.TTNhom_QLThuVien.Models.NhaXuatBan>
+﻿@model coderush.Areas.TTNhom_QLThuVien.Models.Sach
 
 @{
-                /**/
-
-                ViewBag.Title = "Index";
-                Layout = "~/Views/Shared/_Adminlte.cshtml";
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
-
-<style>
-</style>
-
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -33,66 +27,88 @@
                 <div class="box">
                     <div class="box-header">
                         <i class="fa fa-hand-o-right"></i>
-                        <h3 class="box-title">QUẢN LÝ NHÀ XUẤT BẢN</h3>
-
-                        <button type="button" class="btn btn-warning" style="float:right; margin-left:10px">
-                            <i class="fa fa-plus-square"></i> &nbsp;
-                            @Html.ActionLink("Thêm mới", "Create", "PublishingCompany")
-                        </button>
+                        <h3 class="box-title">QUẢN LÝ SÁCH&nbsp;&nbsp;</h3>
+                        <i class="fa fa-angle-double-right"></i>
+                        <h3 class="box-title">Thông tin Sách</h3>
+                        <div style="float:right">
+                            <button type="button" class="btn btn-warning">
+                                <a class="fa fa-edit"></a> &nbsp;
+                                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaSach })
+                            </button>
+                            <button type="button" class="btn btn-warning" style="margin-right: auto">
+                                <a class="fa fa-th-list"></a> &nbsp;
+                                @Html.ActionLink("Danh sách", "Index")
+                            </button>
+                        </div>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <div class="box-body">
-                            <table id="example1" class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Mã NXB</th>
-                                        <th>Tên NXB</th>
-                                        <th>Địa chỉ</th>
-                                        <th>Điện thoại</th>
-                                        <th>Email</th>
-                                        <th>Chức năng</th>
+                        <dl class="dl-horizontal">
+                            <dt>
+                                Mã Sách:
+                            </dt>
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var item in Model)
-                                    {
-                                        <tr>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.MaNXB)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.TenNXB)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.DiaChi)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.SoDT)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Email)
-                                            </td>
-                                            <td>
-                                                <i class="fa fa-info-circle"></i> &nbsp;
-                                                @Html.ActionLink("Xem", "Details", new { id = item.MaNXB }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <i class="fa fa-edit"></i> &nbsp;
-                                                @Html.ActionLink("Sửa", "Edit", new { id = item.MaNXB }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <i class="far fa-trash-alt"></i> &nbsp;
-                                                @Html.ActionLink("Xóa", "Delete", new { id = item.MaNXB }, new { onclick = "return confirm('Chắc chắn muốn xoá?');" })
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
+                            <dd>
+                                @Html.DisplayFor(model => model.MaSach)
+                            </dd>
 
-                            </table>
-                        </div>
-                        <!-- /.box-body -->
+                            <dt>
+                                Tên Sách:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TenSach)
+                            </dd>
+
+                            <dt>
+                                Tác giả:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TacGia.TenTacGia)
+                            </dd>
+
+                            <dt>
+                                Thể loại:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TheLoai.TenTheLoai)
+                            </dd>
+
+                            <dt>
+                                Nhà xuất bản:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.NhaXuatBan.TenNXB)
+                            </dd>
+
+                            <dt>
+                                Năm xuất bản:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.NamXuatBan)
+                            </dd>
+
+                            <dt>
+                                Tình trạng:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TinhTrang)
+                            </dd>
+
+
+                        </dl>
                     </div>
+
                     <!-- /.box-body -->
+
                 </div>
                 <!-- /.box -->
+
             </div>
             <!-- /.col -->
         </div>
@@ -132,7 +148,7 @@
     <!-- Bootstrap 3.3.7 -->
     <script src="~/Content/adminlte/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- DataTables -->
-    <script src="~/Areas/TTNhom_QLThuVien/assets/myscript.js"></script>
+    <script src="~/Content/adminlte/components/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="~/Content/adminlte/components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <!-- Slimscroll -->
     <script src="~/Content/adminlte/components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
@@ -156,4 +172,5 @@
             })
         })</script>
 }
+
 

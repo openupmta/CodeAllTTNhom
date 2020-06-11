@@ -1,4 +1,4 @@
-﻿@model coderush.Areas.TTNhom_QLThuVien.Models.TheLoai
+﻿@model coderush.Areas.TTNhom_QLThuVien.Models.NhaXuatBan
 
 @{
     ViewBag.Title = "Details";
@@ -27,13 +27,13 @@
                 <div class="box">
                     <div class="box-header">
                         <i class="fa fa-hand-o-right"></i>
-                        <h3 class="box-title">QUẢN LÝ THỂ LOẠI&nbsp;&nbsp;</h3>
+                        <h3 class="box-title">QUẢN LÝ NHÀ XUẤT BẢN&nbsp;&nbsp;</h3>
                         <i class="fa fa-angle-double-right"></i>
-                        <h3 class="box-title">Thông tin Thể loại</h3>
+                        <h3 class="box-title">Thông tin Nhà xuất bản</h3>
                         <div style="float:right">
                             <button type="button" class="btn btn-warning">
                                 <a class="fa fa-edit"></a> &nbsp;
-                                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaTheLoai })
+                                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaNXB})
                             </button>
                             <button type="button" class="btn btn-warning" style="margin-right: auto">
                                 <a class="fa fa-th-list"></a> &nbsp;
@@ -45,29 +45,52 @@
                     <div class="box-body">
                         <dl class="dl-horizontal">
                             <dt>
-                                Mã Thể loại:
+                                Mã NXB:
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.MaTheLoai)
+                                @Html.DisplayFor(model => model.MaNXB)
                             </dd>
 
                             <dt>
-                                Tên Thể loại:
+                                Tên NXB:
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.TenTheLoai)
+                                @Html.DisplayFor(model => model.TenNXB)
                             </dd>
 
                             <dt>
-                                Mô tả Thể loại:
+                                Địa chỉ:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DiaChi)
+                            </dd>
+
+                            <dt>
+                                Điện thoại:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.SoDT)
+                            </dd>
+
+                            <dt>
+                                Email:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Email)
+                            </dd>
+
+                            <dt>
+                                Ghi chú:
                             </dt>
 
                             <dd>
                                 @Html.DisplayFor(model => model.GhiChu)
                             </dd>
-
                         </dl>
                     </div>
 

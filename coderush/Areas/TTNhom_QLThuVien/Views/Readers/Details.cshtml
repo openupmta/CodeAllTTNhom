@@ -1,4 +1,4 @@
-﻿@model coderush.Areas.TTNhom_QLThuVien.Models.TheLoai
+﻿@model coderush.Areas.TTNhom_QLThuVien.Models.DocGia
 
 @{
     ViewBag.Title = "Details";
@@ -27,13 +27,17 @@
                 <div class="box">
                     <div class="box-header">
                         <i class="fa fa-hand-o-right"></i>
-                        <h3 class="box-title">QUẢN LÝ THỂ LOẠI&nbsp;&nbsp;</h3>
+                        <h3 class="box-title">QUẢN LÝ ĐỘC GIẢ&nbsp;&nbsp;</h3>
                         <i class="fa fa-angle-double-right"></i>
-                        <h3 class="box-title">Thông tin Thể loại</h3>
+                        <h3 class="box-title">Thông tin Độc giả</h3>
                         <div style="float:right">
+                            <button type="button" class="btn btn-success">
+                                <i class="fa fa-print"></i> &nbsp;
+                                @Html.ActionLink("Xuất phiếu", "ExportToExcel", new { id = Model.MaDocGia })
+                            </button>
                             <button type="button" class="btn btn-warning">
                                 <a class="fa fa-edit"></a> &nbsp;
-                                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaTheLoai })
+                                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaDocGia })
                             </button>
                             <button type="button" class="btn btn-warning" style="margin-right: auto">
                                 <a class="fa fa-th-list"></a> &nbsp;
@@ -45,29 +49,76 @@
                     <div class="box-body">
                         <dl class="dl-horizontal">
                             <dt>
-                                Mã Thể loại:
+                                Mã độc giả:
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.MaTheLoai)
+                                @Html.DisplayFor(model => model.MaDocGia)
                             </dd>
 
                             <dt>
-                                Tên Thể loại:
+                                Tên độc giả:
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.TenTheLoai)
+                                @Html.DisplayFor(model => model.TenDocGia)
                             </dd>
 
                             <dt>
-                                Mô tả Thể loại:
+                                Đơn vị:
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.GhiChu)
+                                @Html.DisplayFor(model => model.DonVi)
                             </dd>
 
+                            <dt>
+                                Số điện thoại:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.SoDT)
+                            </dd>
+
+                            <dt>
+                                CMT/CCDC:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CMT)
+                            </dd>
+
+                            <dt>
+                                Mã số thẻ:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.MaSoThe)
+                            </dd>
+
+                            <dt>
+                                Ngày cấp thẻ:
+                            </dt>
+
+                            <dd>
+                                @Html.Raw(Model.TheThuVien.NgayCap.Value.ToShortDateString())
+                            </dd>
+
+                            <dt>
+                                Ngày hết hạn thẻ:
+                            </dt>
+
+                            <dd>
+                                @Html.Raw(Model.TheThuVien.NgayHetHan.Value.ToShortDateString())
+                            </dd>
+
+                            <dt>
+                                Ghi chú:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TheThuVien.GhiChu)
+                            </dd>
                         </dl>
                     </div>
 
@@ -127,17 +178,17 @@
     <script src="~/Content/adminlte/dist/js/demo.js"></script>
     <!-- page script -->
     <script>
-            $(function () {
-                $('#example1').DataTable()
-                $('#example2').DataTable({
-                    'paging': true,
-                    'lengthChange': false,
-                    'searching': false,
-                    'ordering': true,
-                    'info': true,
-                    'autoWidth': false
-                })
-            })</script>
+        $(function () {
+            $('#example1').DataTable()
+            $('#example2').DataTable({
+                'paging': true,
+                'lengthChange': false,
+                'searching': false,
+                'ordering': true,
+                'info': true,
+                'autoWidth': false
+            })
+        })</script>
 }
 
 
