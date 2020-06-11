@@ -8,14 +8,16 @@ using System.Web;
 using System.Web.Mvc;
 using coderush.Areas.TTNhom_QLNS.Models;
 using coderush.Areas.TTNhom_QLNS.Models.Staff;
+using coderush.Controllers;
 using Common;
+using Microsoft.AspNet.Identity;
 
 namespace coderush.Areas.TTNhom_QLNS.Controllers
 {
     public class StaffsController : Controller
     {
         private DBQLNSContext db = new DBQLNSContext();
-
+        [Authorize]
         // GET: TTNhom_QLNS/Staffs
         public ActionResult Index()
         {
@@ -23,22 +25,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
             return View(staffs.ToList());
         }
 
-        // GET: TTNhom_QLNS/Staffs/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            staff staff = db.staffs.Find(id);
-            if (staff == null)
-            {
-                return HttpNotFound();
-            }
-            return View(staff);
-        }
-
         // GET: TTNhom_QLNS/Staffs/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.department_id = new SelectList(db.departments, "de_id", "de_name");
@@ -50,20 +38,24 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
             return View();
         }
 
+        
         // POST: TTNhom_QLNS/Staffs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(staff staff,AddressViewModel address)
         {
             if (ModelState.IsValid)
             {
+                
                 //Save infor staff
                 var code = db.staffs.OrderByDescending(x => x.sta_id).FirstOrDefault();
                 if (code == null) staff.sta_code = "NV000001";
                 else staff.sta_code = Utilis.CreateCodeByCode("NV", code.sta_code, 8);
                 staff.sta_created_date = DateTime.Now;
+                staff.sta_status = 1;
                 //Mail 
                 string content = System.IO.File.ReadAllText("D:/Ki2Nam3/ttn/Tien_TTNhom/CodeAllTTNhom/Common/Template/sendmail.html");
                 content = content.Replace("{{Username}}", staff.sta_username);
@@ -89,10 +81,15 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
             ViewBag.department_id = new SelectList(db.departments, "de_id", "de_name", staff.department_id);
             ViewBag.group_role_id = new SelectList(db.group_role, "gr_id", "gr_name", staff.group_role_id);
             ViewBag.position_id = new SelectList(db.positions, "pos_id", "pos_name", staff.position_id);
+
+            ViewBag.provinceID = new SelectList(db.Provinces, "Id", "Name", address.provinceID);
+            ViewBag.districtID = new SelectList(db.Districts, "Id", "Name", address.districtID);
+            ViewBag.wardID = new SelectList(db.Wards, "Id", "Name", address.wardID);
             return View(staff);
         }
 
         // GET: TTNhom_QLNS/Staffs/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -120,6 +117,7 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit( staff staff, AddressViewModel address)
         {
             if (ModelState.IsValid)
@@ -134,7 +132,6 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
                 up_staff.sta_identity_card = staff.sta_identity_card;
                 up_staff.sta_identity_card_date = staff.sta_identity_card_date;
                 up_staff.sta_mobile = staff.sta_mobile;
-                up_staff.sta_password = staff.sta_password;
                 up_staff.sta_sex = staff.sta_sex;
                 up_staff.sta_status = staff.sta_status;
                 up_staff.sta_thumbnai = staff.sta_thumbnai;
@@ -162,6 +159,7 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         }
 
         // GET: TTNhom_QLNS/Staffs/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             staff staff = db.staffs.Find(id);
@@ -169,7 +167,16 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        [Authorize]
+        public ActionResult Profile()
+        {
+            var user = User.Identity.GetUserId();
 
+            return View();
+        }
+
+        [Authorize]
 
         public JsonResult LoadProvince()
         {
@@ -188,6 +195,7 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
                 status = true
             });
         }
+        [Authorize]
         public JsonResult LoadDistrict(int? provinceID)
         {
             List<dropdown> res = new List<dropdown>();
@@ -205,6 +213,7 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
                 status = true
             });
         }
+        [Authorize]
         public JsonResult LoadWard(int? districtID)
         {
             List<dropdown> res = new List<dropdown>();
@@ -222,7 +231,28 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
                 status = true
             });
         }
+        #region[Check Duplicate]
+        
+        public JsonResult ExsitsUserName(string sta_username,int? sta_id)
+        {
+            List<staff> lts_sta = db.staffs.ToList();
+            if(sta_id != null)
+            {
+                lts_sta.Remove(db.staffs.Find(sta_id));
+            }
+            return Json(!lts_sta.Any(x => x.sta_username.Trim().ToLower() == sta_username.Trim().ToLower()), JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult ExsitsEmail(string sta_email, int? sta_id)
+        {
+            List<staff> lts_sta = db.staffs.ToList();
+            if (sta_id != null)
+            {
+                lts_sta.Remove(db.staffs.Find(sta_id));
+            }
+            return Json(!lts_sta.Any(x => x.sta_email.Trim().ToLower() == sta_email.Trim().ToLower()), JsonRequestBehavior.AllowGet);
+        }
 
+        #endregion
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -15,12 +15,14 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         private DBQLNSContext db = new DBQLNSContext();
 
         // GET: TTNhom_QLNS/Departments
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.departments.ToList());
         }
 
         // GET: TTNhom_QLNS/Departments/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +38,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         }
 
         // GET: TTNhom_QLNS/Departments/Create
+        [Authorize]
+
         public ActionResult Create()
         {
             return View();
@@ -46,6 +50,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+
         public ActionResult Create([Bind(Include = "de_id,de_name,de_thumbnail,de_description,de_manager,de_status")] department department)
         {
             if (ModelState.IsValid)
@@ -59,6 +65,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         }
 
         // GET: TTNhom_QLNS/Departments/Edit/5
+        [Authorize]
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +86,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+
         public ActionResult Edit([Bind(Include = "de_id,de_name,de_thumbnail,de_description,de_manager,de_status")] department department)
         {
             if (ModelState.IsValid)
@@ -90,6 +100,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         }
 
         // GET: TTNhom_QLNS/Departments/Delete/5
+        [Authorize]
+
         public ActionResult Delete(int? id)
         {
             department department = db.departments.Find(id);
@@ -97,6 +109,7 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        
 
         protected override void Dispose(bool disposing)
         {

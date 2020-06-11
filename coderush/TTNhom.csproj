@@ -202,7 +202,6 @@
     <Compile Include="Areas\TTNhom_QLNS\Controllers\group_roleController.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Controllers\PositionsController.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Controllers\StaffsController.cs" />
-    <Compile Include="Areas\TTNhom_QLNS\Controllers\staffsController1.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\address.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\customer.cs" />
     <Compile Include="Areas\TTNhom_QLNS\Models\department.cs" />
@@ -253,6 +252,7 @@
     <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\FormController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
@@ -8833,11 +8833,6 @@
     <Content Include="Areas\TTNhom_QLThuVien\Views\Category\Details.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\Category\Edit.cshtml" />
     <Content Include="Areas\TTNhom_QLThuVien\Views\Category\Create.cshtml" />
-    <Content Include="Areas\TTNhom_QLNS\Views\staffs1\Create.cshtml" />
-    <Content Include="Areas\TTNhom_QLNS\Views\staffs1\Delete.cshtml" />
-    <Content Include="Areas\TTNhom_QLNS\Views\staffs1\Details.cshtml" />
-    <Content Include="Areas\TTNhom_QLNS\Views\staffs1\Edit.cshtml" />
-    <Content Include="Areas\TTNhom_QLNS\Views\staffs1\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLKS\Views\web.config" />
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\scss\navs\_global.scss" />
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\scss\navs\_sidebar.scss" />
@@ -9017,7 +9012,6 @@
     <Content Include="Areas\TTNhom_QLNS\Views\Positions\Edit.cshtml" />
     <Content Include="Areas\TTNhom_QLNS\Views\Positions\Index.cshtml" />
     <Content Include="Areas\TTNhom_QLNS\Views\Staffs\Create.cshtml" />
-    <Content Include="Areas\TTNhom_QLNS\Views\Staffs\Delete.cshtml" />
     <Content Include="Areas\TTNhom_QLNS\Views\Staffs\Details.cshtml" />
     <Content Include="Areas\TTNhom_QLNS\Views\Staffs\Edit.cshtml" />
     <Content Include="Areas\TTNhom_QLNS\Views\Staffs\Index.cshtml" />

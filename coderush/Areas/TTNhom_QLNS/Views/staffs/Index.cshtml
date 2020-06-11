@@ -6,7 +6,18 @@
 }
 
 
-
+<style>
+    .status-lock{
+        background-color: #1abc9c;
+        color: white;
+        font-size: 12px;
+    }
+    .status-unlock{
+        background-color: #f1556c;
+        color: white;
+        font-size: 12px;
+    }
+</style>
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -16,9 +27,9 @@
             <small>Danh sách nhân sự</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Data tables</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Quản lý nhân sự</a></li>
+            <li><a href="#">Nhân sự</a></li>
+            <li class="active"><a href="@lte.MVC.Pages.Department.Index">Danh sách </a></li>
         </ol>
     </section>
 
@@ -36,7 +47,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <table id="example2" class="table table-bordered table-hover">
+                        <table id="example1" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th>
@@ -108,11 +119,12 @@
                                         <td>
                                             @if (item.sta_status == 1)
                                             {
-                                                @Html.Raw("Hoạt động")
+                                                <span class="status-lock"> Hoạt động</span>
+                                               
                                             }
                                             else
                                             {
-                                                @Html.Raw("Khóa")
+                                                <span class="status-unlock">Khóa</span>
                                             }
                                         </td>
 

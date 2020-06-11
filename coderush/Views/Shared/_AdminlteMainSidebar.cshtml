@@ -52,9 +52,44 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Thêm</a></li>
-                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Sửa</a></li>
-                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
+                            <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Danh sách</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="@Html.IsSelected(controller: "Departments") treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i> <span>Phòng ban</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="@Html.IsSelected(controller: "Departments", action: "Index")"><a href="@lte.MVC.Pages.Department.Index"><i class="fa fa-circle-o"></i> Danh sách</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="@Html.IsSelected(controller: "Positions") treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i> <span>Chức vụ</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="@Html.IsSelected(controller: "Positions", action: "Index")"><a href="@lte.MVC.Pages.Position.Index"><i class="fa fa-circle-o"></i> Danh sách</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="@Html.IsSelected(controller: "Staffs") treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i> <span>Nhân sự</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="@Html.IsSelected(controller: "Staffs", action: "Index")"><a href="@lte.MVC.Pages.Staff.Index"><i class="fa fa-circle-o"></i> Danh sách</a></li>
                         </ul>
                     </li>
                 </ul>

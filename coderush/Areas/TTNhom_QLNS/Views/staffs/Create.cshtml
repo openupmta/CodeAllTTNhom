@@ -14,9 +14,9 @@
             <small>Nhân sự</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Quản lý nhân sự</a></li>
             <li><a href="#">Nhân sự</a></li>
-            <li class="active">Thêm</li>
+            <li class="active"><a href="@lte.MVC.Pages.Staff.Create">Tạo mới</a></li>
         </ol>
     </section>
     <!-- Main content -->
@@ -249,6 +249,7 @@
 }
 
 @section Scripts{
+
     <!-- jQuery 3 -->
     <script src="~/Content/adminlte/components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.3.7 -->
@@ -260,7 +261,9 @@
     <!-- AdminLTE for demo purposes -->
     <script src="~/Content/adminlte/dist/js/demo.js"></script>
     <script src="~/Areas/TTNhom_QLNS/assest/staffsController.js"></script>
-
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <!-- jQuery 3 -->
     <script src="~/Content/adminlte/components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.3.7 -->
@@ -295,14 +298,12 @@
         $(function () {
             //Initialize Select2 Elements
             $('.select2').select2()
-
             //Datemask dd/mm/yyyy
             $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
             //Datemask2 mm/dd/yyyy
             $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
             //Money Euro
             $('[data-mask]').inputmask()
-
             //Date range picker
             $('#reservation').daterangepicker()
             //Date range picker with time picker
@@ -325,7 +326,6 @@
                     $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
                 }
             )
-
             //Date picker
             $('#sta_birthday').datepicker({
                 autoclose: true
@@ -333,7 +333,6 @@
             $('#sta_identity_card_date').datepicker({
                 autoclose: true
             })
-
             //iCheck for checkbox and radio inputs
             $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
                 checkboxClass: 'icheckbox_minimal-blue',
@@ -349,19 +348,14 @@
                 checkboxClass: 'icheckbox_flat-green',
                 radioClass: 'iradio_flat-green'
             })
-
             //Colorpicker
             $('.my-colorpicker1').colorpicker()
             //color picker with addon
             $('.my-colorpicker2').colorpicker()
-
             //Timepicker
             $('.timepicker').timepicker({
                 showInputs: false
             })
         })</script>
 })
-
-
-
 

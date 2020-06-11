@@ -15,12 +15,16 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         private DBQLNSContext db = new DBQLNSContext();
 
         // GET: TTNhom_QLNS/Positions
+        [Authorize]
+
         public ActionResult Index()
         {
             return View(db.positions.ToList());
         }
 
         // GET: TTNhom_QLNS/Positions/Details/5
+        [Authorize]
+
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +40,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         }
 
         // GET: TTNhom_QLNS/Positions/Create
+        [Authorize]
+
         public ActionResult Create()
         {
             return View();
@@ -46,6 +52,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+
         public ActionResult Create([Bind(Include = "pos_id,pos_name,pos_description,pos_status")] position position)
         {
             if (ModelState.IsValid)
@@ -59,6 +67,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         }
 
         // GET: TTNhom_QLNS/Positions/Edit/5
+        [Authorize]
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +88,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+
         public ActionResult Edit([Bind(Include = "pos_id,pos_name,pos_description,pos_status")] position position)
         {
             if (ModelState.IsValid)
@@ -90,6 +102,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         }
 
         // GET: TTNhom_QLNS/Positions/Delete/5
+        [Authorize]
+
         public ActionResult Delete(int? id)
         {
             position position = db.positions.Find(id);

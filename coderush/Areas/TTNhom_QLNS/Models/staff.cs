@@ -5,6 +5,8 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Net.Http;
+    using System.Web.Mvc;
 
     [Table("staff")]
     public partial class staff
@@ -30,11 +32,13 @@
         [StringLength(45)]
         [Display(Name = "Tên nhân viên")]
         [Required(ErrorMessage ="Tên nhân viên không được để trống")]
+        
         public string sta_fullname { get; set; }
 
         [StringLength(45)]
         [Display(Name = "Tên đăng nhập")]
-        [Required(ErrorMessage ="Tên đăng nhập không được để trống ")]
+        [Remote("ExsitsUserName", "Staffs", ErrorMessage = "Tên đăng nhập đã tồn tại", AdditionalFields = "sta_id")]
+        [Required(ErrorMessage = "Tên đăng nhập không được để trống ")]
         public string sta_username { get; set; }
 
         [StringLength(120)]
@@ -49,6 +53,7 @@
 
         [StringLength(50)]
         [Display(Name = "Email")]
+        [Remote("ExsitsEmail", "Staffs", ErrorMessage = "Email đã tồn tại", AdditionalFields = "sta_email")]
         [Required(ErrorMessage ="Email không được để trống")]
         public string sta_email { get; set; }
 
