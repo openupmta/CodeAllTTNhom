@@ -1,7 +1,7 @@
 ﻿var user = {
     init: function () {
 
-        user.loadProvince();
+        //user.loadProvince();
         user.registerEvent();
     },
     registerEvent: function () {

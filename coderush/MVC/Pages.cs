@@ -37,6 +37,31 @@ namespace lte.MVC
         public static class GroupRole
         {
             public const string Index = "/TTNhom_QLNS/group_role/Index";
+            public const string Create = "/TTNhom_QLNS/group_role/Create";
+            public const string Detail = "/TTNhom_QLNS/group_role/Details";
+            public const string Update = "/TTNhom_QLNS/group_role/Edit";
+            
+        }
+        public static class Department
+        {
+            public const string Index = "/TTNhom_QLNS/Departments/Index";
+            public const string Create = "/TTNhom_QLNS/Departments/Create";
+            public const string Detail = "/TTNhom_QLNS/Departments/Details";
+            public const string Update = "/TTNhom_QLNS/Departments/Edit";
+        }
+        public static class Position
+        {
+            public const string Index = "/TTNhom_QLNS/Positions/Index";
+            public const string Create = "/TTNhom_QLNS/Positions/Create";
+            public const string Detail = "/TTNhom_QLNS/Positions/Details";
+            public const string Update = "/TTNhom_QLNS/Positions/Edit";
+        }
+        public static class Staff
+        {
+            public const string Index = "/TTNhom_QLNS/Staffs/Index";
+            public const string Create = "/TTNhom_QLNS/Staffs/Create";
+            public const string Detail = "/TTNhom_QLNS/Staffs/Details";
+            public const string Update = "/TTNhom_QLNS/Staffs/Edit";
         }
         public static class Dashbaordv2
         {
@@ -211,6 +236,10 @@ namespace lte.MVC
         public static class ExamplePacePage
         {
             public const string Url = "/Example/PacePage";
+        }
+        public static class Account
+        {
+            public const string Logout = "/Account/LogOff";
         }
     }
 }
