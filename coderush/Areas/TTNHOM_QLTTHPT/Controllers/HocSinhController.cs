@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using coderush.Areas.TTNhom_QLTTHPT.Models;
+using OfficeOpenXml;
 
 namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
 {
@@ -135,6 +137,59 @@ namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public void ExportToExcel()
+        {
+            List<HOCSINH> emplist = db.HOCSINHs.ToList();
+
+            ExcelPackage pck = new ExcelPackage();
+            ExcelWorksheet ws = pck.Workbook.Worksheets.Add("Report");
+            
+            ws.Cells["D1"].Value = "Danh Sách Học Sinh";
+            
+            ws.Cells["C3"].Value = "Ngày Tạo :";
+            ws.Cells["D3"].Value = string.Format("{0:dd MMMM yyyy} at {0:H: mm tt}", DateTime.Now);
+
+            ws.Cells["A6"].Value = "STT";
+            ws.Cells["B6"].Value = "Họ và Tên";
+            ws.Cells["C6"].Value = "Giới Tính";
+            ws.Cells["D6"].Value = "Ngày Sinh";
+            ws.Cells["E6"].Value = "Địa Chỉ";
+            ws.Cells["F6"].Value = "Số Điện Thoại";
+            ws.Cells["G6"].Value = "Niên Khóa";
+            ws.Cells["H6"].Value = "Lớp";
+
+            int rowStart = 7;
+            int stt = 1;
+            foreach (var item in emplist)
+            {
+                if (item.MaDUT == 1 && item.MaDUT == 2 && item.MaDUT == 3 && item.MaDUT == 4 && item.MaDUT == 5 && item.MaDUT == 6)
+                {
+                    ws.Row(rowStart).Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                    ws.Row(rowStart).Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml(string.Format("pink")));
+                }
+
+                ws.Cells[string.Format("A{0}", rowStart)].Value = stt;
+                ws.Cells[string.Format("B{0}", rowStart)].Value = item.HoTenHS;
+                ws.Cells[string.Format("C{0}", rowStart)].Value = item.GioiTinh;
+                ws.Cells[string.Format("D{0}", rowStart)].Value = string.Format("{0:dd/MMMM/yyyy}", item.NgaySinh); ;
+                ws.Cells[string.Format("E{0}", rowStart)].Value = item.DiaChi;
+                ws.Cells[string.Format("F{0}", rowStart)].Value = item.SDT;
+                ws.Cells[string.Format("G{0}", rowStart)].Value = item.NienKhoa;
+                ws.Cells[string.Format("H{0}", rowStart)].Value = item.LOP.TenLop;
+                rowStart++;
+                stt++;
+            }
+
+            
+            ws.Cells["A:AZ"].AutoFitColumns();
+            Response.Clear();
+            Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            Response.AddHeader("content-disposition", "attachment: filename=" + "ExcelReport.xlsx");
+            Response.BinaryWrite(pck.GetAsByteArray());
+            Response.End();
+
         }
     }
 }
