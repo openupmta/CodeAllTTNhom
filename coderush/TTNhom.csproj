@@ -309,6 +309,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\TTNhom_QLKHO\image\background 3.png" />
     <Content Include="Areas\TTNhom_QLNS\assest\staffsController.js" />
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\css\sb-admin-2.css" />
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\css\sb-admin-2.min.css" />

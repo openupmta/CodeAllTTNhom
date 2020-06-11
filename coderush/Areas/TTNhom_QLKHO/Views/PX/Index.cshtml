@@ -35,7 +35,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <table id="example2" class="table table-bordered table-hover">
+                        <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>
@@ -48,40 +48,40 @@
                                         Mã Thông tin phiếu xuất
                                     </th>
                                     @*<th>
-                                        Hành động
-                                    </th>*@
+                        Hành động
+                    </th>*@
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.ID)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.NGAYXUAT)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.IDTTPHIEUXUAT)
-                                    </td>
-                                    @*<td>
-                                        @if (item.gr_status == 0)
-                                        {
-                                            <p>Khóa </p>
-                                        }
-                                        else
-                                        {
-                                            <p>Hoạt động</p>
-                                        }
-                                    </td>*@
-                                    <td>
-                                        @Html.ActionLink("Sửa", "Edit", new { id = item.ID }) |
-                                        @Html.ActionLink("Xem", "Details", new { id = item.ID}) |
-                                        @Html.ActionLink("Xóa", "Delete", new { id = item.ID}, new { onclick = "return confirm('Are you sure?');" })
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NGAYXUAT)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IDTTPHIEUXUAT)
+                                        </td>
+                                        @*<td>
+                            @if (item.gr_status == 0)
+                            {
+                                <p>Khóa </p>
+                            }
+                            else
+                            {
+                                <p>Hoạt động</p>
+                            }
+                        </td>*@
+                                        <td>
+                                            @Html.ActionLink("Sửa", "Edit", new { id = item.ID }) |
+                                            @Html.ActionLink("Xem", "Details", new { id = item.ID }) |
+                                            @Html.ActionLink("Xóa", "Delete", new { id = item.ID }, new { onclick = "return confirm('Are you sure?');" })
+                                        </td>
+                                    </tr>
                                 }
 
                             </tbody>
