@@ -1,21 +1,22 @@
-﻿@model coderush.Areas.TTNhom_QLNS.Models.group_role
+﻿@model coderush.Areas.TTNhom_QLNS.Models.department
 
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Thêm nhóm quyền
-            <small>Nhóm quyền</small>
+            Thêm phòng ban 
+            <small>Phòng ban </small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Quản lý nhân sự</a></li>
-            <li><a href="#">Nhóm quyền</a></li>
-            <li class="active"><a href="@lte.MVC.Pages.GroupRole.Create">Tạo mới</a></li>
+            <li><a href="#">Phòng ban</a></li>
+            <li class="active"><a href="@lte.MVC.Pages.Department.Create">Tạo mới</a></li>
         </ol>
     </section>
     <!-- Main content -->
@@ -26,42 +27,55 @@
                 <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Thêm nhóm</h3>
+                        <h3 class="box-title">Thêm phòng ban</h3>
                         <button type="button" class="btn btn-warning" style="float:right">
                             @Html.ActionLink("Danh sách", "Index")
                         </button>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    @using (Html.BeginForm("Create", "group_role", FormMethod.Post))
+                    @using (Html.BeginForm())
                     {
                         @Html.AntiForgeryToken()
 
-                        <div class="box-body">
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Tên nhóm</label>
-                                <input type="text" class="form-control" name="gr_name" placeholder="Nhập tên nhóm">
+                                @Html.LabelFor(model => model.de_name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.de_name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.de_name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
+                            
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.de_description, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.de_description, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.de_description, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                           <div class="form-group">
-                                <label for="exampleInputEmail1">Mô tả</label>
-                                <input type="text" class="form-control" name="gr_description" placeholder="Mô tả">
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.de_status, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    <label class="radio-inline">
+                                        <input name="de_status" value="1" checked="" type="radio">Hoạt động
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input name="de_status" value="0" type="radio">Khóa
+                                    </label>
+
+                                </div>
                             </div>
-                           <div class="form-group">
-                               <label>Trạng thái</label>
-                               <label class="radio-inline">
-                                   <input name="gr_status" value="1" checked="" type="radio">Hoạt động
-                               </label>
-                               <label class="radio-inline">
-                                   <input name="gr_status" value="0" type="radio">Khóa
-                               </label>
-                           </div>
-                           
-                        </div>
-                        <!-- /.box-body -->
-                        <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Tạo mới</button>
-                        </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Create" class="btn btn-default" />
+                                    </div>
+                                </div>
+                            </div>
                     }
 
 
@@ -114,6 +128,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="~/Content/adminlte/dist/js/demo.js"></script>
 }
+
 
 
 

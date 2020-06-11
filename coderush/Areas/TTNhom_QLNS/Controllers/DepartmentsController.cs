@@ -8,39 +8,36 @@ using System.Web;
 using System.Web.Mvc;
 using coderush.Areas.TTNhom_QLNS.Models;
 
-
 namespace coderush.Areas.TTNhom_QLNS.Controllers
 {
-    public class group_roleController : BaseController
+    public class DepartmentsController : Controller
     {
-        DBQLNSContext db = new DBQLNSContext();
+        private DBQLNSContext db = new DBQLNSContext();
 
-        // GET: TTNhom_QLNS/group_role
+        // GET: TTNhom_QLNS/Departments
         [Authorize]
-
         public ActionResult Index()
         {
-            return View(db.group_role.ToList());
+            return View(db.departments.ToList());
         }
 
-        // GET: TTNhom_QLNS/group_role/Details/5
+        // GET: TTNhom_QLNS/Departments/Details/5
         [Authorize]
-
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            group_role group_role = db.group_role.Find(id);
-            if (group_role == null)
+            department department = db.departments.Find(id);
+            if (department == null)
             {
                 return HttpNotFound();
             }
-            return View(group_role);
+            return View(department);
         }
 
-        // GET: TTNhom_QLNS/group_role/Create
+        // GET: TTNhom_QLNS/Departments/Create
         [Authorize]
 
         public ActionResult Create()
@@ -48,26 +45,26 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
             return View();
         }
 
-        // POST: TTNhom_QLNS/group_role/Create
+        // POST: TTNhom_QLNS/Departments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
 
-        public ActionResult Create([Bind(Include = "gr_id,gr_name,gr_description,gr_status")] group_role group_role)
+        public ActionResult Create([Bind(Include = "de_id,de_name,de_thumbnail,de_description,de_manager,de_status")] department department)
         {
             if (ModelState.IsValid)
             {
-                db.group_role.Add(group_role);
+                db.departments.Add(department);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(group_role);
+            return View(department);
         }
 
-        // GET: TTNhom_QLNS/group_role/Edit/5
+        // GET: TTNhom_QLNS/Departments/Edit/5
         [Authorize]
 
         public ActionResult Edit(int? id)
@@ -76,42 +73,44 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            group_role group_role = db.group_role.Find(id);
-            if (group_role == null)
+            department department = db.departments.Find(id);
+            if (department == null)
             {
                 return HttpNotFound();
             }
-            return View(group_role);
+            return View(department);
         }
 
-        // POST: TTNhom_QLNS/group_role/Edit/5
+        // POST: TTNhom_QLNS/Departments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
 
-        public ActionResult Edit([Bind(Include = "gr_id,gr_name,gr_description,gr_status")] group_role group_role)
+        public ActionResult Edit([Bind(Include = "de_id,de_name,de_thumbnail,de_description,de_manager,de_status")] department department)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(group_role).State = EntityState.Modified;
+                db.Entry(department).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(group_role);
+            return View(department);
         }
+
+        // GET: TTNhom_QLNS/Departments/Delete/5
         [Authorize]
 
         public ActionResult Delete(int? id)
         {
-            group_role group_role = db.group_role.Find(id);
-            db.group_role.Remove(group_role);
+            department department = db.departments.Find(id);
+            db.departments.Remove(department);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        
 
-       
         protected override void Dispose(bool disposing)
         {
             if (disposing)

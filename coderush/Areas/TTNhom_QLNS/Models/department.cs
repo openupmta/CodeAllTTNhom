@@ -1,4 +1,4 @@
-namespace coderush.Areas.TTNhom_QLNS.Models
+﻿namespace coderush.Areas.TTNhom_QLNS.Models
 {
     using System;
     using System.Collections.Generic;
@@ -16,20 +16,18 @@ namespace coderush.Areas.TTNhom_QLNS.Models
         }
 
         [Key]
+        [Display(Name ="Mã phòng ban ")]
         public int de_id { get; set; }
 
         [StringLength(50)]
+        [Display(Name ="Tên phòng ban")]
+        [Required(ErrorMessage ="Tên phòng ban không được để trống")]
         public string de_name { get; set; }
 
-        [StringLength(50)]
-        public string de_thumbnail { get; set; }
-
         [StringLength(500)]
+        [Display(Name = "Mô tả")]
         public string de_description { get; set; }
-
-        [StringLength(50)]
-        public string de_manager { get; set; }
-
+        [Display(Name ="Trạng thái")]
         public byte? de_status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

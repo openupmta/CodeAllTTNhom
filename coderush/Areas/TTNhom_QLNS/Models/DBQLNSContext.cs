@@ -20,8 +20,6 @@ namespace coderush.Areas.TTNhom_QLNS.Models
         public virtual DbSet<position> positions { get; set; }
         public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<staff> staffs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<ticket> tickets { get; set; }
         public virtual DbSet<Ward> Wards { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -43,10 +41,6 @@ namespace coderush.Areas.TTNhom_QLNS.Models
                 .WithOptional(e => e.customer)
                 .HasForeignKey(e => e.customer_id)
                 .WillCascadeOnDelete();
-
-            modelBuilder.Entity<department>()
-                .Property(e => e.de_thumbnail)
-                .IsUnicode(false);
 
             modelBuilder.Entity<department>()
                 .HasMany(e => e.staffs)
@@ -104,40 +98,9 @@ namespace coderush.Areas.TTNhom_QLNS.Models
             modelBuilder.Entity<staff>()
                 .HasMany(e => e.addresses)
                 .WithOptional(e => e.staff)
-                .HasForeignKey(e => e.staff_id);
-
-            modelBuilder.Entity<staff>()
-                .HasMany(e => e.tickets)
-                .WithOptional(e => e.staff)
-                .HasForeignKey(e => e.staff_id);
-
-            modelBuilder.Entity<ticket>()
-                .Property(e => e.ti_type)
-                .IsFixedLength();
-
-            modelBuilder.Entity<ticket>()
-                .Property(e => e.ti_title)
-                .IsFixedLength();
-
-            modelBuilder.Entity<ticket>()
-                .Property(e => e.ti_content)
-                .IsFixedLength();
-
-            modelBuilder.Entity<ticket>()
-                .Property(e => e.ti_create_date)
-                .IsFixedLength();
-
-            modelBuilder.Entity<ticket>()
-                .Property(e => e.ti_end_date)
-                .IsFixedLength();
-
-            modelBuilder.Entity<ticket>()
-                .Property(e => e.ti_priority)
-                .IsFixedLength();
-
-            modelBuilder.Entity<ticket>()
-                .Property(e => e.ti_status)
-                .IsFixedLength();
+                .HasForeignKey(e => e.staff_id)
+                .WillCascadeOnDelete();
         }
     }
 }
+

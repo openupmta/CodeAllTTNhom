@@ -1,20 +1,21 @@
-﻿@model coderush.Areas.TTNhom_QLNS.Models.group_role
+﻿@model coderush.Areas.TTNhom_QLNS.Models.position
 
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Adminlte.cshtml";
 }
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Chi tiết nhóm quyền
-            <small>Nhóm quyền</small>
+            Chi tiết chức vụ
+            <small>chức vụ </small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Quản lý nhân sự</a></li>
-            <li><a href="#">Nhóm quyền</a></li>
-            <li class="active"><a href="@lte.MVC.Pages.GroupRole.Detail">Chi tiết</a></li>
+            <li><a href="#">Chức vụ</a></li>
+            <li class="active"><a href="@lte.MVC.Pages.Position.Detail">Chi tiêt </a></li>
         </ol>
     </section>
 
@@ -24,10 +25,10 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title" style="font-weight:100">Chi tiết nhóm</h3>
+                        <h3 class="box-title" style="font-weight:100">Chi tiết phòng</h3>
                         <div style="float:right">
                             <button type="button" class="btn btn-warning">
-                                @Html.ActionLink("Sửa", "Edit", new { id = Model.gr_id })
+                                @Html.ActionLink("Sửa", "Edit", new { id = Model.pos_id })
                             </button>
                             <button type="button" class="btn btn-warning" style="margin-right: auto">
                                 @Html.ActionLink("Danh sách", "Index")
@@ -38,27 +39,25 @@
                     <div class="box-body">
                         <dl class="dl-horizontal">
                             <dt>
-                                Tên nhóm: 
+                                @Html.DisplayNameFor(model => model.pos_name)
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.gr_name)
+                                @Html.DisplayFor(model => model.pos_name)
                             </dd>
-
                             <dt>
-                                Mô tả: 
+                                @Html.DisplayNameFor(model => model.pos_description)
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.gr_description)
+                                @Html.DisplayFor(model => model.pos_description)
                             </dd>
-
                             <dt>
-                                Trạng thái: 
+                                @Html.DisplayNameFor(model => model.pos_status)
                             </dt>
 
                             <dd>
-                                @if (Model.gr_status == 1)
+                                @if (Model.pos_status == 1)
                                 {
                                     @Html.Raw("Hoạt động")
                                 }
@@ -72,7 +71,7 @@
                     </div>
 
                     <!-- /.box-body -->
-                    
+
                 </div>
                 <!-- /.box -->
 
@@ -138,5 +137,4 @@
             })
         })</script>
 }
-
 
