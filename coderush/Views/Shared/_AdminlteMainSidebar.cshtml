@@ -28,13 +28,28 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="@Html.IsSelected(controller: "group_role") treeview">
+
+            @*<li class="@Html.IsSelected(controller: "group_role") treeview">
                 <a href="#">
                     <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</span>
                 </a>
+            </li>*@
 
 
+            <li class="@Html.IsSelected(controller: "Dashboard")  treeview">
+                <a href="#">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Html.IsSelected(controller: "Dashboard", action: "Dashboardv1")"><a href="@lte.MVC.Pages.Dashboard.dashboard"><i class="fa fa-bar-chart"></i> Thống kê </a></li>
+                </ul>
             </li>
+
+
             <li class="@Html.IsSelected(controller: "group_role") treeview">
                 <a href="#">
                     <i class="fas fa-user-alt"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Nhân Sự</span>
@@ -154,7 +169,7 @@
                     <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
                 </ul>
             </li>
-            <li class="@Html.IsSelected(controller: "Layout") treeview">
+            @*<li class="@Html.IsSelected(controller: "Layout") treeview">
                 <a href="#">
                     <i class="fa fa-files-o"></i>
                     <span>Layout Options</span>
@@ -322,7 +337,7 @@
             <li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>*@
         </ul>
     </section>
     <!-- /.sidebar -->

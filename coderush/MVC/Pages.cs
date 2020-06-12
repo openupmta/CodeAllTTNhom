@@ -7,6 +7,11 @@ namespace lte.MVC
 {
     public static class Pages
     {
+        public static class Dashboard
+        {
+            public const string dashboard = "/Dashboard/Dashboardv1";
+        }
+
         public static class QLTV
         {
             public const string Home = "/TTNhom_QLThuVien/Home/Index";
