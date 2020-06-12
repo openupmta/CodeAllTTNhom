@@ -11,6 +11,19 @@ namespace lte.MVC
         {
             public const string dashboard = "/Dashboard/Dashboardv1";
         }
+        public static class QuanLyTTHPT
+        {
+            public const string Home = "/TTNhom_QLTTHPT/Home/Index";
+            public const string HocSinh = "/TTNhom_QLTTHPT/HocSinh/Index";
+            public const string GiaoVien = "/TTNhom_QLTTHPT/GiaoVien/Index";
+            public const string Diem = "/TTNhom_QLTTHPT/Diem/Index";
+            public const string DiemChiTiet = "/TTNhom_QLTTHPT/DiemChiTiet/Index";
+            public const string MonHoc = "/TTNhom_QLTTHPT/MonHoc/Index";
+            public const string PhanCong = "/TTNhom_QLTTHPT/PhanCong/Index";
+            public const string Lop = "/TTNhom_QLTTHPT/Lop/Index";
+            public const string KhoiLop = "/TTNhom_QLTTHPT/KhoiLop/Index";
+            public const string DienUuTien = "/TTNhom_QLTTHPT/DienUuTien/Index";
+        }
 
         public static class QLTV
         {
@@ -25,6 +38,21 @@ namespace lte.MVC
             public const string Readers = "/TTNhom_QLThuVien/Readers/Index";
             public const string Rules = "/TTNhom_QLThuVien/Rules/Index";
         }
+        public static class QLKHO
+        {
+            public const string Home = "/TTNhom_QLKHO/Home/Index";
+            public const string News = "/TTNhom_QLKHO/News/Index";
+            public const string HH = "/TTNhom_QLKHO/HH/Index";
+            public const string KH = "/TTNhom_QLKHO/KH/Index";
+            public const string DV = "/TTNhom_QLKHO/DV/Index";
+            public const string NCC = "/TTNhom_QLKHO/NCC/Index";
+            public const string PN = "/TTNhom_QLKHO/PN/Index";
+            public const string TTPN = "/TTNhom_QLKHO/TTPN/Index";
+            public const string PX = "/TTNhom_QLKHO/PX/Index";
+            public const string TTPX = "/TTNhom_QLKHO/TTPX/Index";
+        }
+
+
         public static class GroupRole
         {
             public const string Index = "/TTNhom_QLNS/group_role/Index";
