@@ -1,5 +1,12 @@
 ﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 
+<style>
+    a .fas.fa-user-edit {
+        margin: 0px 12px;
+    }
+</style>
+
+
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -35,7 +42,7 @@
 
 
             </li>
-            <li class="@Html.IsSelected(controller: "group_role") treeview">
+            <li class="@Html.IsSelected(controller: "Home") treeview">
                 <a href="#">
                     <i class="fas fa-user-alt"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Nhân Sự</span>
                     <span class="pull-right-container">
@@ -44,7 +51,7 @@
                 </a>
                 <ul class="treeview-menu">
 
-                    <li class="@Html.IsSelected(controller: "group_role") treeview">
+                    <li class="@Html.IsSelected(controller: "Home") treeview">
                         <a href="#">
                             <i class="fa fa-circle-o"></i> <span>Nhóm quyền</span>
                             <span class="pull-right-container">
@@ -95,7 +102,7 @@
                 </ul>
 
             </li>
-            <li class="@Html.IsSelected(controller: "group_role") treeview">
+            <li class="@Html.IsSelected(controller: "Home") treeview">
                 <a href="#">
                     <i class="fas fa-book"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Thư Viện</span>
                     <span class="pull-right-container">
@@ -115,7 +122,7 @@
                     <li><a href="http://mta.edu.vn" target="_blank"><i class="fa fa-hand-o-right"></i> Cổng thống tin điện tử</a></li>
                 </ul>
             </li>
-            <li class="@Html.IsSelected(controller: "group_role") treeview">
+            <li class="@Html.IsSelected(controller: "Home") treeview">
                 <a href="#">
                     <i class="fas fa-hotel"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Khách Sạn</span>
                     <span class="pull-right-container">
@@ -128,7 +135,7 @@
                     <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
                 </ul>
             </li>
-            <li class="@Html.IsSelected(controller: "group_role") treeview">
+            <li class="@Html.IsSelected(controller: "Home") treeview">
                 <a href="#">
                     <i class="fas fa-key"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Kho</span>
                     <span class="pull-right-container">
@@ -141,7 +148,7 @@
                     <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
                 </ul>
             </li>
-            <li class="@Html.IsSelected(controller: "group_role") treeview">
+            <li class="@Html.IsSelected(controller: "Home") treeview">
                 <a href="#">
                     <i class="fas fa-school"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Trường THPT</span>
                     <span class="pull-right-container">
@@ -149,9 +156,18 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Thêm</a></li>
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Sửa</a></li>
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
+                    <li class="@Html.IsSelected(controller: "Home", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.Home"><i class="fas fa-user-edit"></i> Giới Thiệu - Nội Quy </a></li>
+                    <li class="@Html.IsSelected(controller: "GiaoVien", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.GiaoVien"><i class="fas fa-user-edit"></i> Quản Lý Giáo Viên</a></li>
+                    <li class="@Html.IsSelected(controller: "HocSinh", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.HocSinh"><i class="fas fa-user-edit"></i> Quản Lý Học Sinh</a></li>
+                    <li class="@Html.IsSelected(controller: "Diem", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.Diem"><i class="fas fa-user-edit"></i>  Quản Lý Đánh Giá Học Lực</a></li>
+                    <li class="@Html.IsSelected(controller: "DiemChiTiet", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.DiemChiTiet"><i class="fas fa-user-edit"></i> Quản Lý Điểm Chi Tiết</a></li>
+                    <li class="@Html.IsSelected(controller: "MonHoc", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.MonHoc"><i class="fas fa-user-edit"></i> Quản Lý Môn Học</a></li>
+                    <li class="@Html.IsSelected(controller: "PhanCong", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.PhanCong"><i class="fas fa-user-edit"></i> Quản Lý Phân Công</a></li>
+                    <li class="@Html.IsSelected(controller: "Lop", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.Lop"><i class="fas fa-user-edit"></i> Quản Lý Lớp</a></li>
+                    <li class="@Html.IsSelected(controller: "KhoiLop", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.KhoiLop"><i class="fas fa-user-edit"></i> Quản Lý Khối Lớp</a></li>
+                    <li class="@Html.IsSelected(controller: "DienUuTien", action: "Index")"><a href="@lte.MVC.Pages.QuanLyTTHPT.DienUuTien"><i class="fas fa-user-edit"></i> Quản Lý Diện Ưu Tiên</a></li>
+                    <li><a href="http://mta.edu.vn" target="_blank"><i class="fas fa-user-edit"></i> Cổng thống tin điện tử</a></li>
+
                 </ul>
             </li>
             <li class="@Html.IsSelected(controller: "Layout") treeview">

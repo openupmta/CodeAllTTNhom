@@ -7,6 +7,20 @@ namespace lte.MVC
 {
     public static class Pages
     {
+        public static class QuanLyTTHPT
+        {
+            public const string Home = "/TTNhom_QLTTHPT/Home/Index";
+            public const string HocSinh = "/TTNhom_QLTTHPT/HocSinh/Index";
+            public const string GiaoVien = "/TTNhom_QLTTHPT/GiaoVien/Index";
+            public const string Diem = "/TTNhom_QLTTHPT/Diem/Index";
+            public const string DiemChiTiet = "/TTNhom_QLTTHPT/DiemChiTiet/Index";
+            public const string MonHoc = "/TTNhom_QLTTHPT/MonHoc/Index";
+            public const string PhanCong = "/TTNhom_QLTTHPT/PhanCong/Index";
+            public const string Lop = "/TTNhom_QLTTHPT/Lop/Index";
+            public const string KhoiLop = "/TTNhom_QLTTHPT/KhoiLop/Index";
+            public const string DienUuTien = "/TTNhom_QLTTHPT/DienUuTien/Index";
+        }
+
         public static class QLTV
         {
             public const string Home = "/TTNhom_QLThuVien/Home/Index";
