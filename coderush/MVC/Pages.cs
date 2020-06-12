@@ -34,6 +34,21 @@ namespace lte.MVC
             public const string Readers = "/TTNhom_QLThuVien/Readers/Index";
             public const string Rules = "/TTNhom_QLThuVien/Rules/Index";
         }
+        public static class QLKHO
+        {
+            public const string Home = "/TTNhom_QLKHO/Home/Index";
+            public const string News = "/TTNhom_QLKHO/News/Index";
+            public const string HH = "/TTNhom_QLKHO/HH/Index";
+            public const string KH = "/TTNhom_QLKHO/KH/Index";
+            public const string DV = "/TTNhom_QLKHO/DV/Index";
+            public const string NCC = "/TTNhom_QLKHO/NCC/Index";
+            public const string PN = "/TTNhom_QLKHO/PN/Index";
+            public const string TTPN = "/TTNhom_QLKHO/TTPN/Index";
+            public const string PX = "/TTNhom_QLKHO/PX/Index";
+            public const string TTPX = "/TTNhom_QLKHO/TTPX/Index";
+        }
+
+
         public static class GroupRole
         {
             public const string Index = "/TTNhom_QLNS/group_role/Index";
