@@ -1,0 +1,122 @@
+﻿@model coderush.Areas.TTNhom_QLThuVien.Models.TheLoai
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Adminlte.cshtml";
+}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            <b>
+                QUẢN LÝ THƯ VIỆN
+                <small>Học viện Kỹ thuật Quân sự</small>
+            </b>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Data tables</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <i class="fa fa-hand-o-right"></i>
+                        <h3 class="box-title">QUẢN LÝ SÁCH&nbsp;&nbsp;</h3>
+                        <i class="fa fa-angle-double-right"></i>
+                        <h3 class="box-title">Bổ sung Thể loại</h3>
+                        <button type="button" class="btn btn-warning" style="float:right">
+                            <a class="fa fa-reply"></a> &nbsp;
+                            @Html.ActionLink("Quay lại", "Create")
+                        </button>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    @using (Html.BeginForm("Create", "Category", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Mã thể loại</label>
+                                <input type="text" class="form-control" name="MaTheLoai" placeholder="Nhập mã thể loại" value=" @Html.DisplayFor(model => model.MaTheLoai)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Tên thể loại</label>
+                                <input type="text" class="form-control" name="TenTheLoai" placeholder="Nhập tên thể loại" value=" @Html.DisplayFor(model => model.TenTheLoai)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Mô tả</label>
+                                <input type="text" class="form-control" name="GhiChu" placeholder="Nhập mô tả cho thể loại" value=" @Html.DisplayFor(model => model.GhiChu)">
+                            </div>
+
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary"><a class="fa fa-plus-square"></a> &nbsp;Tạo mới</button>
+                        </div>
+                    }
+
+
+                </div>
+
+            </div>
+            <!--/.col -->
+
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+
+@section Styles{
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="~/Content/adminlte/components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/adminlte/components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/Content/adminlte/components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/adminlte/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="~/Content/adminlte/dist/css/skins/_all-skins.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="~/Areas/TTNhom_QLThuVien/assets/mystyle.css">
+}
+
+
+@section Scripts{
+    <!-- jQuery 3 -->
+    <script src="~/Content/adminlte/components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="~/Content/adminlte/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Content/adminlte/components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Content/adminlte/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Content/adminlte/dist/js/demo.js"></script>
+}
+
+
+
+
+
+

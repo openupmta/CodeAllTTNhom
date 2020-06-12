@@ -1,4 +1,4 @@
-namespace coderush.Areas.TTNhom_QLNS.Models
+﻿namespace coderush.Areas.TTNhom_QLNS.Models
 {
     using System;
     using System.Collections.Generic;
@@ -10,16 +10,17 @@ namespace coderush.Areas.TTNhom_QLNS.Models
     public partial class address
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int add_id { get; set; }
 
         [StringLength(50)]
+        [Required(ErrorMessage ="Xã không được để trống")]
         public string add_ward { get; set; }
-
         [StringLength(50)]
+        [Required(ErrorMessage = "Quận/Huyệnkhông được để trống")]
         public string add_district { get; set; }
 
         [StringLength(50)]
+        [Required(ErrorMessage = "Tỉnh/Thành phố không được để trống")]
         public string add_province { get; set; }
 
         [StringLength(150)]

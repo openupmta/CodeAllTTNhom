@@ -1,4 +1,4 @@
-namespace coderush.Areas.TTNhom_QLNS.Models
+﻿namespace coderush.Areas.TTNhom_QLNS.Models
 {
     using System;
     using System.Collections.Generic;
@@ -19,6 +19,7 @@ namespace coderush.Areas.TTNhom_QLNS.Models
 
         [Required]
         [StringLength(50)]
+        [Display(Name ="Nhóm quyền")]
         public string gr_name { get; set; }
 
         [StringLength(500)]

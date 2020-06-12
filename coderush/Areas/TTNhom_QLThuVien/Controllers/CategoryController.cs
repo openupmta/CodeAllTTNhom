@@ -78,7 +78,7 @@ namespace coderush.Areas.TTNhom_QLThuVien.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaTheLoai, TenTheLoai, ChiChu")] TheLoai obj)
+        public ActionResult Edit([Bind(Include = "MaTheLoai, TenTheLoai, GhiChu")] TheLoai obj)
         {
             if (ModelState.IsValid)
             {
@@ -91,12 +91,18 @@ namespace coderush.Areas.TTNhom_QLThuVien.Controllers
 
         public ActionResult Delete(string id)
         {
-            TheLoai obj = db.TheLoais.Find(id);
-            db.TheLoais.Remove(obj);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                TheLoai obj = db.TheLoais.Find(id);
+                db.TheLoais.Remove(obj);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
         }
-
 
         protected override void Dispose(bool disposing)
         {
