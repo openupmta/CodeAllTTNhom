@@ -1,0 +1,47 @@
+﻿#MaMH, #MaDiem, #MaHS, #MaLop, #MaDUT, #MaKhoi, #MaGV {
+    width: 164px;
+}
+
+.form-horizontal .control-label {
+    padding-top: 2px;
+}
+
+.control-label.col-md-2[for=MaMH], .control-label.col-md-2[for=MaDiem] {
+    padding-top: 6px;
+    border-color: #a9a9aa;
+}
+
+.btn.btn-warning {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+    .btn.btn-warning a {
+        color: #fff;
+        margin-left: 8px;
+    }
+
+        .btn.btn-warning a:hover {
+            color: #337ab7;
+        }
+
+            .btn.btn-warning a:hover ~ i {
+                color: #337ab7;
+            }
+
+.btn.btn-default {
+    color: #fff;
+    background-color: #f39c12;
+    border-color: #e08e0b;
+}
+
+    .btn.btn-default:hover {
+        background-color: #e08e0b;
+        color: #337ab7;
+    }
+
+.form-group {
+    margin-bottom: unset;
+    padding-bottom: 15px;
+}
