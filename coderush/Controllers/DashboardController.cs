@@ -1,4 +1,5 @@
-﻿using coderush.Areas.TTNhom_QLThuVien.Models;
+﻿using coderush.Areas.TTNhom_QLKHO.Models;
+using coderush.Areas.TTNhom_QLThuVien.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace coderush.Controllers
                                  select c).Count();
 
             var totalPublishingCompany = (from c in dbQLTV.NhaXuatBans
-                                 select c).Count();
+                                          select c).Count();
 
             var totalAuthor = (from a in dbQLTV.TacGias
                                select a).Count();
@@ -51,6 +52,27 @@ namespace coderush.Controllers
             ViewBag.YetBG = yetBG;
 
             // QL_Kho
+            DBQLKHOContext dbQLKHO = new DBQLKHOContext();
+            var HH = (from b in dbQLKHO.HANGHOAs
+                             select b).Count();
+
+            var KH = (from c in dbQLKHO.KHACHHANGs
+                                 select c).Count();
+
+            var NCC = (from c in dbQLKHO.NHACCs
+                                          select c).Count();
+
+            var PN = (from a in dbQLKHO.PHIEUNHAPs
+                               select a).Count();
+
+            var PX = (from r in dbQLKHO.PHIEUXUATs
+                               select r).Count();
+
+            ViewBag.HH = HH;
+            ViewBag.KH = KH;
+            ViewBag.NCC = NCC;
+            ViewBag.PN = PN;
+            ViewBag.PX = PX;
 
             // QL_KhachSan
 
