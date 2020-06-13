@@ -137,7 +137,7 @@ namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
             ws.Cells["D1"].Value = "Danh Sách Giáo Viên";
 
             ws.Cells["C3"].Value = "Ngày Tạo :";
-            ws.Cells["D3"].Value = string.Format("{0:dd MMMM yyyy} at {0:H: mm tt}", DateTime.Now);
+            ws.Cells["D3"].Value = string.Format("{0:dd MM yyyy} at {0:H: mm tt}", DateTime.Now);
 
             ws.Cells["A6"].Value = "STT";
             ws.Cells["B6"].Value = "Họ và Tên";
