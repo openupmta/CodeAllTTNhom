@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="~/Content/adminlte/components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="~/Areas/TTNhom_QLTTHPT/Asset/index.css" />
 
-    <link rel="stylesheet" href="~/Areas/TTNhom_QLTTHPT/Asset/dashboard.css"/>
+    <link rel="stylesheet" href="~/Areas/TTNhom_QLTTHPT/Asset/dashboard.css" />
 }
 
 
@@ -69,7 +69,20 @@
                 <div class="small-box bg-red">
                     <div class="inner">
                         <h3>Quản Lý Nhân Sự</h3>
-                        <p>Thống kê cái gì viết vào đây :))</p>
+                        <table cellpadding="0" cellspacing="0" style="width:60%">
+                            <col style="width:40%">
+                            <col style="width:36%">
+                            <col style="width:24%">
+                            <tr>
+                                <td><h4>Nhân sự hoạt động&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <b>@ViewBag.TotalStaffON</b></h4></td>
+                                <td><h4>Nhân sự không hoạt động&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <b>@ViewBag.TotalStaffOFF</b></h4></td>
+                            </tr>
+                            <tr>
+                                <td><h4>Quản lý&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <b>@ViewBag.TotalQL</b></h4></td>
+                                <td><h4>Người dùng&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <b>@ViewBag.TotalND</b></h4></td>
+                            </tr>
+
+                        </table>
                     </div>
                     <div class="icon">
                         <i class="fa fa-user-alt"></i>
@@ -109,7 +122,7 @@
                     <div class="icon">
                         <i class="fa fa-book"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="/TTNhom_QLThuVien/Home/Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -118,7 +131,31 @@
                 <div class="small-box bg-green">
                     <div class="inner">
                         <h3>Quản Lý Khách Sạn</h3>
-                        <p>Thống kê cái gì viết vào đây :))</p>
+
+
+                        <table cellpadding="0" cellspacing="0" style="width:60%">
+                            <col style="width:40%">
+                            <col style="width:36%">
+                            <col style="width:24%">
+                            <tr>
+                                <td><h4>Số lượng nhân viên: <b>@ViewBag.NhanVien</b></h4></td>
+                                <td><h4>Thu ngày: <b>@ViewBag.ThuNgay</b></h4></td>
+                                <td><h4>Thu tháng: <b>@ViewBag.ThuThang</b></h4></td>
+                            </tr>
+                            <tr>
+                                <td><h4>Số lượng khách hàng: <b>@ViewBag.KhachHang</b></h4></td>
+                                <td><h4>Chi ngày: <b>@ViewBag.ChiNgay</b></h4></td>
+                                <td><h4>Chi tháng: <b>@ViewBag.ChiThang</b></h4></td>
+                            </tr>
+                            <tr>
+                                <td><h4><b></b></h4></td>
+                                <td><h4><b></b></h4></td>
+                                <td><h4><b></b></h4></td>
+                            </tr>
+
+                        </table>
+
+
                     </div>
                     <div class="icon">
                         <i class="fa fa-hotel"></i>
@@ -139,16 +176,16 @@
                             <tr>
                                 <td><h4>Số Hàng Hóa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <b>@ViewBag.HH</b></h4></td>
                                 <td><h4>Số Khách Hàng&nbsp;&nbsp;: <b>@ViewBag.KH</b></h4></td>
-                 
+
                             </tr>
                             <tr>
                                 <td><h4>Số Nhà Cung Cấp&nbsp;: <b>@ViewBag.NCC</b></h4></td>
                                 <td><h4>Số Phiếu Nhập&nbsp;&nbsp;&nbsp;: <b>@ViewBag.PN</b></h4></td>
-                               
+
                             </tr>
                             <tr>
                                 <td><h4>Số Phiếu Xuất&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <b>@ViewBag.PX</b></h4></td>
-                               
+
                             </tr>
 
                         </table>
@@ -167,9 +204,9 @@
                         <h3>Quản Lý Trường THPT</h3>
 
                         <ul class="thongke">
-                                <li class="col-lg-3 col-xs-6">Số Học Sinh : @ViewBag.totalStudent</li>
-                                <li class="col-lg-3 col-xs-6">Số Học Sinh Xuất Sắc : @ViewBag.totalStudentXS</li>
-                                <li class="col-lg-3 col-xs-6">Số Học Sinh Giỏi : @ViewBag.totalStudentG</li>
+                            <li class="col-lg-3 col-xs-6">Số Học Sinh : @ViewBag.totalStudent</li>
+                            <li class="col-lg-3 col-xs-6">Số Học Sinh Xuất Sắc : @ViewBag.totalStudentXS</li>
+                            <li class="col-lg-3 col-xs-6">Số Học Sinh Giỏi : @ViewBag.totalStudentG</li>
                         </ul>
                         <ul class="thongke">
                             <li class="col-lg-3 col-xs-6">Số Học Sinh Khá : @ViewBag.totalStudentK</li>

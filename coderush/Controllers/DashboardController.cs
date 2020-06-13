@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using coderush.Areas.TTNhom_QLTTHPT.Models;
 using OfficeOpenXml;
+using coderush.Areas.TTNhom_QLNS.Models;
+using coderush.Areas.TTNhom_QLKS.EF;
 
 namespace coderush.Controllers
 {
@@ -28,7 +30,18 @@ namespace coderush.Controllers
             ViewBag.totalStudentDUT = (from s in dbTHPTcontext.HOCSINHs where s.MaDUT != 1 select s).Count();
             ViewBag.totalTeacher = (from t in dbTHPTcontext.HOCSINHs select t).Count();
             ViewBag.totalClass = (from c in dbTHPTcontext.HOCSINHs select c).Count();
+
             // QL_NhanSu
+            DBQLNSContext dBQLNS = new DBQLNSContext();
+            ViewBag.TotalStaffON = dBQLNS.staffs.Where(x => x.sta_status == 1).Count();
+            ViewBag.TotalStaffOFF = dBQLNS.staffs.Where(x => x.sta_status == 0).Count();
+            var gr_admin = dBQLNS.group_role.Where(x => x.gr_name == "Admin").FirstOrDefault();
+            var gr_user = dBQLNS.group_role.Where(x => x.gr_name == "User").FirstOrDefault();
+            if (gr_admin != null)
+                ViewBag.TotalQL = dBQLNS.staffs.Where(x => x.group_role_id == gr_admin.gr_id).Count();
+            if (gr_user != null)
+                ViewBag.TotalND = dBQLNS.staffs.Where(x => x.group_role_id == gr_user.gr_id).Count();
+
 
             // QL_ThuVien
             DBQLTVContext dbQLTV = new DBQLTVContext();
@@ -70,19 +83,19 @@ namespace coderush.Controllers
             // QL_Kho
             DBQLKHOContext dbQLKHO = new DBQLKHOContext();
             var HH = (from b in dbQLKHO.HANGHOAs
-                             select b).Count();
+                      select b).Count();
 
             var KH = (from c in dbQLKHO.KHACHHANGs
-                                 select c).Count();
+                      select c).Count();
 
             var NCC = (from c in dbQLKHO.NHACCs
-                                          select c).Count();
+                       select c).Count();
 
             var PN = (from a in dbQLKHO.PHIEUNHAPs
-                               select a).Count();
+                      select a).Count();
 
             var PX = (from r in dbQLKHO.PHIEUXUATs
-                               select r).Count();
+                      select r).Count();
 
             ViewBag.HH = HH;
             ViewBag.KH = KH;
@@ -91,6 +104,19 @@ namespace coderush.Controllers
             ViewBag.PX = PX;
 
             // QL_KhachSan
+
+            QLKSdbContext dbQLKS = new QLKSdbContext();
+            ViewBag.NhanVien = dbQLKS.NhanViens.Count();
+            // số lượng khách hàng
+            ViewBag.KhachHang = dbQLKS.KhachHangs.Count();
+            // thu lãi ngày
+            ViewBag.ThuNgay = Convert.ToDecimal((dbQLKS.PhieuThus.Where(p => p.ngaytao.Value.Day == DateTime.Now.Day).Sum(p => p.tongtien)));
+            // chi tiề ngày
+            ViewBag.ChiNgay = Convert.ToDecimal((dbQLKS.PhieuChis.Where(p => p.ngaytao.Value.Day == DateTime.Now.Day).Sum(p => p.tongtien)));
+            // thu lãi tháng
+            ViewBag.ThuThang = Convert.ToDecimal((dbQLKS.PhieuThus.Where(p => p.ngaytao.Value.Month == DateTime.Now.Month).Sum(p => p.tongtien)));
+            // chi tiền tháng
+            ViewBag.ChiThang = Convert.ToDecimal((dbQLKS.PhieuChis.Where(p => p.ngaytao.Value.Month == DateTime.Now.Month).Sum(p => p.tongtien)));
 
             // QL_TruongTHPT
 
