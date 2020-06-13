@@ -89,9 +89,13 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Thêm</a></li>
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Sửa</a></li>
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
+                    <li class="@Html.IsSelected(controller: "Home", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Home"><i class="fa fa-circle-o"></i> Lễ tân</a></li>
+                    <li class="@Html.IsSelected(controller: "NhanViens", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Employees"><i class="fa fa-circle-o"></i> Nhân viên</a></li>
+                    <li class="@Html.IsSelected(controller: "KhacHangs", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Clients"><i class="fa fa-circle-o"></i> Khách hàng</a></li>
+                    <li class="@Html.IsSelected(controller: "PhieuChis", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Payments"><i class="fa fa-circle-o"></i> Phiếu chi</a></li>
+                    <li class="@Html.IsSelected(controller: "DichVuChungs", action: "Index")"><a href="@lte.MVC.Pages.QLKS.GeneralService"><i class="fa fa-circle-o"></i> Dịch vụ chung</a></li>
+                    <li class="@Html.IsSelected(controller: "Phongs", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Rooms"><i class="fa fa-building"></i> Phòng</a></li>
+                    <li class="@Html.IsSelected(controller: "PhieuThus", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Receipts"><i class="fa fa-usd"></i> Phiếu thu</a></li>
                 </ul>
             </li>
             <li class="@Html.IsSelected(controller: "group_role") treeview">

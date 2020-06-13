@@ -1,16 +1,16 @@
-﻿using coderush.Areas.TTNhon_QLKS.Common;
-using QLKSCommonModels.Dom;
+﻿using coderush.Areas.TTNhom_QLKS.Dom;
+using coderush.Areas.TTNhom_QLKS.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace coderush.Areas.TTNhon_QLKS.Controllers
+namespace coderush.Areas.TTNhom_QLKS.Controllers
 {
     public class LoginController : Controller
     {
-        // GET: TTNhon_QLKS/Login
+        // GET: admin/Login
         public ActionResult Index()
         {
             return View();
@@ -30,6 +30,7 @@ namespace coderush.Areas.TTNhon_QLKS.Controllers
                     userSession.UserID = user.ID;
 
                     Session.Add(CommonConstants.USER_SESSION, userSession.UserName);
+                    Session.Add(CommonConstants.ID_SESSION, userSession.UserID);
                     return RedirectToAction("Index", "Home");
                 }
                 else if (result == 0)
@@ -55,5 +56,9 @@ namespace coderush.Areas.TTNhon_QLKS.Controllers
             }
             return View("Index");
         }
+
+
+        //
+
     }
 }
