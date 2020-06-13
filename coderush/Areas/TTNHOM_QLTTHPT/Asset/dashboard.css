@@ -1,0 +1,21 @@
+﻿.row-button {
+    display: flex;
+    margin-top: 7px;
+    justify-content: flex-end;
+    position: absolute;
+    right: 5px;
+}
+
+
+#export i {
+    margin-right: 4px;
+    margin-right: 4px;
+}
+
+.thongke {
+    display: flex;
+}
+
+    .thongke li {
+        font-size: 1.6rem;
+    }

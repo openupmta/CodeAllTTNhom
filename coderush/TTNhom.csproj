@@ -1992,6 +1992,7 @@
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\vendor\jquery\jquery.slim.js" />
     <Content Include="Areas\TTNhom_QLKS\Content\Admin\vendor\jquery\jquery.slim.min.js" />
     <Content Include="Areas\TTNhom_QLTTHPT\Asset\create.css" />
+    <Content Include="Areas\TTNhom_QLTTHPT\Asset\dashboard.css" />
     <Content Include="Areas\TTNhom_QLTTHPT\Asset\details.css" />
     <Content Include="Areas\TTNhom_QLTTHPT\Asset\edit.css" />
     <Content Include="Areas\TTNhom_QLTTHPT\Asset\img\ff81224b0050fa0ea341.jpg" />
