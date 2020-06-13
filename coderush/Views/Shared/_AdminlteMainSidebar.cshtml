@@ -105,7 +105,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li class="@Html.IsSelected(controller: "Staffs", action: "Index")"><a href="@lte.MVC.Pages.Staff.Index"><i class="fa fa-circle-o"></i> Danh sách</a></li>
-                        </ul>
+                        </ul> 
                     </li>
                 </ul>
 
@@ -140,9 +140,13 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Thêm</a></li>
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Sửa</a></li>
-                    <li class="@Html.IsSelected(controller: "group_role", action: "Index")"><a href="@lte.MVC.Pages.GroupRole.Index"><i class="fa fa-circle-o"></i> Xoá</a></li>
+                    <li class="@Html.IsSelected(controller: "Home", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Home"><i class="fa fa-circle-o"></i> Lễ tân</a></li>
+                    <li class="@Html.IsSelected(controller: "NhanViens", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Employees"><i class="fa fa-circle-o"></i> Nhân viên</a></li>
+                    <li class="@Html.IsSelected(controller: "KhacHangs", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Clients"><i class="fa fa-circle-o"></i> Khách hàng</a></li>
+                    <li class="@Html.IsSelected(controller: "PhieuChis", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Payments"><i class="fa fa-circle-o"></i> Phiếu chi</a></li>
+                    <li class="@Html.IsSelected(controller: "DichVuChungs", action: "Index")"><a href="@lte.MVC.Pages.QLKS.GeneralService"><i class="fa fa-circle-o"></i> Dịch vụ chung</a></li>
+                    <li class="@Html.IsSelected(controller: "Phongs", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Rooms"><i class="fa fa-building"></i> Phòng</a></li>
+                    <li class="@Html.IsSelected(controller: "PhieuThus", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Receipts"><i class="fa fa-usd"></i> Phiếu thu</a></li>
                 </ul>
             </li>
             <li class="@Html.IsSelected(controller: "/Areas/TTNhom_QLKHO/Controllers/Home") treeview">
@@ -153,17 +157,17 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@Html.IsSelected(controller: "Home", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.Home"><i class="fa fa-circle-o"></i> Giới thiệu </a></li>
-                    <li class="@Html.IsSelected(controller: "News", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.News"><i class="fa fa-circle-o"></i> Tin tức - Sự kiện</a></li>
-                    <li class="@Html.IsSelected(controller: "HH", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.HH"><i class="fa fa-circle-o"></i> Hàng Hóa</a></li>
-                    <li class="@Html.IsSelected(controller: "KH", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.KH"><i class="fa fa-circle-o"></i> Khách Hàng</a></li>
-                    <li class="@Html.IsSelected(controller: "DV", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.DV"><i class="fa fa-circle-o"></i> Đơn Vị</a></li>
-                    <li class="@Html.IsSelected(controller: "NCC", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.NCC"><i class="fa fa-circle-o"></i> Nhà Cung Cấp</a></li>
-                    <li class="@Html.IsSelected(controller: "PN", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.PN"><i class="fa fa-circle-o"></i> Phiếu Nhập</a></li>
-                    <li class="@Html.IsSelected(controller: "TTPN", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.TTPN"><i class="fa fa-circle-o"></i> THÔNG TIN PHIẾU NHẬP</a></li>
-                    <li class="@Html.IsSelected(controller: "PX", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.PX"><i class="fa fa-circle-o"></i> PHIẾU XUẤT</a></li>
-                    <li class="@Html.IsSelected(controller: "TTPX", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.TTPX"><i class="fa fa-circle-o"></i> THÔNG TIN PHIẾU XUẤT</a></li>
-                    <li><a href="http://mta.edu.vn" target="_blank"><i class="fa fa-circle-o"></i> Cổng thống tin điện tử</a></li>
+                    <li class="@Html.IsSelected(controller: "Home", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.Home"><i class="fas fa-user-edit"></i> Giới thiệu </a></li>
+                    <li class="@Html.IsSelected(controller: "News", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.News"><i class="fas fa-user-edit"></i> Tin tức - Sự kiện</a></li>
+                    <li class="@Html.IsSelected(controller: "HH", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.HH"><i class="fas fa-user-edit"></i> Hàng Hóa</a></li>
+                    <li class="@Html.IsSelected(controller: "KH", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.KH"><i class="fas fa-user-edit"></i> Khách Hàng</a></li>
+                    <li class="@Html.IsSelected(controller: "DV", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.DV"><i class="fas fa-user-edit"></i> Đơn Vị</a></li>
+                    <li class="@Html.IsSelected(controller: "NCC", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.NCC"><i class="fas fa-user-edit"></i> Nhà Cung Cấp</a></li>
+                    <li class="@Html.IsSelected(controller: "PN", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.PN"><i class="fas fa-user-edit"></i> Phiếu Nhập</a></li>
+                    <li class="@Html.IsSelected(controller: "TTPN", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.TTPN"><i class="fas fa-user-edit"></i> Thông Tin Phiếu Nhập</a></li>
+                    <li class="@Html.IsSelected(controller: "PX", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.PX"><i class="fas fa-user-edit"></i> Phiếu Xuất</a></li>
+                    <li class="@Html.IsSelected(controller: "TTPX", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.TTPX"><i class="fas fa-user-edit"></i> Thông Tin Phiếu Xuất</a></li>
+                    <li><a href="http://mta.edu.vn" target="_blank"><i class="fas fa-user-edit"></i> Cổng thống tin điện tử</a></li>
                 </ul>
             </li>
             <li class="@Html.IsSelected(controller: "/Areas/TTNhom_QLTTHPT/Controllers/Home") treeview">
@@ -361,3 +365,6 @@
     </section>
     <!-- /.sidebar -->
 </aside>
+
+
+

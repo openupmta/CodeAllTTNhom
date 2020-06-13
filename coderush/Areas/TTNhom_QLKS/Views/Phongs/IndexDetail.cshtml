@@ -1,0 +1,43 @@
+﻿@model IEnumerable<coderush.Areas.TTNhom_QLKS.EF.GiaPhong>
+<h3 class="box-title">Các hình thức cho thuê</h3>
+<p>
+    @Html.ActionLink("Thêm dịch vụ", "Create", "GiaPhongs", new { maphong = ViewBag.IDphong }, null)
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DichVu.tenDV)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Phong.maphong)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.gia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr id="row_@item.maDV-@item.maphong">
+        <td>
+            @Html.DisplayFor(modelItem => item.DichVu.tenDV)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Phong.maphong)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.gia)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit","GiaPhongs", new { @IDdichvu = item.maDV, @IDphong = item.maphong }, null) | 
+            @Ajax.ActionLink("Delete", "DeleteDV", new { @IDdichvu = item.maDV , @IDphong = item.maphong }, new AjaxOptions
+       {   Confirm =" Bạn có muốn xóa bản ghi này?",
+           OnComplete = "$('#row_"+ @item.maDV + "-" + @item.maphong + "').remove()",
+           HttpMethod = "Delete"
+       })
+        </td>
+    </tr>
+}
+
+</table>
