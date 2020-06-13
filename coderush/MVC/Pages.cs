@@ -7,6 +7,24 @@ namespace lte.MVC
 {
     public static class Pages
     {
+        public static class Dashboard
+        {
+            public const string dashboard = "/Dashboard/Dashboardv1";
+        }
+        public static class QuanLyTTHPT
+        {
+            public const string Home = "/TTNhom_QLTTHPT/Home/Index";
+            public const string HocSinh = "/TTNhom_QLTTHPT/HocSinh/Index";
+            public const string GiaoVien = "/TTNhom_QLTTHPT/GiaoVien/Index";
+            public const string Diem = "/TTNhom_QLTTHPT/Diem/Index";
+            public const string DiemChiTiet = "/TTNhom_QLTTHPT/DiemChiTiet/Index";
+            public const string MonHoc = "/TTNhom_QLTTHPT/MonHoc/Index";
+            public const string PhanCong = "/TTNhom_QLTTHPT/PhanCong/Index";
+            public const string Lop = "/TTNhom_QLTTHPT/Lop/Index";
+            public const string KhoiLop = "/TTNhom_QLTTHPT/KhoiLop/Index";
+            public const string DienUuTien = "/TTNhom_QLTTHPT/DienUuTien/Index";
+        }
+
         public static class QLTV
         {
             public const string Home = "/TTNhom_QLThuVien/Home/Index";
@@ -20,9 +38,49 @@ namespace lte.MVC
             public const string Readers = "/TTNhom_QLThuVien/Readers/Index";
             public const string Rules = "/TTNhom_QLThuVien/Rules/Index";
         }
+        public static class QLKHO
+        {
+            public const string Home = "/TTNhom_QLKHO/Home/Index";
+            public const string News = "/TTNhom_QLKHO/News/Index";
+            public const string HH = "/TTNhom_QLKHO/HH/Index";
+            public const string KH = "/TTNhom_QLKHO/KH/Index";
+            public const string DV = "/TTNhom_QLKHO/DV/Index";
+            public const string NCC = "/TTNhom_QLKHO/NCC/Index";
+            public const string PN = "/TTNhom_QLKHO/PN/Index";
+            public const string TTPN = "/TTNhom_QLKHO/TTPN/Index";
+            public const string PX = "/TTNhom_QLKHO/PX/Index";
+            public const string TTPX = "/TTNhom_QLKHO/TTPX/Index";
+        }
+
+
         public static class GroupRole
         {
             public const string Index = "/TTNhom_QLNS/group_role/Index";
+            public const string Create = "/TTNhom_QLNS/group_role/Create";
+            public const string Detail = "/TTNhom_QLNS/group_role/Details";
+            public const string Update = "/TTNhom_QLNS/group_role/Edit";
+            
+        }
+        public static class Department
+        {
+            public const string Index = "/TTNhom_QLNS/Departments/Index";
+            public const string Create = "/TTNhom_QLNS/Departments/Create";
+            public const string Detail = "/TTNhom_QLNS/Departments/Details";
+            public const string Update = "/TTNhom_QLNS/Departments/Edit";
+        }
+        public static class Position
+        {
+            public const string Index = "/TTNhom_QLNS/Positions/Index";
+            public const string Create = "/TTNhom_QLNS/Positions/Create";
+            public const string Detail = "/TTNhom_QLNS/Positions/Details";
+            public const string Update = "/TTNhom_QLNS/Positions/Edit";
+        }
+        public static class Staff
+        {
+            public const string Index = "/TTNhom_QLNS/Staffs/Index";
+            public const string Create = "/TTNhom_QLNS/Staffs/Create";
+            public const string Detail = "/TTNhom_QLNS/Staffs/Details";
+            public const string Update = "/TTNhom_QLNS/Staffs/Edit";
         }
 
         public static class QLKS
@@ -208,6 +266,10 @@ namespace lte.MVC
         public static class ExamplePacePage
         {
             public const string Url = "/Example/PacePage";
+        }
+        public static class Account
+        {
+            public const string Logout = "/Account/LogOff";
         }
     }
 }

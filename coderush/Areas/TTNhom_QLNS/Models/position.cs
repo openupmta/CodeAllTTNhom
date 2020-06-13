@@ -1,4 +1,4 @@
-namespace coderush.Areas.TTNhom_QLNS.Models
+﻿namespace coderush.Areas.TTNhom_QLNS.Models
 {
     using System;
     using System.Collections.Generic;
@@ -16,25 +16,19 @@ namespace coderush.Areas.TTNhom_QLNS.Models
         }
 
         [Key]
+        [Display(Name ="Mã chức vụ")]
         public int pos_id { get; set; }
 
         [StringLength(250)]
+        [Display(Name ="Tên chức vụ")]
+        [Required(ErrorMessage ="Tên chức vụ không được để trống")]
         public string pos_name { get; set; }
 
         [StringLength(250)]
-        public string pos_competence { get; set; }
-
-        [StringLength(250)]
-        public string pos_abilty { get; set; }
-
-        [StringLength(250)]
-        public string pos_authority { get; set; }
-
-        [StringLength(250)]
-        public string pos_responsibility { get; set; }
-
-        [StringLength(250)]
+        [Display(Name ="Mô tả ")]
         public string pos_description { get; set; }
+        [Display(Name ="Trạng thái")]
+        public byte? pos_status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<staff> staffs { get; set; }

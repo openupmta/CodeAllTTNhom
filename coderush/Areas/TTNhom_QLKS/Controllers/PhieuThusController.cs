@@ -10,7 +10,7 @@ using coderush.Areas.TTNhom_QLKS.EF;
 
 namespace coderush.Areas.TTNhom_QLKS.Controllers
 {
-    public class PhieuThusController : BaseController
+    public class PhieuThusController : Controller
     {
         private QLKSdbContext db = new QLKSdbContext();
 

@@ -11,7 +11,7 @@ using coderush.Areas.TTNhom_QLKS.EF;
 
 namespace coderush.Areas.TTNhom_QLKS.Controllers
 {
-    public class KhachHangsController : BaseController
+    public class KhachHangsController : Controller
     {
         private QLKSdbContext db = new QLKSdbContext();
 

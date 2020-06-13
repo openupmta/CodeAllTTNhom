@@ -12,9 +12,9 @@
             <small>Nhóm quyền</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Forms</a></li>
-            <li class="active">General Elements</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Quản lý nhân sự</a></li>
+            <li><a href="#">Nhóm quyền</a></li>
+            <li class="active"><a href="@lte.MVC.Pages.GroupRole.Detail">Chi tiết</a></li>
         </ol>
     </section>
 
@@ -58,7 +58,14 @@
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.gr_status)
+                                @if (Model.gr_status == 1)
+                                {
+                                    @Html.Raw("Hoạt động")
+                                }
+                                else
+                                {
+                                    @Html.Raw("Khóa")
+                                }
                             </dd>
 
                         </dl>

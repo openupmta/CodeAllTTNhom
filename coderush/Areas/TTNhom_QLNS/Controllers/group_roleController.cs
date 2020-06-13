@@ -11,17 +11,21 @@ using coderush.Areas.TTNhom_QLNS.Models;
 
 namespace coderush.Areas.TTNhom_QLNS.Controllers
 {
-    public class group_roleController : Controller
+    public class group_roleController : BaseController
     {
         DBQLNSContext db = new DBQLNSContext();
 
         // GET: TTNhom_QLNS/group_role
+        [Authorize]
+
         public ActionResult Index()
         {
             return View(db.group_role.ToList());
         }
 
         // GET: TTNhom_QLNS/group_role/Details/5
+        [Authorize]
+
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +41,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         }
 
         // GET: TTNhom_QLNS/group_role/Create
+        [Authorize]
+
         public ActionResult Create()
         {
             return View();
@@ -47,6 +53,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+
         public ActionResult Create([Bind(Include = "gr_id,gr_name,gr_description,gr_status")] group_role group_role)
         {
             if (ModelState.IsValid)
@@ -60,6 +68,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         }
 
         // GET: TTNhom_QLNS/group_role/Edit/5
+        [Authorize]
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -79,6 +89,8 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+
         public ActionResult Edit([Bind(Include = "gr_id,gr_name,gr_description,gr_status")] group_role group_role)
         {
             if (ModelState.IsValid)
@@ -89,6 +101,7 @@ namespace coderush.Areas.TTNhom_QLNS.Controllers
             }
             return View(group_role);
         }
+        [Authorize]
 
         public ActionResult Delete(int? id)
         {
