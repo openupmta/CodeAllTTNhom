@@ -82,6 +82,17 @@ namespace lte.MVC
             public const string Detail = "/TTNhom_QLNS/Staffs/Details";
             public const string Update = "/TTNhom_QLNS/Staffs/Edit";
         }
+
+        public static class QLKS
+        {
+            public const string Home = "/TTNhom_QLKS/Home/Index";
+            public const string Employees = "/TTNhom_QLKS/NhanViens/Index";
+            public const string Payments = "/TTNhom_QLKS/PhieuChis/Index";
+            public const string Clients = "/TTNhom_QLKS/KhachHangs/Index";
+            public const string GeneralService = "/TTNhom_QLKS/DichVuChungs/Index";
+            public const string Rooms = "/TTNhom_QLKS/Phongs/Index";
+            public const string Receipts = "/TTNhom_QLKS/PhieuThus/Index";
+        }
         public static class Dashbaordv2
         {
             public const string Url = "/Dashboard/Dashboardv2";

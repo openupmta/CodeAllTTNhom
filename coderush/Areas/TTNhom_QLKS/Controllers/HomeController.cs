@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace coderush.Areas.TTNhon_QLKS.Controllers
+namespace coderush.Areas.TTNhom_QLKS.Controllers
 {
     public class HomeController : BaseController
     {
-        // GET: TTNhon_QLKS/Home
+        // GET: TTNhom_QLKS/Home
         public ActionResult Index()
         {
             return View();
