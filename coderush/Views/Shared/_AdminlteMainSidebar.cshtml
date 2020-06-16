@@ -34,7 +34,7 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">MAIN NAVIGATION</li>
+            <li class="header">Giầy D</li>
 
             <li class="@Html.IsSelected(controller: "Dashboard")  treeview">
                 <a href="#">
@@ -50,7 +50,7 @@
             </li>
 
 
-            <li class="@Html.IsSelected(controller: "group_role") treeview">
+            @*<li class="@Html.IsSelected(controller: "group_role") treeview">
                 <a href="#">
                     <i class="fas fa-user-alt"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Nhân Sự</span>
                     <span class="pull-right-container">
@@ -109,12 +109,12 @@
                     </li>
                 </ul>
 
-            </li>
+            </li>*@
 
             <li class="@Html.IsSelected(controller: "/Areas/TTNhom_QLThuVien/Controllers/Home") treeview">
                 <a href="#">
                     <i class="fas fa-book"></i>
-                    <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Thư Viện</span>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Cái Gì Đó</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -124,7 +124,7 @@
                     <li class="@Html.IsSelected(controller: "WorkingSchedule", action: "Index")"><a href="@lte.MVC.Pages.QLTV.WorkingSchedule"><i class="fa fa-hand-o-right"></i> Lịch công tác</a></li>
                     <li class="@Html.IsSelected(controller: "BorrowGiveBack", action: "Index")"><a href="@lte.MVC.Pages.QLTV.BorrowGiveBack"><i class="fa fa-hand-o-right"></i> Mượn - Trả</a></li>
                     <li class="@Html.IsSelected(controller: "Book", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Book"><i class="fa fa-hand-o-right"></i> Kho sách</a></li>
-                    <li class="@Html.IsSelected(controller: "Author", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Author"><i class="fa fa-hand-o-right"></i> Tác giả</a></li>
+                    @*<li class="@Html.IsSelected(controller: "Author", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Author"><i class="fa fa-hand-o-right"></i> Tác giả</a></li>*@
                     <li class="@Html.IsSelected(controller: "PublishingCompany", action: "Index")"><a href="@lte.MVC.Pages.QLTV.PublishingCompany"><i class="fa fa-hand-o-right"></i> Nhà xuất bản</a></li>
                     <li class="@Html.IsSelected(controller: "Category", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Category"><i class="fa fa-hand-o-right"></i> Thể loại</a></li>
                     <li class="@Html.IsSelected(controller: "Readers", action: "Index")"><a href="@lte.MVC.Pages.QLTV.Readers"><i class="fa fa-hand-o-right"></i> Độc giả</a></li>
@@ -132,7 +132,7 @@
                     <li><a href="http://mta.edu.vn" target="_blank"><i class="fa fa-hand-o-right"></i> Cổng thống tin điện tử</a></li>
                 </ul>
             </li>
-            <li class="@Html.IsSelected(controller: "/Areas/TTNhom_QLKS/Controllers/Home") treeview">
+            @*<li class="@Html.IsSelected(controller: "/Areas/TTNhom_QLKS/Controllers/Home") treeview">
                 <a href="#">
                     <i class="fas fa-hotel"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Khách Sạn</span>
                     <span class="pull-right-container">
@@ -148,10 +148,10 @@
                     <li class="@Html.IsSelected(controller: "Phongs", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Rooms"><i class="fa fa-building"></i> Phòng</a></li>
                     <li class="@Html.IsSelected(controller: "PhieuThus", action: "Index")"><a href="@lte.MVC.Pages.QLKS.Receipts"><i class="fa fa-usd"></i> Phiếu thu</a></li>
                 </ul>
-            </li>
-            <li class="@Html.IsSelected(controller: "/Areas/TTNhom_QLKHO/Controllers/Home") treeview">
+            </li>*@
+            @*<li class="@Html.IsSelected(controller: "/Areas/TTNhom_QLKHO/Controllers/Home") treeview">
                 <a href="#">
-                    <i class="fas fa-key"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Kho</span>
+                    <i class="fas fa-key"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Cái Gì Đó</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -169,10 +169,10 @@
                     <li class="@Html.IsSelected(controller: "TTPX", action: "Index")"><a href="@lte.MVC.Pages.QLKHO.TTPX"><i class="fas fa-user-edit"></i> Thông Tin Phiếu Xuất</a></li>
                     <li><a href="http://mta.edu.vn" target="_blank"><i class="fas fa-user-edit"></i> Cổng thống tin điện tử</a></li>
                 </ul>
-            </li>
+            </li>*@
             <li class="@Html.IsSelected(controller: "/Areas/TTNhom_QLTTHPT/Controllers/Home") treeview">
                 <a href="#">
-                    <i class="fas fa-school"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Trường THPT</span>
+                    <i class="fas fa-school"></i> <span>&nbsp;&nbsp;&nbsp;&nbsp;Quản Lý Cái gì đó</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>

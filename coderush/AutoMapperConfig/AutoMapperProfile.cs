@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using AutoMapper;
-using coderush.Areas.TTNhom_QLNS.Models;
-using coderush.Areas.TTNhom_QLNS.Models.Staff;
+//using coderush.Areas.TTNhom_QLNS.Models;
+//using coderush.Areas.TTNhom_QLNS.Models.Staff;
 
 namespace coderush.AutoMapper
 {
@@ -13,8 +13,8 @@ namespace coderush.AutoMapper
         
         public AutoMapperProfile()
         {
-            CreateMap<StaffCreateViewModel, staff>();
-            CreateMap<staff, StaffCreateViewModel>();
+        //    CreateMap<StaffCreateViewModel, staff>();
+        //    CreateMap<staff, StaffCreateViewModel>();
         }
     }
 }
