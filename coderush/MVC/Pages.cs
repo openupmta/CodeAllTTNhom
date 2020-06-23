@@ -11,6 +11,7 @@ namespace lte.MVC
         {
             public const string dashboard = "/Dashboard/Dashboardv1";
         }
+        
         public static class QuanLyTTHPT
         {
             public const string Home = "/TTNhom_QLTTHPT/Home/Index";
@@ -95,7 +96,7 @@ namespace lte.MVC
         }
         public static class Dashbaordv2
         {
-            public const string Url = "/Dashboard/Dashboardv2";
+            public const string Url = "/Dashboard/Dashboardv1";
         }
 
         public static class LayoutTop

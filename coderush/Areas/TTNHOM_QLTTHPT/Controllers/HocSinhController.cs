@@ -149,7 +149,7 @@ namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
             ws.Cells["D1"].Value = "Danh Sách Học Sinh";
             
             ws.Cells["C3"].Value = "Ngày Tạo :";
-            ws.Cells["D3"].Value = string.Format("{0:dd MMMM yyyy} at {0:H: mm tt}", DateTime.Now);
+            ws.Cells["D3"].Value = string.Format("{0:dd MM yyyy} at {0:H: mm tt}", DateTime.Now);
 
             ws.Cells["A6"].Value = "STT";
             ws.Cells["B6"].Value = "Họ và Tên";
@@ -173,7 +173,7 @@ namespace coderush.Areas.TTNhom_QLTTHPT.Controllers
                 ws.Cells[string.Format("A{0}", rowStart)].Value = stt;
                 ws.Cells[string.Format("B{0}", rowStart)].Value = item.HoTenHS;
                 ws.Cells[string.Format("C{0}", rowStart)].Value = item.GioiTinh;
-                ws.Cells[string.Format("D{0}", rowStart)].Value = string.Format("{0:dd/MMMM/yyyy}", item.NgaySinh); ;
+                ws.Cells[string.Format("D{0}", rowStart)].Value = string.Format("{0:dd/MM/yyyy}", item.NgaySinh);
                 ws.Cells[string.Format("E{0}", rowStart)].Value = item.DiaChi;
                 ws.Cells[string.Format("F{0}", rowStart)].Value = item.SDT;
                 ws.Cells[string.Format("G{0}", rowStart)].Value = item.NienKhoa;
